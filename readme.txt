@@ -14,8 +14,8 @@ Itération 1:
 -Proposer un modèle du Domaine —> ✔
 -Coder en Java les classes conceptuelles —> ✗
 -Diagramme de Séquence Système pour les 2 cas d’utilisation développé,
-	et quelques contrats. —> ✗
--Esquisses à la main de l’interface utilisateur—> ⟳ (Rajouter un bouton inscription)
+	et quelques contrats. —> ✔
+-Esquisses à la main de l’interface utilisateur—> ✔
 -Construire une première base de données —> ✗
 
 CLASSEMENT USECASE (A discuter):
