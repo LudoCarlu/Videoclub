@@ -32,6 +32,11 @@ public class Location extends Operation{
 		this.amende = amende;
 	}
 	
+	public Record getDescriptionFilm(int idFilm)
+	String qry;	
+		\\ l'argument est
+	qry = "SELECT* FROM DescriptionFilm WHERE DescriptionFilm.id = "+idfilm;
 	
+	}
 
 }
