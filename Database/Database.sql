@@ -38,13 +38,18 @@ CREATE TABLE Location (
 );
 
 /*CREATE TABLE Film (
-	id INTEGER PRIMARY KEY NOT NULL,
+	
 	codeArticle INT NOT NULL,
-	titre VARCHAR(100) NOT NULL,
 	estNouveau BOOLEAN NOT NULL,
-	genre VARCHAR(50) NOT NULL,
 	FOREIGN KEY (codeArticle) REFERENCES Article(codeArticle)
 );
+
+CREATE TABLE DescriptionFilm(
+	id INTEGER PRIMARY KEY NOT NULL,
+	titre VARCHAR(100) NOT NULL,
+	genre VARCHAR(50) NOT NULL,
+	dateParution DATETIME NOT NULL,
+);	
 
 INSERT INTO Adherent VALUES ('8193296425','1234','Carlu','Ludovic','71 rue Scott J8Y4G8 Gatineau','1234567812345678','2016-11-06 21:50');
 INSERT INTO Article VALUES (1,2);
