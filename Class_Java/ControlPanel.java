@@ -10,6 +10,7 @@ public class ControlPanel extends JPanel implements ActionListener{
 	private JButton vente=null;
 	private JButton inscription=null;
 	private JButton retours=null;
+	private JButton acquisition=null;
 	private int choix=0;
 	
 	public ControlPanel(JFrameGestionnaire fenetre){
@@ -28,12 +29,17 @@ public class ControlPanel extends JPanel implements ActionListener{
 		
 		this.retard= new JButton("Retards");
 		add(this.retard);
+		this.acquisition = new JButton("Acquisition");
+		add(this.acquisition);
 		
 		this.retard.addActionListener(this);
 		this.location.addActionListener(this);
 		this.vente.addActionListener(this);
 		this.retours.addActionListener(this);
 		this.inscription.addActionListener(this);
+		this.acquisition.addActionListener(this);
+		
+		
 	}
 	
 	public int getChoix(){
@@ -56,6 +62,9 @@ public class ControlPanel extends JPanel implements ActionListener{
 		}
 		if (e.getSource()==this.retard){
 			this.gestionnaire.setDisplayPanel(new DisplayPanel(5,this.gestionnaire));
+		}
+		if (e.getSource()==this.acquisition){
+			this.gestionnaire.setDisplayPanel(new DisplayPanel(6,this.gestionnaire));
 		}
 		
 	}

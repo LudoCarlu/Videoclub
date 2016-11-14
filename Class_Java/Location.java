@@ -7,6 +7,14 @@ public class Location extends Operation{
 	private Adherent adherent;
 	private Amende amende;
 	
+	
+	public Location(Date dateDue, Date dateRetour, Adherent adherent, Amende amende) {
+		super();
+		this.dateDue = dateDue;
+		this.dateRetour = dateRetour;
+		this.adherent = adherent;
+		this.amende = amende;
+	}
 	public Date getDateDue() {
 		return dateDue;
 	}
