@@ -12413,8 +12413,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 1232,
-											"top": -112,
+											"left": 1328,
+											"top": -48,
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -12437,8 +12437,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 885,
-											"top": 439,
+											"left": 933,
+											"top": 471,
 											"width": 85.4775390625,
 											"height": 13,
 											"autoResize": false,
@@ -12462,8 +12462,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 1232,
-											"top": -112,
+											"left": 1328,
+											"top": -48,
 											"width": 157.79638671875,
 											"height": 13,
 											"autoResize": false,
@@ -12487,8 +12487,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 1232,
-											"top": -112,
+											"left": 1328,
+											"top": -48,
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -12506,8 +12506,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 880,
-									"top": 432,
+									"left": 928,
+									"top": 464,
 									"width": 95.4775390625,
 									"height": 25,
 									"autoResize": false,
@@ -12542,8 +12542,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 880,
-									"top": 457,
+									"left": 928,
+									"top": 489,
 									"width": 95.4775390625,
 									"height": 10,
 									"autoResize": false
@@ -12566,8 +12566,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 880,
-									"top": 467,
+									"left": 928,
+									"top": 499,
 									"width": 95.4775390625,
 									"height": 10,
 									"autoResize": false
@@ -12590,8 +12590,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 616,
-									"top": -56,
+									"left": 664,
+									"top": -24,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -12614,8 +12614,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 616,
-									"top": -56,
+									"left": 664,
+									"top": -24,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -12630,8 +12630,8 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
-							"left": 880,
-							"top": 432,
+							"left": 928,
+							"top": 464,
 							"width": 95.4775390625,
 							"height": 45,
 							"autoResize": false,
@@ -13323,8 +13323,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 80,
 											"top": 1408,
+=======
+											"left": 32,
+											"top": 960,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -13347,8 +13352,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 189,
 											"top": 959,
+=======
+											"left": 165,
+											"top": 735,
+>>>>>>> Stashed changes
 											"width": 67,
 											"height": 13,
 											"autoResize": false,
@@ -13372,8 +13382,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 80,
 											"top": 1408,
+=======
+											"left": 32,
+											"top": 960,
+>>>>>>> Stashed changes
 											"width": 157.79638671875,
 											"height": 13,
 											"autoResize": false,
@@ -13397,8 +13412,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 80,
 											"top": 1408,
+=======
+											"left": 32,
+											"top": 960,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -13416,8 +13436,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 184,
 									"top": 952,
+=======
+									"left": 160,
+									"top": 728,
+>>>>>>> Stashed changes
 									"width": 77,
 									"height": 25,
 									"autoResize": false,
@@ -13452,8 +13477,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 184,
 									"top": 977,
+=======
+									"left": 160,
+									"top": 753,
+>>>>>>> Stashed changes
 									"width": 77,
 									"height": 10,
 									"autoResize": false
@@ -13476,8 +13506,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 184,
 									"top": 987,
+=======
+									"left": 160,
+									"top": 763,
+>>>>>>> Stashed changes
 									"width": 77,
 									"height": 10,
 									"autoResize": false
@@ -13500,8 +13535,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 40,
 									"top": 704,
+=======
+									"left": 16,
+									"top": 480,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -13524,8 +13564,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 40,
 									"top": 704,
+=======
+									"left": 16,
+									"top": 480,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -13540,8 +13585,13 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
+<<<<<<< Updated upstream
 							"left": 184,
 							"top": 952,
+=======
+							"left": 160,
+							"top": 728,
+>>>>>>> Stashed changes
 							"width": 77,
 							"height": 58,
 							"autoResize": false,
@@ -13607,8 +13657,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 1696,
-											"top": 0,
+											"left": 1824,
+											"top": 64,
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -13631,8 +13681,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 997,
-											"top": 439,
+											"left": 1061,
+											"top": 471,
 											"width": 54.55810546875,
 											"height": 13,
 											"autoResize": false,
@@ -13656,8 +13706,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 1696,
-											"top": 0,
+											"left": 1824,
+											"top": 64,
 											"width": 157.79638671875,
 											"height": 13,
 											"autoResize": false,
@@ -13681,8 +13731,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 1696,
-											"top": 0,
+											"left": 1824,
+											"top": 64,
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -13700,8 +13750,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 992,
-									"top": 432,
+									"left": 1056,
+									"top": 464,
 									"width": 64.55810546875,
 									"height": 25,
 									"autoResize": false,
@@ -13736,8 +13786,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 992,
-									"top": 457,
+									"left": 1056,
+									"top": 489,
 									"width": 64.55810546875,
 									"height": 10,
 									"autoResize": false
@@ -13760,8 +13810,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 992,
-									"top": 467,
+									"left": 1056,
+									"top": 499,
 									"width": 64.55810546875,
 									"height": 10,
 									"autoResize": false
@@ -13784,8 +13834,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 848,
-									"top": 0,
+									"left": 912,
+									"top": 32,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -13808,8 +13858,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 848,
-									"top": 0,
+									"left": 912,
+									"top": 32,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -13824,8 +13874,8 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
-							"left": 992,
-							"top": 432,
+							"left": 1056,
+							"top": 464,
 							"width": 64.55810546875,
 							"height": 45,
 							"autoResize": false,
@@ -13891,8 +13941,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 1856,
-											"top": 112,
+											"left": 2032,
+											"top": 160,
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -13915,8 +13965,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 1101,
-											"top": 439,
+											"left": 1189,
+											"top": 463,
 											"width": 50.48291015625,
 											"height": 13,
 											"autoResize": false,
@@ -13940,8 +13990,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 1856,
-											"top": 112,
+											"left": 2032,
+											"top": 160,
 											"width": 157.79638671875,
 											"height": 13,
 											"autoResize": false,
@@ -13965,8 +14015,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 1856,
-											"top": 112,
+											"left": 2032,
+											"top": 160,
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -13984,8 +14034,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 1096,
-									"top": 432,
+									"left": 1184,
+									"top": 456,
 									"width": 60.48291015625,
 									"height": 25,
 									"autoResize": false,
@@ -14020,8 +14070,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 1096,
-									"top": 457,
+									"left": 1184,
+									"top": 481,
 									"width": 60.48291015625,
 									"height": 10,
 									"autoResize": false
@@ -14044,8 +14094,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 1096,
-									"top": 467,
+									"left": 1184,
+									"top": 491,
 									"width": 60.48291015625,
 									"height": 10,
 									"autoResize": false
@@ -14068,8 +14118,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 928,
-									"top": 56,
+									"left": 1016,
+									"top": 80,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -14092,8 +14142,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 928,
-									"top": 56,
+									"left": 1016,
+									"top": 80,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -14108,8 +14158,8 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
-							"left": 1096,
-							"top": 432,
+							"left": 1184,
+							"top": 456,
 							"width": 60.48291015625,
 							"height": 45,
 							"autoResize": false,
@@ -14175,8 +14225,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 544,
-											"top": 32,
+											"left": 736,
+											"top": 96,
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -14199,8 +14249,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 645,
-											"top": 439,
+											"left": 741,
+											"top": 471,
 											"width": 143.14599609375,
 											"height": 13,
 											"autoResize": false,
@@ -14224,8 +14274,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 544,
-											"top": 32,
+											"left": 736,
+											"top": 96,
 											"width": 157.79638671875,
 											"height": 13,
 											"autoResize": false,
@@ -14249,8 +14299,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 544,
-											"top": 32,
+											"left": 736,
+											"top": 96,
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -14268,8 +14318,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 640,
-									"top": 432,
+									"left": 736,
+									"top": 464,
 									"width": 153.14599609375,
 									"height": 25,
 									"autoResize": false,
@@ -14314,8 +14364,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 645,
-											"top": 462,
+											"left": 741,
+											"top": 494,
 											"width": 143.14599609375,
 											"height": 13,
 											"autoResize": false,
@@ -14342,8 +14392,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 645,
-											"top": 477,
+											"left": 741,
+											"top": 509,
 											"width": 143.14599609375,
 											"height": 13,
 											"autoResize": false,
@@ -14370,8 +14420,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 645,
-											"top": 492,
+											"left": 741,
+											"top": 524,
 											"width": 143.14599609375,
 											"height": 13,
 											"autoResize": false,
@@ -14398,8 +14448,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 645,
-											"top": 507,
+											"left": 741,
+											"top": 539,
 											"width": 143.14599609375,
 											"height": 13,
 											"autoResize": false,
@@ -14426,8 +14476,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 645,
-											"top": 522,
+											"left": 741,
+											"top": 554,
 											"width": 143.14599609375,
 											"height": 13,
 											"autoResize": false,
@@ -14454,8 +14504,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": 645,
-											"top": 537,
+											"left": 741,
+											"top": 569,
 											"width": 143.14599609375,
 											"height": 13,
 											"autoResize": false,
@@ -14474,8 +14524,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 640,
-									"top": 457,
+									"left": 736,
+									"top": 489,
 									"width": 153.14599609375,
 									"height": 98,
 									"autoResize": false
@@ -14498,8 +14548,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 640,
-									"top": 555,
+									"left": 736,
+									"top": 587,
 									"width": 153.14599609375,
 									"height": 10,
 									"autoResize": false
@@ -14522,8 +14572,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 272,
-									"top": 16,
+									"left": 368,
+									"top": 48,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -14546,8 +14596,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 272,
-									"top": 16,
+									"left": 368,
+									"top": 48,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -14562,8 +14612,8 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
-							"left": 640,
-							"top": 432,
+							"left": 736,
+							"top": 464,
 							"width": 153.14599609375,
 							"height": 133,
 							"autoResize": false,
@@ -14630,7 +14680,11 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 752,
+<<<<<<< Updated upstream
 											"top": 704,
+=======
+											"top": 816,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -14654,7 +14708,11 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 877,
+<<<<<<< Updated upstream
 											"top": 703,
+=======
+											"top": 759,
+>>>>>>> Stashed changes
 											"width": 84,
 											"height": 13,
 											"autoResize": false,
@@ -14679,7 +14737,11 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 752,
+<<<<<<< Updated upstream
 											"top": 704,
+=======
+											"top": 816,
+>>>>>>> Stashed changes
 											"width": 157.79638671875,
 											"height": 13,
 											"autoResize": false,
@@ -14704,7 +14766,11 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 752,
+<<<<<<< Updated upstream
 											"top": 704,
+=======
+											"top": 816,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -14723,7 +14789,11 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 872,
+<<<<<<< Updated upstream
 									"top": 696,
+=======
+									"top": 752,
+>>>>>>> Stashed changes
 									"width": 94,
 									"height": 25,
 									"autoResize": false,
@@ -14759,7 +14829,11 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 872,
+<<<<<<< Updated upstream
 									"top": 721,
+=======
+									"top": 777,
+>>>>>>> Stashed changes
 									"width": 94,
 									"height": 10,
 									"autoResize": false
@@ -14783,7 +14857,11 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 872,
+<<<<<<< Updated upstream
 									"top": 731,
+=======
+									"top": 787,
+>>>>>>> Stashed changes
 									"width": 94,
 									"height": 10,
 									"autoResize": false
@@ -14807,7 +14885,11 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 376,
+<<<<<<< Updated upstream
 									"top": 352,
+=======
+									"top": 408,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -14831,7 +14913,11 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 376,
+<<<<<<< Updated upstream
 									"top": 352,
+=======
+									"top": 408,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -14847,7 +14933,11 @@
 							"containerChangeable": true,
 							"containerExtending": false,
 							"left": 872,
+<<<<<<< Updated upstream
 							"top": 696,
+=======
+							"top": 752,
+>>>>>>> Stashed changes
 							"width": 94,
 							"height": 58,
 							"autoResize": false,
@@ -14913,8 +15003,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 240,
 											"top": 1024,
+=======
+											"left": 192,
+											"top": 1136,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -14937,8 +15032,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 581,
 											"top": 775,
+=======
+											"left": 557,
+											"top": 831,
+>>>>>>> Stashed changes
 											"width": 89.08935546875,
 											"height": 13,
 											"autoResize": false,
@@ -14962,8 +15062,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 240,
 											"top": 1024,
+=======
+											"left": 192,
+											"top": 1136,
+>>>>>>> Stashed changes
 											"width": 157.79638671875,
 											"height": 13,
 											"autoResize": false,
@@ -14987,8 +15092,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 240,
 											"top": 1024,
+=======
+											"left": 192,
+											"top": 1136,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -15006,8 +15116,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 576,
 									"top": 768,
+=======
+									"left": 552,
+									"top": 824,
+>>>>>>> Stashed changes
 									"width": 99.08935546875,
 									"height": 25,
 									"autoResize": false,
@@ -15052,8 +15167,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 581,
 											"top": 798,
+=======
+											"left": 557,
+											"top": 854,
+>>>>>>> Stashed changes
 											"width": 89.08935546875,
 											"height": 13,
 											"autoResize": false,
@@ -15080,8 +15200,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 581,
 											"top": 813,
+=======
+											"left": 557,
+											"top": 869,
+>>>>>>> Stashed changes
 											"width": 89.08935546875,
 											"height": 13,
 											"autoResize": false,
@@ -15100,8 +15225,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 576,
 									"top": 793,
+=======
+									"left": 552,
+									"top": 849,
+>>>>>>> Stashed changes
 									"width": 99.08935546875,
 									"height": 38,
 									"autoResize": false
@@ -15124,8 +15254,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 576,
 									"top": 831,
+=======
+									"left": 552,
+									"top": 887,
+>>>>>>> Stashed changes
 									"width": 99.08935546875,
 									"height": 10,
 									"autoResize": false
@@ -15148,8 +15283,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 120,
 									"top": 512,
+=======
+									"left": 96,
+									"top": 568,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -15172,8 +15312,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 120,
 									"top": 512,
+=======
+									"left": 96,
+									"top": 568,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -15188,8 +15333,13 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
+<<<<<<< Updated upstream
 							"left": 576,
 							"top": 768,
+=======
+							"left": 552,
+							"top": 824,
+>>>>>>> Stashed changes
 							"width": 99.08935546875,
 							"height": 73,
 							"autoResize": false,
@@ -15255,8 +15405,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 752,
 											"top": -160,
+=======
+											"left": 720,
+											"top": -224,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -15279,9 +15434,15 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 509,
 											"top": 639,
 											"width": 64,
+=======
+											"left": 493,
+											"top": 607,
+											"width": 122,
+>>>>>>> Stashed changes
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -15304,8 +15465,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 752,
 											"top": -160,
+=======
+											"left": 720,
+											"top": -224,
+>>>>>>> Stashed changes
 											"width": 157.79638671875,
 											"height": 13,
 											"autoResize": false,
@@ -15329,8 +15495,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 752,
 											"top": -160,
+=======
+											"left": 720,
+											"top": -224,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -15348,9 +15519,15 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 504,
 									"top": 632,
 									"width": 74,
+=======
+									"left": 488,
+									"top": 600,
+									"width": 132,
+>>>>>>> Stashed changes
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -15378,12 +15555,12 @@
 									"subViews": [
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAFYHY2cWOw/AgU=",
+											"_id": "AAAAAAFYZRnYOa3uayE=",
 											"_parent": {
 												"$ref": "AAAAAAFYHY2B0ewajzM="
 											},
 											"model": {
-												"$ref": "AAAAAAFYHY2cQOw8zjg="
+												"$ref": "AAAAAAFYZRnYI63rHQY="
 											},
 											"visible": true,
 											"enabled": true,
@@ -15394,13 +15571,19 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 509,
 											"top": 662,
 											"width": 64,
+=======
+											"left": 493,
+											"top": 630,
+											"width": 122,
+>>>>>>> Stashed changes
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+montant",
+											"text": "+estPayee : Booleen",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -15414,9 +15597,15 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 504,
 									"top": 657,
 									"width": 74,
+=======
+									"left": 488,
+									"top": 625,
+									"width": 132,
+>>>>>>> Stashed changes
 									"height": 23,
 									"autoResize": false
 								},
@@ -15438,9 +15627,15 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 504,
 									"top": 680,
 									"width": 74,
+=======
+									"left": 488,
+									"top": 648,
+									"width": 132,
+>>>>>>> Stashed changes
 									"height": 10,
 									"autoResize": false
 								},
@@ -15462,8 +15657,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 376,
 									"top": -80,
+=======
+									"left": 360,
+									"top": -112,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -15486,8 +15686,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 376,
 									"top": -80,
+=======
+									"left": 360,
+									"top": -112,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -15502,10 +15707,17 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
+<<<<<<< Updated upstream
 							"left": 504,
 							"top": 632,
 							"width": 74,
 							"height": 58,
+=======
+							"left": 488,
+							"top": 600,
+							"width": 132,
+							"height": 73,
+>>>>>>> Stashed changes
 							"autoResize": false,
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
@@ -15853,8 +16065,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 1824,
 											"top": -560,
+=======
+											"left": 1648,
+											"top": -736,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -15877,13 +16094,18 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 1165,
 											"top": 295,
+=======
+											"left": 1077,
+											"top": 207,
+>>>>>>> Stashed changes
 											"width": 138.00439453125,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "ArticleALoue",
+											"text": "Film",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -15902,8 +16124,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 1824,
 											"top": -560,
+=======
+											"left": 1648,
+											"top": -736,
+>>>>>>> Stashed changes
 											"width": 157.79638671875,
 											"height": 13,
 											"autoResize": false,
@@ -15927,8 +16154,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 1824,
 											"top": -560,
+=======
+											"left": 1648,
+											"top": -736,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -15946,8 +16178,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 1160,
 									"top": 288,
+=======
+									"left": 1072,
+									"top": 200,
+>>>>>>> Stashed changes
 									"width": 148.00439453125,
 									"height": 25,
 									"autoResize": false,
@@ -15976,6 +16213,7 @@
 									"subViews": [
 										{
 											"_type": "UMLAttributeView",
+<<<<<<< Updated upstream
 											"_id": "AAAAAAFYHZ9Z3u/sl7Y=",
 											"_parent": {
 												"$ref": "AAAAAAFYHZBgyOx3OU4="
@@ -16004,6 +16242,8 @@
 										},
 										{
 											"_type": "UMLAttributeView",
+=======
+>>>>>>> Stashed changes
 											"_id": "AAAAAAFYHaAbY+/3Yig=",
 											"_parent": {
 												"$ref": "AAAAAAFYHZBgyOx3OU4="
@@ -16020,8 +16260,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 1165,
 											"top": 333,
+=======
+											"left": 1077,
+											"top": 230,
+>>>>>>> Stashed changes
 											"width": 138.00439453125,
 											"height": 13,
 											"autoResize": false,
@@ -16040,10 +16285,15 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 1160,
 									"top": 313,
+=======
+									"left": 1072,
+									"top": 225,
+>>>>>>> Stashed changes
 									"width": 148.00439453125,
-									"height": 38,
+									"height": 23,
 									"autoResize": false
 								},
 								{
@@ -16064,8 +16314,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 1160,
 									"top": 351,
+=======
+									"left": 1072,
+									"top": 248,
+>>>>>>> Stashed changes
 									"width": 148.00439453125,
 									"height": 10,
 									"autoResize": false
@@ -16088,8 +16343,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 912,
 									"top": -280,
+=======
+									"left": 824,
+									"top": -368,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -16112,8 +16372,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 912,
 									"top": -280,
+=======
+									"left": 824,
+									"top": -368,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -16128,8 +16393,13 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
+<<<<<<< Updated upstream
 							"left": 1160,
 							"top": 288,
+=======
+							"left": 1072,
+							"top": 200,
+>>>>>>> Stashed changes
 							"width": 148.00439453125,
 							"height": 73,
 							"autoResize": false,
@@ -18065,7 +18335,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+codeArticle",
+											"text": "+codeBarre",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -20611,8 +20881,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 454,
 									"top": 807,
+=======
+									"left": 443,
+									"top": 735,
+>>>>>>> Stashed changes
 									"width": 51,
 									"height": 13,
 									"autoResize": false,
@@ -20645,8 +20920,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 476,
 									"top": 792,
+=======
+									"left": 477,
+									"top": 723,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -20678,8 +20958,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 484,
 									"top": 836,
+=======
+									"left": 449,
+									"top": 758,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -20711,8 +20996,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 413,
 									"top": 818,
+=======
+									"left": 395,
+									"top": 681,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -20744,8 +21034,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 413,
 									"top": 805,
+=======
+									"left": 405,
+									"top": 672,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -20777,8 +21072,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 403,
 									"top": 846,
+=======
+									"left": 365,
+									"top": 700,
+>>>>>>> Stashed changes
 									"width": 20,
 									"height": 13,
 									"autoResize": false,
@@ -20811,8 +21111,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 546,
 									"top": 795,
+=======
+									"left": 540,
+									"top": 789,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -20844,8 +21149,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 542,
 									"top": 782,
+=======
+									"left": 546,
+									"top": 777,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -20877,8 +21187,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 552,
 									"top": 822,
+=======
+									"left": 524,
+									"top": 814,
+>>>>>>> Stashed changes
 									"width": 7,
 									"height": 13,
 									"autoResize": false,
@@ -20958,7 +21273,11 @@
 								"$ref": "AAAAAAFYHYRNiOpCkqY="
 							},
 							"lineStyle": 1,
+<<<<<<< Updated upstream
 							"points": "390:844;575:812",
+=======
+							"points": "366:684;552:823",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -21441,8 +21760,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 209,
 									"top": 793,
+=======
+									"left": 201,
+									"top": 639,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -21474,8 +21798,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 194,
 									"top": 793,
+=======
+									"left": 186,
+									"top": 636,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -21507,8 +21836,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 238,
 									"top": 794,
+=======
+									"left": 230,
+									"top": 644,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -21539,7 +21873,11 @@
 								"$ref": "AAAAAAFYHYVP2+rAzg8="
 							},
 							"lineStyle": 1,
+<<<<<<< Updated upstream
 							"points": "222:951;227:649",
+=======
+							"points": "203:727;230:569",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -22692,8 +23030,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 1063,
 									"top": 288,
+=======
+									"left": 1023,
+									"top": 248,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -22725,8 +23068,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 1059,
 									"top": 303,
+=======
+									"left": 1024,
+									"top": 263,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -22758,8 +23106,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 1070,
 									"top": 259,
+=======
+									"left": 1022,
+									"top": 219,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -22790,7 +23143,11 @@
 								"$ref": "AAAAAAFYHZBgxuxxteM="
 							},
 							"lineStyle": 1,
+<<<<<<< Updated upstream
 							"points": "1159:304;976:256",
+=======
+							"points": "1071:239;976:242",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -22832,8 +23189,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 958,
-									"top": 382,
+									"left": 979,
+									"top": 403,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -22865,8 +23222,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 946,
-									"top": 373,
+									"left": 965,
+									"top": 399,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -22898,8 +23255,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 981,
-									"top": 401,
+									"left": 1008,
+									"top": 412,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -22930,7 +23287,7 @@
 								"$ref": "AAAAAAFYHYPHNuma2Ic="
 							},
 							"lineStyle": 1,
-							"points": "945:431;996:365",
+							"points": "981:463;1008:365",
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -22972,8 +23329,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 1003,
-									"top": 392,
+									"left": 1036,
+									"top": 414,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -23005,8 +23362,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 988,
-									"top": 393,
+									"left": 1023,
+									"top": 421,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -23038,8 +23395,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 1032,
-									"top": 391,
+									"left": 1063,
+									"top": 401,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -23070,7 +23427,7 @@
 								"$ref": "AAAAAAFYHYphDOsUrqw="
 							},
 							"lineStyle": 1,
-							"points": "1021:431;1016:365",
+							"points": "1075:463;1026:365",
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -23112,8 +23469,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 1058,
-									"top": 402,
+									"left": 1106,
+									"top": 417,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -23145,8 +23502,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 1047,
-									"top": 412,
+									"left": 1098,
+									"top": 429,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -23178,8 +23535,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 1079,
-									"top": 381,
+									"left": 1123,
+									"top": 392,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -23210,7 +23567,7 @@
 								"$ref": "AAAAAAFYHYp4vus+6oo="
 							},
 							"lineStyle": 1,
-							"points": "1102:431;1037:365",
+							"points": "1183:457;1048:365",
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -23536,8 +23893,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 845,
 									"top": 614,
+=======
+									"left": 886,
+									"top": 662,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -23569,8 +23931,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 856,
 									"top": 604,
+=======
+									"left": 900,
+									"top": 656,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -23602,8 +23969,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 822,
 									"top": 633,
+=======
+									"left": 859,
+									"top": 673,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -23634,7 +24006,11 @@
 								"$ref": "AAAAAAFYHYsng+toRsI="
 							},
 							"lineStyle": 1,
+<<<<<<< Updated upstream
 							"points": "776:565;892:695",
+=======
+							"points": "840:597;906:751",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -23683,8 +24059,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 736,
 											"top": 544,
+=======
+											"left": 496,
+											"top": 688,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -23707,8 +24088,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 701,
 											"top": 911,
+=======
+											"left": 581,
+											"top": 983,
+>>>>>>> Stashed changes
 											"width": 92.75537109375,
 											"height": 13,
 											"autoResize": false,
@@ -23732,8 +24118,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 736,
 											"top": 544,
+=======
+											"left": 496,
+											"top": 688,
+>>>>>>> Stashed changes
 											"width": 157.79638671875,
 											"height": 13,
 											"autoResize": false,
@@ -23757,8 +24148,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 736,
 											"top": 544,
+=======
+											"left": 496,
+											"top": 688,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -23776,8 +24172,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 696,
 									"top": 904,
+=======
+									"left": 576,
+									"top": 976,
+>>>>>>> Stashed changes
 									"width": 102.75537109375,
 									"height": 25,
 									"autoResize": false,
@@ -23812,8 +24213,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 696,
 									"top": 929,
+=======
+									"left": 576,
+									"top": 1001,
+>>>>>>> Stashed changes
 									"width": 102.75537109375,
 									"height": 10,
 									"autoResize": false
@@ -23836,8 +24242,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 696,
 									"top": 939,
+=======
+									"left": 576,
+									"top": 1011,
+>>>>>>> Stashed changes
 									"width": 102.75537109375,
 									"height": 10,
 									"autoResize": false
@@ -23860,8 +24271,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 368,
 									"top": 272,
+=======
+									"left": 248,
+									"top": 344,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -23884,8 +24300,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 368,
 									"top": 272,
+=======
+									"left": 248,
+									"top": 344,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -23900,8 +24321,13 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
+<<<<<<< Updated upstream
 							"left": 696,
 							"top": 904,
+=======
+							"left": 576,
+							"top": 976,
+>>>>>>> Stashed changes
 							"width": 102.75537109375,
 							"height": 45,
 							"autoResize": false,
@@ -23960,8 +24386,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 817,
 									"top": 812,
+=======
+									"left": 758,
+									"top": 873,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -23993,8 +24424,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 806,
 									"top": 802,
+=======
+									"left": 749,
+									"top": 861,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24026,8 +24462,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 840,
 									"top": 831,
+=======
+									"left": 775,
+									"top": 898,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24058,7 +24499,11 @@
 								"$ref": "AAAAAAFYHdvWmVKyt78="
 							},
 							"lineStyle": 1,
+<<<<<<< Updated upstream
 							"points": "766:903;892:754",
+=======
+							"points": "657:975;878:810",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -24100,8 +24545,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 413,
 									"top": 536,
+=======
+									"left": 469,
+									"top": 506,
+>>>>>>> Stashed changes
 									"width": 57,
 									"height": 13,
 									"autoResize": false,
@@ -24134,8 +24584,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 462,
 									"top": 581,
+=======
+									"left": 508,
+									"top": 554,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24167,8 +24622,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 452,
 									"top": 537,
+=======
+									"left": 507,
+									"top": 510,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24200,8 +24660,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 617,
 									"top": 530,
+=======
+									"left": 709,
+									"top": 539,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24233,8 +24698,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 617,
 									"top": 543,
+=======
+									"left": 706,
+									"top": 552,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24266,8 +24736,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 612,
 									"top": 502,
+=======
+									"left": 710,
+									"top": 511,
+>>>>>>> Stashed changes
 									"width": 7,
 									"height": 13,
 									"autoResize": false,
@@ -24300,8 +24775,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 301,
 									"top": 603,
+=======
+									"left": 307,
+									"top": 540,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24333,8 +24813,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 306,
 									"top": 616,
+=======
+									"left": 309,
+									"top": 554,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24366,8 +24851,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 279,
 									"top": 600,
+=======
+									"left": 286,
+									"top": 534,
+>>>>>>> Stashed changes
 									"width": 20,
 									"height": 13,
 									"autoResize": false,
@@ -24400,8 +24890,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 88,
 									"top": 152,
+=======
+									"left": 152,
+									"top": 136,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -24424,8 +24919,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 88,
 									"top": 152,
+=======
+									"left": 152,
+									"top": 136,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -24447,7 +24947,11 @@
 								"$ref": "AAAAAAFYHYsng+toRsI="
 							},
 							"lineStyle": 1,
+<<<<<<< Updated upstream
 							"points": "639:516;273:601",
+=======
+							"points": "735:530;281:532",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -24515,8 +25019,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 451,
 									"top": 961,
+=======
+									"left": 375,
+									"top": 883,
+>>>>>>> Stashed changes
 									"width": 57,
 									"height": 13,
 									"autoResize": false,
@@ -24549,8 +25058,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 481,
 									"top": 976,
+=======
+									"left": 396,
+									"top": 896,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24582,8 +25096,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 476,
 									"top": 932,
+=======
+									"left": 418,
+									"top": 856,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24615,8 +25134,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 670,
 									"top": 942,
+=======
+									"left": 555,
+									"top": 969,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24648,8 +25172,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 669,
 									"top": 956,
+=======
+									"left": 546,
+									"top": 979,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24681,8 +25210,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 669,
 									"top": 914,
+=======
+									"left": 569,
+									"top": 947,
+>>>>>>> Stashed changes
 									"width": 7,
 									"height": 13,
 									"autoResize": false,
@@ -24715,8 +25249,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 288,
 									"top": 982,
+=======
+									"left": 252,
+									"top": 797,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24748,8 +25287,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 292,
 									"top": 995,
+=======
+									"left": 247,
+									"top": 810,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -24781,8 +25325,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 271,
 									"top": 955,
+=======
+									"left": 251,
+									"top": 771,
+>>>>>>> Stashed changes
 									"width": 20,
 									"height": 13,
 									"autoResize": false,
@@ -24815,8 +25364,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 25,
 									"top": -16,
+=======
+									"left": 73,
+									"top": -80,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -24839,8 +25393,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 25,
 									"top": -16,
+=======
+									"left": 73,
+									"top": -80,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -24862,7 +25421,11 @@
 								"$ref": "AAAAAAFYHdvWmVKyt78="
 							},
 							"lineStyle": 1,
+<<<<<<< Updated upstream
 							"points": "695:931;261:976",
+=======
+							"points": "585:975;237:778",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -24937,8 +25500,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 224,
 											"top": 464,
+=======
+											"left": 304,
+											"top": 496,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -24961,8 +25529,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 709,
 											"top": 775,
+=======
+											"left": 749,
+											"top": 791,
+>>>>>>> Stashed changes
 											"width": 72.20458984375,
 											"height": 13,
 											"autoResize": false,
@@ -24986,8 +25559,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 224,
 											"top": 464,
+=======
+											"left": 304,
+											"top": 496,
+>>>>>>> Stashed changes
 											"width": 157.79638671875,
 											"height": 13,
 											"autoResize": false,
@@ -25011,8 +25589,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 224,
 											"top": 464,
+=======
+											"left": 304,
+											"top": 496,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -25030,8 +25613,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 704,
 									"top": 768,
+=======
+									"left": 744,
+									"top": 784,
+>>>>>>> Stashed changes
 									"width": 82.20458984375,
 									"height": 25,
 									"autoResize": false,
@@ -25076,8 +25664,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 709,
 											"top": 798,
+=======
+											"left": 749,
+											"top": 814,
+>>>>>>> Stashed changes
 											"width": 72.20458984375,
 											"height": 13,
 											"autoResize": false,
@@ -25096,8 +25689,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 704,
 									"top": 793,
+=======
+									"left": 744,
+									"top": 809,
+>>>>>>> Stashed changes
 									"width": 82.20458984375,
 									"height": 23,
 									"autoResize": false
@@ -25120,8 +25718,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 704,
 									"top": 816,
+=======
+									"left": 744,
+									"top": 832,
+>>>>>>> Stashed changes
 									"width": 82.20458984375,
 									"height": 10,
 									"autoResize": false
@@ -25144,8 +25747,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 112,
 									"top": 232,
+=======
+									"left": 152,
+									"top": 248,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -25168,8 +25776,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 112,
 									"top": 232,
+=======
+									"left": 152,
+									"top": 248,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -25184,8 +25797,13 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
+<<<<<<< Updated upstream
 							"left": 704,
 							"top": 768,
+=======
+							"left": 744,
+							"top": 784,
+>>>>>>> Stashed changes
 							"width": 82.20458984375,
 							"height": 58,
 							"autoResize": false,
@@ -25244,8 +25862,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 730,
 									"top": 858,
+=======
+									"left": 690,
+									"top": 892,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -25277,8 +25900,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 715,
 									"top": 858,
+=======
+									"left": 679,
+									"top": 882,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -25310,8 +25938,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 759,
 									"top": 857,
+=======
+									"left": 713,
+									"top": 911,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -25343,8 +25976,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 730,
 									"top": 871,
+=======
+									"left": 651,
+									"top": 939,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -25376,8 +26014,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 716,
 									"top": 869,
+=======
+									"left": 642,
+									"top": 929,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -25409,8 +26052,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 754,
 									"top": 875,
+=======
+									"left": 666,
+									"top": 960,
+>>>>>>> Stashed changes
 									"width": 7,
 									"height": 13,
 									"autoResize": false,
@@ -25443,7 +26091,11 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 729,
+=======
+									"left": 730,
+>>>>>>> Stashed changes
 									"top": 846,
 									"width": 0,
 									"height": 13,
@@ -25476,8 +26128,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 716,
 									"top": 849,
+=======
+									"left": 719,
+									"top": 839,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -25509,8 +26166,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 754,
 									"top": 841,
+=======
+									"left": 751,
+									"top": 860,
+>>>>>>> Stashed changes
 									"width": 7,
 									"height": 13,
 									"autoResize": false,
@@ -25543,8 +26205,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 112,
 									"top": 120,
+=======
+									"left": 152,
+									"top": 136,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -25567,8 +26234,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 112,
 									"top": 120,
+=======
+									"left": 152,
+									"top": 136,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -25590,7 +26262,11 @@
 								"$ref": "AAAAAAFYHdvWmVKyt78="
 							},
 							"lineStyle": 1,
+<<<<<<< Updated upstream
 							"points": "746:903;744:826",
+=======
+							"points": "646:975;759:842",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -25658,8 +26334,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 578,
 									"top": 580,
+=======
+									"left": 653,
+									"top": 565,
+>>>>>>> Stashed changes
 									"width": 36,
 									"height": 13,
 									"autoResize": false,
@@ -25692,8 +26373,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 586,
 									"top": 569,
+=======
+									"left": 665,
+									"top": 551,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -25725,8 +26411,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 617,
 									"top": 603,
+=======
+									"left": 682,
+									"top": 592,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -25758,8 +26449,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 580,
 									"top": 596,
+=======
+									"left": 638,
+									"top": 579,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -25791,8 +26487,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 573,
 									"top": 585,
+=======
+									"left": 635,
+									"top": 566,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -25824,8 +26525,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 568,
 									"top": 599,
+=======
+									"left": 624,
+									"top": 580,
+>>>>>>> Stashed changes
 									"width": 20,
 									"height": 13,
 									"autoResize": false,
@@ -25858,8 +26564,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 613,
 									"top": 565,
+=======
+									"left": 705,
+									"top": 551,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -25891,8 +26602,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 603,
 									"top": 557,
+=======
+									"left": 698,
+									"top": 540,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -25924,8 +26640,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 632,
 									"top": 582,
+=======
+									"left": 716,
+									"top": 575,
+>>>>>>> Stashed changes
 									"width": 7,
 									"height": 13,
 									"autoResize": false,
@@ -25958,8 +26679,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 16,
 									"top": 72,
+=======
+									"left": 72,
+									"top": 136,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -25982,8 +26708,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 16,
 									"top": 72,
+=======
+									"left": 72,
+									"top": 136,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -26005,7 +26736,11 @@
 								"$ref": "AAAAAAFYHY2Bz+wUu0A="
 							},
 							"lineStyle": 1,
+<<<<<<< Updated upstream
 							"points": "572:631;643:565",
+=======
+							"points": "620:609;735:562",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -26073,8 +26808,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 644,
 									"top": 655,
+=======
+									"left": 677,
+									"top": 695,
+>>>>>>> Stashed changes
 									"width": 15,
 									"height": 13,
 									"autoResize": false,
@@ -26107,8 +26847,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 637,
 									"top": 651,
+=======
+									"left": 671,
+									"top": 687,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -26140,8 +26885,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 680,
 									"top": 664,
+=======
+									"left": 709,
+									"top": 712,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -26173,8 +26923,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 629,
 									"top": 731,
+=======
+									"left": 626,
+									"top": 787,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -26207,7 +26962,11 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 616,
+<<<<<<< Updated upstream
 									"top": 725,
+=======
+									"top": 777,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -26239,8 +26998,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 651,
 									"top": 743,
+=======
+									"left": 644,
+									"top": 805,
+>>>>>>> Stashed changes
 									"width": 7,
 									"height": 13,
 									"autoResize": false,
@@ -26273,8 +27037,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 674,
 									"top": 579,
+=======
+									"left": 742,
+									"top": 604,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -26306,8 +27075,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 660,
 									"top": 578,
+=======
+									"left": 729,
+									"top": 599,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -26339,8 +27113,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 692,
 									"top": 568,
+=======
+									"left": 763,
+									"top": 600,
+>>>>>>> Stashed changes
 									"width": 7,
 									"height": 13,
 									"autoResize": false,
@@ -26373,8 +27152,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 0,
-									"top": 0,
+									"left": 72,
+									"top": 136,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -26397,8 +27176,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 0,
-									"top": 0,
+									"left": 72,
+									"top": 136,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -26420,7 +27199,11 @@
 								"$ref": "AAAAAAFYHYzzVuvcAdc="
 							},
 							"lineStyle": 1,
+<<<<<<< Updated upstream
 							"points": "636:767;696:565",
+=======
+							"points": "625:823;769:597",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -27754,8 +28537,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 577,
-									"top": 370,
+									"left": 624,
+									"top": 388,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -27787,8 +28570,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 586,
-									"top": 358,
+									"left": 632,
+									"top": 375,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -27820,8 +28603,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 560,
-									"top": 395,
+									"left": 609,
+									"top": 413,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -27854,7 +28637,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 529,
-									"top": 334,
+									"top": 328,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -27887,7 +28670,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 539,
-									"top": 325,
+									"top": 318,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -27919,8 +28702,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 506,
-									"top": 353,
+									"left": 508,
+									"top": 349,
 									"width": 7,
 									"height": 13,
 									"autoResize": false,
@@ -27953,8 +28736,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 627,
-									"top": 407,
+									"left": 721,
+									"top": 448,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -27986,8 +28769,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 633,
-									"top": 395,
+									"left": 726,
+									"top": 435,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -28019,8 +28802,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 612,
-									"top": 432,
+									"left": 708,
+									"top": 474,
 									"width": 5,
 									"height": 13,
 									"autoResize": false,
@@ -28053,8 +28836,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 0,
-									"top": 0,
+									"left": 72,
+									"top": 136,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -28077,8 +28860,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 0,
-									"top": 0,
+									"left": 72,
+									"top": 136,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -28100,7 +28883,7 @@
 								"$ref": "AAAAAAFYHYN5hOlvxR0="
 							},
 							"lineStyle": 1,
-							"points": "500:337;639:441",
+							"points": "500:333;735:481",
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -28168,8 +28951,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 745,
 									"top": 658,
+=======
+									"left": 810,
+									"top": 685,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -28201,8 +28989,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 760,
 									"top": 657,
+=======
+									"left": 825,
+									"top": 686,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -28234,8 +29027,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 716,
 									"top": 661,
+=======
+									"left": 781,
+									"top": 682,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -28267,8 +29065,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 739,
 									"top": 583,
+=======
+									"left": 817,
+									"top": 618,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -28300,8 +29103,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 752,
 									"top": 584,
+=======
+									"left": 830,
+									"top": 621,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -28333,8 +29141,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 708,
 									"top": 581,
+=======
+									"left": 787,
+									"top": 611,
+>>>>>>> Stashed changes
 									"width": 7,
 									"height": 13,
 									"autoResize": false,
@@ -28367,8 +29180,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 753,
 									"top": 733,
+=======
+									"left": 804,
+									"top": 752,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -28400,8 +29218,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 766,
 									"top": 730,
+=======
+									"left": 817,
+									"top": 751,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -28433,8 +29256,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 723,
 									"top": 740,
+=======
+									"left": 773,
+									"top": 754,
+>>>>>>> Stashed changes
 									"width": 7,
 									"height": 13,
 									"autoResize": false,
@@ -28467,8 +29295,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 0,
-									"top": 0,
+									"left": 72,
+									"top": 136,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -28491,8 +29319,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 0,
-									"top": 0,
+									"left": 72,
+									"top": 136,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -28514,7 +29342,11 @@
 								"$ref": "AAAAAAFYHYsng+toRsI="
 							},
 							"lineStyle": 1,
+<<<<<<< Updated upstream
 							"points": "722:565;741:767",
+=======
+							"points": "805:597;787:783",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -28556,6 +29388,7 @@
 						},
 						{
 							"_type": "UMLClassView",
+<<<<<<< Updated upstream
 							"_id": "AAAAAAFYQfeezjivZtY=",
 							"_parent": {
 								"$ref": "AAAAAAFYHX2zx9D3lKM="
@@ -28841,6 +29674,9 @@
 						{
 							"_type": "UMLClassView",
 							"_id": "AAAAAAFYS1ej9xxdg6M=",
+=======
+							"_id": "AAAAAAFYQfwSMGgVQ6g=",
+>>>>>>> Stashed changes
 							"_parent": {
 								"$ref": "AAAAAAFYHX2zx9D3lKM="
 							},
@@ -28873,8 +29709,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 160,
 											"top": 464,
+=======
+											"left": -720,
+											"top": -912,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -28897,9 +29738,15 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 397,
 											"top": 455,
 											"width": 75.53076171875,
+=======
+											"left": 1093,
+											"top": 71,
+											"width": 132,
+>>>>>>> Stashed changes
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -28922,8 +29769,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 160,
 											"top": 464,
+=======
+											"left": -720,
+											"top": -912,
+>>>>>>> Stashed changes
 											"width": 157.79638671875,
 											"height": 13,
 											"autoResize": false,
@@ -28947,8 +29799,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 160,
 											"top": 464,
+=======
+											"left": -720,
+											"top": -912,
+>>>>>>> Stashed changes
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -28966,9 +29823,15 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 392,
 									"top": 448,
 									"width": 85.53076171875,
+=======
+									"left": 1088,
+									"top": 64,
+									"width": 142,
+>>>>>>> Stashed changes
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -28996,7 +29859,67 @@
 									"subViews": [
 										{
 											"_type": "UMLAttributeView",
+<<<<<<< Updated upstream
 											"_id": "AAAAAAFYS1i4gFKw2s0=",
+=======
+											"_id": "AAAAAAFYQgh0TEJBkAw=",
+											"_parent": {
+												"$ref": "AAAAAAFYQfwSMWgbLYo="
+											},
+											"model": {
+												"$ref": "AAAAAAFYQgh0K0IFgFI="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 1093,
+											"top": 94,
+											"width": 132,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+ID",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFYQf0KtnfYqFU=",
+											"_parent": {
+												"$ref": "AAAAAAFYQfwSMWgbLYo="
+											},
+											"model": {
+												"$ref": "AAAAAAFYQf0Kjnec82w="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 1093,
+											"top": 109,
+											"width": 132,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+titre: String",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFYQf19R3mn2w8=",
+>>>>>>> Stashed changes
 											"_parent": {
 												"$ref": "AAAAAAFYS1ej+RxjMmk="
 											},
@@ -29012,9 +29935,15 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 397,
 											"top": 478,
 											"width": 75.53076171875,
+=======
+											"left": 1093,
+											"top": 124,
+											"width": 132,
+>>>>>>> Stashed changes
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -29040,13 +29969,47 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< Updated upstream
 											"left": 397,
 											"top": 493,
 											"width": 75.53076171875,
+=======
+											"left": 1093,
+											"top": 139,
+											"width": 132,
+>>>>>>> Stashed changes
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
 											"text": "+codeSecret",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFYZSGYjsYV6u8=",
+											"_parent": {
+												"$ref": "AAAAAAFYQfwSMWgbLYo="
+											},
+											"model": {
+												"$ref": "AAAAAAFYZSGYasXcmwM="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 1093,
+											"top": 154,
+											"width": 132,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+estNouveau: Booleen",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -29060,10 +30023,17 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 392,
 									"top": 473,
 									"width": 85.53076171875,
 									"height": 38,
+=======
+									"left": 1088,
+									"top": 89,
+									"width": 142,
+									"height": 83,
+>>>>>>> Stashed changes
 									"autoResize": false
 								},
 								{
@@ -29084,9 +30054,15 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 392,
 									"top": 511,
 									"width": 85.53076171875,
+=======
+									"left": 1088,
+									"top": 172,
+									"width": 142,
+>>>>>>> Stashed changes
 									"height": 10,
 									"autoResize": false
 								},
@@ -29108,8 +30084,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 80,
 									"top": 232,
+=======
+									"left": -360,
+									"top": -456,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -29132,8 +30113,13 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 80,
 									"top": 232,
+=======
+									"left": -360,
+									"top": -456,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -29148,10 +30134,17 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
+<<<<<<< Updated upstream
 							"left": 392,
 							"top": 448,
 							"width": 85.53076171875,
 							"height": 73,
+=======
+							"left": 1088,
+							"top": 64,
+							"width": 142,
+							"height": 118,
+>>>>>>> Stashed changes
 							"autoResize": false,
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
@@ -29181,6 +30174,7 @@
 							}
 						},
 						{
+<<<<<<< Updated upstream
 							"_type": "UMLAssociationView",
 							"_id": "AAAAAAFYS1haNUkIzE0=",
 							"_parent": {
@@ -29597,6 +30591,10 @@
 						{
 							"_type": "UMLAssociationView",
 							"_id": "AAAAAAFYS1h6o0zYcgQ=",
+=======
+							"_type": "UMLClassView",
+							"_id": "AAAAAAFYS1ej9xxdg6M=",
+>>>>>>> Stashed changes
 							"_parent": {
 								"$ref": "AAAAAAFYHX2zx9D3lKM="
 							},
@@ -29611,6 +30609,765 @@
 										"$ref": "AAAAAAFYS1h6o0zYcgQ="
 									},
 									"model": {
+<<<<<<< Updated upstream
+=======
+										"$ref": "AAAAAAFYS1ej9RxbV5s="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFYS1ej+BxfQkc=",
+											"_parent": {
+												"$ref": "AAAAAAFYS1ej+BxeLXM="
+											},
+											"visible": false,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 224,
+											"top": 368,
+											"width": 0,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"horizontalAlignment": 2,
+											"verticalAlignment": 5
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFYS1ej+Rxg2pM=",
+											"_parent": {
+												"$ref": "AAAAAAFYS1ej+BxeLXM="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;1",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 429,
+											"top": 407,
+											"width": 75.53076171875,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "Employé",
+											"horizontalAlignment": 2,
+											"verticalAlignment": 5
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFYS1ej+RxhqS0=",
+											"_parent": {
+												"$ref": "AAAAAAFYS1ej+BxeLXM="
+											},
+											"visible": false,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 224,
+											"top": 368,
+											"width": 157.79638671875,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "(from Model du domaine)",
+											"horizontalAlignment": 2,
+											"verticalAlignment": 5
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFYS1ej+Rxi0f4=",
+											"_parent": {
+												"$ref": "AAAAAAFYS1ej+BxeLXM="
+											},
+											"visible": false,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 224,
+											"top": 368,
+											"width": 0,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"horizontalAlignment": 1,
+											"verticalAlignment": 5
+										}
+									],
+									"visible": true,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 424,
+									"top": 400,
+									"width": 85.53076171875,
+									"height": 25,
+									"autoResize": false,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAFYS1ej+BxfQkc="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAFYS1ej+Rxg2pM="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAFYS1ej+RxhqS0="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAFYS1ej+Rxi0f4="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAFYS1ej+RxjMmk=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1ej9xxdg6M="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1ej9RxbV5s="
+									},
+									"subViews": [
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFYS1i4gFKw2s0=",
+											"_parent": {
+												"$ref": "AAAAAAFYS1ej+RxjMmk="
+											},
+											"model": {
+												"$ref": "AAAAAAFYS1i4YVJuDDM="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 429,
+											"top": 430,
+											"width": 75.53076171875,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+identifiant",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFYS1j4IlsTlIw=",
+											"_parent": {
+												"$ref": "AAAAAAFYS1ej+RxjMmk="
+											},
+											"model": {
+												"$ref": "AAAAAAFYS1j4BFrRC2k="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 429,
+											"top": 445,
+											"width": 75.53076171875,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+codeSecret",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5
+										}
+									],
+									"visible": true,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 424,
+									"top": 425,
+									"width": 85.53076171875,
+									"height": 38,
+									"autoResize": false
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAFYS1ej+Rxkc1Y=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1ej9xxdg6M="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1ej9RxbV5s="
+									},
+									"visible": true,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 424,
+									"top": 463,
+									"width": 85.53076171875,
+									"height": 10,
+									"autoResize": false
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAFYS1ej+hxlm6Q=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1ej9xxdg6M="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1ej9RxbV5s="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 112,
+									"top": 184,
+									"width": 10,
+									"height": 10,
+									"autoResize": false
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAFYS1ej+hxmlUw=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1ej9xxdg6M="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1ej9RxbV5s="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 112,
+									"top": 184,
+									"width": 10,
+									"height": 10,
+									"autoResize": false
+								}
+							],
+							"visible": true,
+							"enabled": true,
+							"lineColor": "#000000",
+							"fillColor": "#ffffff",
+							"fontColor": "#000000",
+							"font": "Arial;13;0",
+							"showShadow": true,
+							"containerChangeable": true,
+							"containerExtending": false,
+							"left": 424,
+							"top": 400,
+							"width": 85.53076171875,
+							"height": 73,
+							"autoResize": false,
+							"stereotypeDisplay": "label",
+							"showVisibility": true,
+							"showNamespace": false,
+							"showProperty": true,
+							"showType": true,
+							"nameCompartment": {
+								"$ref": "AAAAAAFYS1ej+BxeLXM="
+							},
+							"wordWrap": false,
+							"suppressAttributes": false,
+							"suppressOperations": false,
+							"suppressReceptions": true,
+							"showMultiplicity": true,
+							"showOperationSignature": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAFYS1ej+RxjMmk="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAFYS1ej+Rxkc1Y="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAFYS1ej+hxlm6Q="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAFYS1ej+hxmlUw="
+							}
+						},
+						{
+							"_type": "UMLAssociationView",
+							"_id": "AAAAAAFYS1haNUkIzE0=",
+							"_parent": {
+								"$ref": "AAAAAAFYHX2zx9D3lKM="
+							},
+							"model": {
+								"$ref": "AAAAAAFYS1haNUkEo98="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYS1haNUkJB10=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1haNUkEo98="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 448,
+									"top": 366,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"edgePosition": 1,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYS1haNUkKzjQ=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1haNUkEo98="
+									},
+									"visible": null,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 433,
+									"top": 367,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": 1.5707963267948966,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"edgePosition": 1,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYS1haNUkLj8E=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1haNUkEo98="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 477,
+									"top": 365,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": -1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"edgePosition": 1,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYS1haNUkMOJ8=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1haNUkFJOE="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 448,
+									"top": 367,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": 0.5235987755982988,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"edgePosition": 2,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYS1haNUkNtVQ=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1haNUkFJOE="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 435,
+									"top": 366,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": 0.7853981633974483,
+									"distance": 40,
+									"hostEdge": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"edgePosition": 2,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYS1haNUkOEJ0=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1haNUkFJOE="
+									},
+									"visible": true,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 464,
+									"top": 383,
+									"width": 20,
+									"height": 13,
+									"autoResize": false,
+									"alpha": 5.40818365399148,
+									"distance": 13.45362404707371,
+									"hostEdge": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"edgePosition": 2,
+									"underline": false,
+									"text": "1..*",
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYS1haNUkPCQw=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1haNUkGjfI="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 448,
+									"top": 365,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": -0.5235987755982988,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"edgePosition": 0,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYS1haNUkQxi4=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1haNUkGjfI="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 435,
+									"top": 368,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": -0.7853981633974483,
+									"distance": 40,
+									"hostEdge": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"edgePosition": 0,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYS1haNUkR2/M=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1haNUkGjfI="
+									},
+									"visible": true,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 448,
+									"top": 344,
+									"width": 7,
+									"height": 13,
+									"autoResize": false,
+									"alpha": -1.1811887920074444,
+									"distance": 12.083045973594572,
+									"hostEdge": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"edgePosition": 0,
+									"underline": false,
+									"text": "1",
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "UMLQualifierCompartmentView",
+									"_id": "AAAAAAFYS1haNUkS81Q=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1haNUkFJOE="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 0,
+									"top": 0,
+									"width": 10,
+									"height": 10,
+									"autoResize": false
+								},
+								{
+									"_type": "UMLQualifierCompartmentView",
+									"_id": "AAAAAAFYS1haNUkTvCc=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1haNUkIzE0="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1haNUkGjfI="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 0,
+									"top": 0,
+									"width": 10,
+									"height": 10,
+									"autoResize": false
+								}
+							],
+							"visible": true,
+							"enabled": true,
+							"lineColor": "#000000",
+							"fillColor": "#ffffff",
+							"fontColor": "#000000",
+							"font": "Arial;13;0",
+							"showShadow": true,
+							"containerChangeable": false,
+							"containerExtending": false,
+							"head": {
+								"$ref": "AAAAAAFYHYN5hOlvxR0="
+							},
+							"tail": {
+								"$ref": "AAAAAAFYS1ej9xxdg6M="
+							},
+							"lineStyle": 1,
+							"points": "465:399;462:345",
+							"stereotypeDisplay": "label",
+							"showVisibility": true,
+							"showProperty": true,
+							"nameLabel": {
+								"$ref": "AAAAAAFYS1haNUkJB10="
+							},
+							"stereotypeLabel": {
+								"$ref": "AAAAAAFYS1haNUkKzjQ="
+							},
+							"propertyLabel": {
+								"$ref": "AAAAAAFYS1haNUkLj8E="
+							},
+							"showMultiplicity": true,
+							"showType": true,
+							"tailRoleNameLabel": {
+								"$ref": "AAAAAAFYS1haNUkMOJ8="
+							},
+							"tailPropertyLabel": {
+								"$ref": "AAAAAAFYS1haNUkNtVQ="
+							},
+							"tailMultiplicityLabel": {
+								"$ref": "AAAAAAFYS1haNUkOEJ0="
+							},
+							"headRoleNameLabel": {
+								"$ref": "AAAAAAFYS1haNUkPCQw="
+							},
+							"headPropertyLabel": {
+								"$ref": "AAAAAAFYS1haNUkQxi4="
+							},
+							"headMultiplicityLabel": {
+								"$ref": "AAAAAAFYS1haNUkR2/M="
+							},
+							"tailQualifiersCompartment": {
+								"$ref": "AAAAAAFYS1haNUkS81Q="
+							},
+							"headQualifiersCompartment": {
+								"$ref": "AAAAAAFYS1haNUkTvCc="
+							}
+						},
+						{
+							"_type": "UMLAssociationView",
+							"_id": "AAAAAAFYS1h6o0zYcgQ=",
+							"_parent": {
+								"$ref": "AAAAAAFYHX2zx9D3lKM="
+							},
+							"model": {
+								"$ref": "AAAAAAFYS1h6okzUAcA="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYS1h6o0zZcmk=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1h6o0zYcgQ="
+									},
+									"model": {
+>>>>>>> Stashed changes
 										"$ref": "AAAAAAFYS1h6okzUAcA="
 									},
 									"visible": true,
@@ -30195,6 +31952,8 @@
 										"$ref": "AAAAAAFYS1wj4ASHaCs="
 									},
 									"visible": true,
+<<<<<<< Updated upstream
+=======
 									"enabled": true,
 									"lineColor": "#000000",
 									"fillColor": "#ffffff",
@@ -30400,6 +32159,525 @@
 							"showMultiplicity": true,
 							"showType": true,
 							"tailRoleNameLabel": {
+								"$ref": "AAAAAAFYS1wj4wSO0KY="
+							},
+							"tailPropertyLabel": {
+								"$ref": "AAAAAAFYS1wj5ASPXX4="
+							},
+							"tailMultiplicityLabel": {
+								"$ref": "AAAAAAFYS1wj5ASQmOs="
+							},
+							"headRoleNameLabel": {
+								"$ref": "AAAAAAFYS1wj5ASROBw="
+							},
+							"headPropertyLabel": {
+								"$ref": "AAAAAAFYS1wj5ASSMT8="
+							},
+							"headMultiplicityLabel": {
+								"$ref": "AAAAAAFYS1wj5ASTMYQ="
+							},
+							"tailQualifiersCompartment": {
+								"$ref": "AAAAAAFYS1wj5ASUbL8="
+							},
+							"headQualifiersCompartment": {
+								"$ref": "AAAAAAFYS1wj5QSVOy0="
+							}
+						},
+						{
+							"_type": "UMLAssociationView",
+							"_id": "AAAAAAFYZREjGSavNBI=",
+							"_parent": {
+								"$ref": "AAAAAAFYHX2zx9D3lKM="
+							},
+							"model": {
+								"$ref": "AAAAAAFYZREjGCar8DM="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYZREjGiaw8kM=",
+									"_parent": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZREjGCar8DM="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 1135,
+									"top": 182,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"edgePosition": 1,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYZREjGiaxbuc=",
+									"_parent": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZREjGCar8DM="
+									},
+									"visible": null,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 1120,
+									"top": 180,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": 1.5707963267948966,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"edgePosition": 1,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYZREjGiayWhM=",
+									"_parent": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZREjGCar8DM="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 1164,
+									"top": 185,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": -1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"edgePosition": 1,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYZREjGiazhR8=",
+									"_parent": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZREjGSasTrg="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 1137,
+									"top": 165,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": 0.5235987755982988,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"edgePosition": 2,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYZREjGia0Itw=",
+									"_parent": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZREjGSasTrg="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 1124,
+									"top": 161,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": 0.7853981633974483,
+									"distance": 40,
+									"hostEdge": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"edgePosition": 2,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYZREjGia1Xno=",
+									"_parent": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZREjGSasTrg="
+									},
+									"visible": false,
+>>>>>>> Stashed changes
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+<<<<<<< Updated upstream
+									"left": 511,
+									"top": 312,
+									"width": 20,
+=======
+									"left": 1163,
+									"top": 172,
+									"width": 0,
+>>>>>>> Stashed changes
+									"height": 13,
+									"autoResize": false,
+									"alpha": 0.5916768989064735,
+									"distance": 21.587033144922902,
+									"hostEdge": {
+<<<<<<< Updated upstream
+										"$ref": "AAAAAAFYS1wj4gSKKec="
+=======
+										"$ref": "AAAAAAFYZREjGSavNBI="
+>>>>>>> Stashed changes
+									},
+									"edgePosition": 2,
+									"underline": false,
+									"text": "1..*",
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+<<<<<<< Updated upstream
+									"_id": "AAAAAAFYS1wj5ASROBw=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1wj4gSKKec="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1wj4ASIcMo="
+=======
+									"_id": "AAAAAAFYZREjGya2q/I=",
+									"_parent": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZREjGSatHrE="
+>>>>>>> Stashed changes
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+<<<<<<< Updated upstream
+									"left": 611,
+									"top": 342,
+=======
+									"left": 1133,
+									"top": 200,
+>>>>>>> Stashed changes
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": -0.5235987755982988,
+									"distance": 30,
+									"hostEdge": {
+<<<<<<< Updated upstream
+										"$ref": "AAAAAAFYS1wj4gSKKec="
+=======
+										"$ref": "AAAAAAFYZREjGSavNBI="
+>>>>>>> Stashed changes
+									},
+									"edgePosition": 0,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+<<<<<<< Updated upstream
+									"_id": "AAAAAAFYS1wj5ASSMT8=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1wj4gSKKec="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1wj4ASIcMo="
+=======
+									"_id": "AAAAAAFYZREjGya3Xwk=",
+									"_parent": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZREjGSatHrE="
+>>>>>>> Stashed changes
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+<<<<<<< Updated upstream
+									"left": 614,
+									"top": 329,
+=======
+									"left": 1119,
+									"top": 200,
+>>>>>>> Stashed changes
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": -0.7853981633974483,
+									"distance": 40,
+									"hostEdge": {
+<<<<<<< Updated upstream
+										"$ref": "AAAAAAFYS1wj4gSKKec="
+=======
+										"$ref": "AAAAAAFYZREjGSavNBI="
+>>>>>>> Stashed changes
+									},
+									"edgePosition": 0,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+<<<<<<< Updated upstream
+									"_id": "AAAAAAFYS1wj5ASTMYQ=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1wj4gSKKec="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1wj4ASIcMo="
+=======
+									"_id": "AAAAAAFYZREjGya4sVo=",
+									"_parent": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZREjGSatHrE="
+>>>>>>> Stashed changes
+									},
+									"visible": true,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+<<<<<<< Updated upstream
+									"left": 608,
+									"top": 370,
+									"width": 7,
+=======
+									"left": 1160,
+									"top": 198,
+									"width": 0,
+>>>>>>> Stashed changes
+									"height": 13,
+									"autoResize": false,
+									"alpha": 0.5553295314345612,
+									"distance": 20.396078054371138,
+									"hostEdge": {
+<<<<<<< Updated upstream
+										"$ref": "AAAAAAFYS1wj4gSKKec="
+=======
+										"$ref": "AAAAAAFYZREjGSavNBI="
+>>>>>>> Stashed changes
+									},
+									"edgePosition": 0,
+									"underline": false,
+									"text": "1",
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "UMLQualifierCompartmentView",
+<<<<<<< Updated upstream
+									"_id": "AAAAAAFYS1wj5ASUbL8=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1wj4gSKKec="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1wj4ASHaCs="
+=======
+									"_id": "AAAAAAFYZREjGya5Q5k=",
+									"_parent": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZREjGSasTrg="
+>>>>>>> Stashed changes
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 0,
+									"top": 0,
+									"width": 10,
+									"height": 10,
+									"autoResize": false
+								},
+								{
+									"_type": "UMLQualifierCompartmentView",
+<<<<<<< Updated upstream
+									"_id": "AAAAAAFYS1wj5QSVOy0=",
+									"_parent": {
+										"$ref": "AAAAAAFYS1wj4gSKKec="
+									},
+									"model": {
+										"$ref": "AAAAAAFYS1wj4ASIcMo="
+=======
+									"_id": "AAAAAAFYZREjGya6PWw=",
+									"_parent": {
+										"$ref": "AAAAAAFYZREjGSavNBI="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZREjGSatHrE="
+>>>>>>> Stashed changes
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 0,
+									"top": 0,
+									"width": 10,
+									"height": 10,
+									"autoResize": false
+								}
+							],
+							"visible": true,
+							"enabled": true,
+							"lineColor": "#000000",
+							"fillColor": "#ffffff",
+							"fontColor": "#000000",
+							"font": "Arial;13;0",
+							"showShadow": true,
+							"containerChangeable": false,
+							"containerExtending": false,
+							"head": {
+<<<<<<< Updated upstream
+								"$ref": "AAAAAAFYHdU1KDIYC0o="
+							},
+							"tail": {
+								"$ref": "AAAAAAFYHYN5hOlvxR0="
+							},
+							"lineStyle": 1,
+							"points": "500:323;631:372",
+=======
+								"$ref": "AAAAAAFYQfwSMGgVQ6g="
+							},
+							"tail": {
+								"$ref": "AAAAAAFYHZBgxuxxteM="
+							},
+							"lineStyle": 1,
+							"points": "1149:199;1151:182",
+>>>>>>> Stashed changes
+							"stereotypeDisplay": "label",
+							"showVisibility": true,
+							"showProperty": true,
+							"nameLabel": {
+<<<<<<< Updated upstream
+								"$ref": "AAAAAAFYS1wj4wSLL94="
+							},
+							"stereotypeLabel": {
+								"$ref": "AAAAAAFYS1wj4wSMwM0="
+							},
+							"propertyLabel": {
+								"$ref": "AAAAAAFYS1wj4wSN9gU="
+=======
+								"$ref": "AAAAAAFYZREjGiaw8kM="
+							},
+							"stereotypeLabel": {
+								"$ref": "AAAAAAFYZREjGiaxbuc="
+							},
+							"propertyLabel": {
+								"$ref": "AAAAAAFYZREjGiayWhM="
+>>>>>>> Stashed changes
+							},
+							"showMultiplicity": true,
+							"showType": true,
+							"tailRoleNameLabel": {
+<<<<<<< Updated upstream
 								"$ref": "AAAAAAFYS1wj4wSO0KY="
 							},
 							"tailPropertyLabel": {
@@ -30711,21 +32989,63 @@
 						{
 							"_type": "UMLAssociationView",
 							"_id": "AAAAAAFYWal438KALmI=",
+=======
+								"$ref": "AAAAAAFYZREjGiazhR8="
+							},
+							"tailPropertyLabel": {
+								"$ref": "AAAAAAFYZREjGia0Itw="
+							},
+							"tailMultiplicityLabel": {
+								"$ref": "AAAAAAFYZREjGia1Xno="
+							},
+							"headRoleNameLabel": {
+								"$ref": "AAAAAAFYZREjGya2q/I="
+							},
+							"headPropertyLabel": {
+								"$ref": "AAAAAAFYZREjGya3Xwk="
+							},
+							"headMultiplicityLabel": {
+								"$ref": "AAAAAAFYZREjGya4sVo="
+							},
+							"tailQualifiersCompartment": {
+								"$ref": "AAAAAAFYZREjGya5Q5k="
+							},
+							"headQualifiersCompartment": {
+								"$ref": "AAAAAAFYZREjGya6PWw="
+							}
+						},
+						{
+							"_type": "UMLGeneralizationView",
+							"_id": "AAAAAAFYZTAljfI4xKo=",
+>>>>>>> Stashed changes
 							"_parent": {
 								"$ref": "AAAAAAFYHX2zx9D3lKM="
 							},
 							"model": {
+<<<<<<< Updated upstream
 								"$ref": "AAAAAAFYWal438J800c="
+=======
+								"$ref": "AAAAAAFYZTAljPI2T+o="
+>>>>>>> Stashed changes
 							},
 							"subViews": [
 								{
 									"_type": "EdgeLabelView",
+<<<<<<< Updated upstream
 									"_id": "AAAAAAFYWal44MKB9E8=",
 									"_parent": {
 										"$ref": "AAAAAAFYWal438KALmI="
 									},
 									"model": {
 										"$ref": "AAAAAAFYWal438J800c="
+=======
+									"_id": "AAAAAAFYZTAljvI5xjE=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTAljfI4xKo="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTAljPI2T+o="
+>>>>>>> Stashed changes
 									},
 									"visible": false,
 									"enabled": true,
@@ -30736,15 +33056,24 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 463,
 									"top": 653,
+=======
+									"left": 379,
+									"top": 588,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
 									"hostEdge": {
+<<<<<<< Updated upstream
 										"$ref": "AAAAAAFYWal438KALmI="
+=======
+										"$ref": "AAAAAAFYZTAljfI4xKo="
+>>>>>>> Stashed changes
 									},
 									"edgePosition": 1,
 									"underline": false,
@@ -30753,12 +33082,21 @@
 								},
 								{
 									"_type": "EdgeLabelView",
+<<<<<<< Updated upstream
 									"_id": "AAAAAAFYWal44MKCh90=",
 									"_parent": {
 										"$ref": "AAAAAAFYWal438KALmI="
 									},
 									"model": {
 										"$ref": "AAAAAAFYWal438J800c="
+=======
+									"_id": "AAAAAAFYZTAljvI65mY=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTAljfI4xKo="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTAljPI2T+o="
+>>>>>>> Stashed changes
 									},
 									"visible": null,
 									"enabled": true,
@@ -30769,15 +33107,24 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 460,
 									"top": 638,
+=======
+									"left": 374,
+									"top": 602,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
 									"hostEdge": {
+<<<<<<< Updated upstream
 										"$ref": "AAAAAAFYWal438KALmI="
+=======
+										"$ref": "AAAAAAFYZTAljfI4xKo="
+>>>>>>> Stashed changes
 									},
 									"edgePosition": 1,
 									"underline": false,
@@ -30786,12 +33133,21 @@
 								},
 								{
 									"_type": "EdgeLabelView",
+<<<<<<< Updated upstream
 									"_id": "AAAAAAFYWal44MKDCds=",
 									"_parent": {
 										"$ref": "AAAAAAFYWal438KALmI="
 									},
 									"model": {
 										"$ref": "AAAAAAFYWal438J800c="
+=======
+									"_id": "AAAAAAFYZTAljvI7zeg=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTAljfI4xKo="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTAljPI2T+o="
+>>>>>>> Stashed changes
 									},
 									"visible": false,
 									"enabled": true,
@@ -30802,20 +33158,30 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 468,
 									"top": 682,
+=======
+									"left": 388,
+									"top": 559,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
 									"hostEdge": {
+<<<<<<< Updated upstream
 										"$ref": "AAAAAAFYWal438KALmI="
+=======
+										"$ref": "AAAAAAFYZTAljfI4xKo="
+>>>>>>> Stashed changes
 									},
 									"edgePosition": 1,
 									"underline": false,
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
+<<<<<<< Updated upstream
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -31476,6 +33842,8 @@
 									"width": 10,
 									"height": 10,
 									"autoResize": false
+=======
+>>>>>>> Stashed changes
 								}
 							],
 							"visible": true,
@@ -31488,17 +33856,25 @@
 							"containerChangeable": false,
 							"containerExtending": false,
 							"head": {
-								"$ref": "AAAAAAFYWafnjG+2T0M="
+								"$ref": "AAAAAAFYHZfIru9OPOY="
 							},
 							"tail": {
+<<<<<<< Updated upstream
 								"$ref": "AAAAAAFYHZfIru9OPOY="
 							},
 							"lineStyle": 1,
 							"points": "273:631;375:675",
+=======
+								"$ref": "AAAAAAFYHY2Bz+wUu0A="
+							},
+							"lineStyle": 1,
+							"points": "487:614;281:547",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
 							"nameLabel": {
+<<<<<<< Updated upstream
 								"$ref": "AAAAAAFYYKUtJlXYJvw="
 							},
 							"stereotypeLabel": {
@@ -31537,21 +33913,48 @@
 						{
 							"_type": "UMLGeneralizationView",
 							"_id": "AAAAAAFYYKZ2fYx58mw=",
+=======
+								"$ref": "AAAAAAFYZTAljvI5xjE="
+							},
+							"stereotypeLabel": {
+								"$ref": "AAAAAAFYZTAljvI65mY="
+							},
+							"propertyLabel": {
+								"$ref": "AAAAAAFYZTAljvI7zeg="
+							}
+						},
+						{
+							"_type": "UMLAssociationView",
+							"_id": "AAAAAAFYZTIfG/7ZVyM=",
+>>>>>>> Stashed changes
 							"_parent": {
 								"$ref": "AAAAAAFYHX2zx9D3lKM="
 							},
 							"model": {
+<<<<<<< Updated upstream
 								"$ref": "AAAAAAFYYKZ2fIx3jf0="
+=======
+								"$ref": "AAAAAAFYZTIfGv7V+gM="
+>>>>>>> Stashed changes
 							},
 							"subViews": [
 								{
 									"_type": "EdgeLabelView",
+<<<<<<< Updated upstream
 									"_id": "AAAAAAFYYKZ2fYx6FDs=",
 									"_parent": {
 										"$ref": "AAAAAAFYYKZ2fYx58mw="
 									},
 									"model": {
 										"$ref": "AAAAAAFYYKZ2fIx3jf0="
+=======
+									"_id": "AAAAAAFYZTIfG/7azVQ=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTIfGv7V+gM="
+>>>>>>> Stashed changes
 									},
 									"visible": false,
 									"enabled": true,
@@ -31562,15 +33965,24 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 1313,
 									"top": 401,
+=======
+									"left": 425,
+									"top": 623,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
 									"hostEdge": {
+<<<<<<< Updated upstream
 										"$ref": "AAAAAAFYYKZ2fYx58mw="
+=======
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+>>>>>>> Stashed changes
 									},
 									"edgePosition": 1,
 									"underline": false,
@@ -31579,12 +33991,21 @@
 								},
 								{
 									"_type": "EdgeLabelView",
+<<<<<<< Updated upstream
 									"_id": "AAAAAAFYYKZ2fYx7SvM=",
 									"_parent": {
 										"$ref": "AAAAAAFYYKZ2fYx58mw="
 									},
 									"model": {
 										"$ref": "AAAAAAFYYKZ2fIx3jf0="
+=======
+									"_id": "AAAAAAFYZTIfG/7bMR8=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTIfGv7V+gM="
+>>>>>>> Stashed changes
 									},
 									"visible": null,
 									"enabled": true,
@@ -31595,15 +34016,24 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 1304,
 									"top": 413,
+=======
+									"left": 424,
+									"top": 608,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
 									"hostEdge": {
+<<<<<<< Updated upstream
 										"$ref": "AAAAAAFYYKZ2fYx58mw="
+=======
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+>>>>>>> Stashed changes
 									},
 									"edgePosition": 1,
 									"underline": false,
@@ -31612,12 +34042,21 @@
 								},
 								{
 									"_type": "EdgeLabelView",
+<<<<<<< Updated upstream
 									"_id": "AAAAAAFYYKZ2fYx80Lc=",
 									"_parent": {
 										"$ref": "AAAAAAFYYKZ2fYx58mw="
 									},
 									"model": {
 										"$ref": "AAAAAAFYYKZ2fIx3jf0="
+=======
+									"_id": "AAAAAAFYZTIfG/7cbv8=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTIfGv7V+gM="
+>>>>>>> Stashed changes
 									},
 									"visible": false,
 									"enabled": true,
@@ -31628,20 +34067,278 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< Updated upstream
 									"left": 1332,
 									"top": 378,
+=======
+									"left": 426,
+									"top": 652,
+>>>>>>> Stashed changes
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
 									"hostEdge": {
+<<<<<<< Updated upstream
 										"$ref": "AAAAAAFYYKZ2fYx58mw="
+=======
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+>>>>>>> Stashed changes
 									},
 									"edgePosition": 1,
 									"underline": false,
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
+<<<<<<< Updated upstream
+=======
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYZTIfG/7d1VE=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTIfGv7Ww8w="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 390,
+									"top": 625,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": 0.5235987755982988,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"edgePosition": 2,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYZTIfG/7eaaM=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTIfGv7Ww8w="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 392,
+									"top": 611,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": 0.7853981633974483,
+									"distance": 40,
+									"hostEdge": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"edgePosition": 2,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYZTIfG/7fdz0=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTIfGv7Ww8w="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 388,
+									"top": 653,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": -0.5235987755982988,
+									"distance": 25,
+									"hostEdge": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"edgePosition": 2,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYZTIfG/7gNpE=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTIfGv7XCgE="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 460,
+									"top": 620,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": -0.5235987755982988,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"edgePosition": 0,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYZTIfG/7hBTA=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTIfGv7XCgE="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 456,
+									"top": 607,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": -0.7853981633974483,
+									"distance": 40,
+									"hostEdge": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"edgePosition": 0,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFYZTIfG/7iVmc=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTIfGv7XCgE="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 466,
+									"top": 647,
+									"width": 0,
+									"height": 13,
+									"autoResize": false,
+									"alpha": 0.5235987755982988,
+									"distance": 25,
+									"hostEdge": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"edgePosition": 0,
+									"underline": false,
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								},
+								{
+									"_type": "UMLQualifierCompartmentView",
+									"_id": "AAAAAAFYZTIfG/7jT3k=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTIfGv7Ww8w="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 0,
+									"top": 0,
+									"width": 10,
+									"height": 10,
+									"autoResize": false
+								},
+								{
+									"_type": "UMLQualifierCompartmentView",
+									"_id": "AAAAAAFYZTIfG/7kw/A=",
+									"_parent": {
+										"$ref": "AAAAAAFYZTIfG/7ZVyM="
+									},
+									"model": {
+										"$ref": "AAAAAAFYZTIfGv7XCgE="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 0,
+									"top": 0,
+									"width": 10,
+									"height": 10,
+									"autoResize": false
+>>>>>>> Stashed changes
 								}
 							],
 							"visible": true,
@@ -31657,14 +34354,22 @@
 								"$ref": "AAAAAAFYHZBgxuxxteM="
 							},
 							"tail": {
+<<<<<<< Updated upstream
 								"$ref": "AAAAAAFYQfeezjivZtY="
 							},
 							"lineStyle": 1,
 							"points": "1367:431;1279:361",
+=======
+								"$ref": "AAAAAAFYHYRNiOpCkqY="
+							},
+							"lineStyle": 1,
+							"points": "366:648;487:640",
+>>>>>>> Stashed changes
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
 							"nameLabel": {
+<<<<<<< Updated upstream
 								"$ref": "AAAAAAFYYKZ2fYx6FDs="
 							},
 							"stereotypeLabel": {
@@ -31672,6 +34377,41 @@
 							},
 							"propertyLabel": {
 								"$ref": "AAAAAAFYYKZ2fYx80Lc="
+=======
+								"$ref": "AAAAAAFYZTIfG/7azVQ="
+							},
+							"stereotypeLabel": {
+								"$ref": "AAAAAAFYZTIfG/7bMR8="
+							},
+							"propertyLabel": {
+								"$ref": "AAAAAAFYZTIfG/7cbv8="
+							},
+							"showMultiplicity": true,
+							"showType": true,
+							"tailRoleNameLabel": {
+								"$ref": "AAAAAAFYZTIfG/7d1VE="
+							},
+							"tailPropertyLabel": {
+								"$ref": "AAAAAAFYZTIfG/7eaaM="
+							},
+							"tailMultiplicityLabel": {
+								"$ref": "AAAAAAFYZTIfG/7fdz0="
+							},
+							"headRoleNameLabel": {
+								"$ref": "AAAAAAFYZTIfG/7gNpE="
+							},
+							"headPropertyLabel": {
+								"$ref": "AAAAAAFYZTIfG/7hBTA="
+							},
+							"headMultiplicityLabel": {
+								"$ref": "AAAAAAFYZTIfG/7iVmc="
+							},
+							"tailQualifiersCompartment": {
+								"$ref": "AAAAAAFYZTIfG/7jT3k="
+							},
+							"headQualifiersCompartment": {
+								"$ref": "AAAAAAFYZTIfG/7kw/A="
+>>>>>>> Stashed changes
 							}
 						}
 					]
@@ -32015,6 +34755,51 @@
 								"$ref": "AAAAAAFYHZfIre9MSmA="
 							},
 							"visibility": "public"
+						},
+						{
+							"_type": "UMLAssociation",
+							"_id": "AAAAAAFYZTIfGv7V+gM=",
+							"_parent": {
+								"$ref": "AAAAAAFYHYRNh+pA0uo="
+							},
+							"end1": {
+								"_type": "UMLAssociationEnd",
+								"_id": "AAAAAAFYZTIfGv7Ww8w=",
+								"_parent": {
+									"$ref": "AAAAAAFYZTIfGv7V+gM="
+								},
+								"reference": {
+									"$ref": "AAAAAAFYHYRNh+pA0uo="
+								},
+								"visibility": "public",
+								"navigable": true,
+								"aggregation": "none",
+								"isReadOnly": false,
+								"isOrdered": false,
+								"isUnique": false,
+								"isDerived": false,
+								"isID": false
+							},
+							"end2": {
+								"_type": "UMLAssociationEnd",
+								"_id": "AAAAAAFYZTIfGv7XCgE=",
+								"_parent": {
+									"$ref": "AAAAAAFYZTIfGv7V+gM="
+								},
+								"reference": {
+									"$ref": "AAAAAAFYHY2BzuwSxVI="
+								},
+								"visibility": "public",
+								"navigable": true,
+								"aggregation": "none",
+								"isReadOnly": false,
+								"isOrdered": false,
+								"isUnique": false,
+								"isDerived": false,
+								"isID": false
+							},
+							"visibility": "public",
+							"isDerived": false
 						}
 					],
 					"visibility": "public",
@@ -32660,21 +35445,34 @@
 							},
 							"visibility": "public",
 							"isDerived": false
+						},
+						{
+							"_type": "UMLGeneralization",
+							"_id": "AAAAAAFYZTAljPI2T+o=",
+							"_parent": {
+								"$ref": "AAAAAAFYHY2BzuwSxVI="
+							},
+							"source": {
+								"$ref": "AAAAAAFYHY2BzuwSxVI="
+							},
+							"target": {
+								"$ref": "AAAAAAFYHZfIre9MSmA="
+							},
+							"visibility": "public"
 						}
 					],
 					"visibility": "public",
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
-							"_id": "AAAAAAFYHY2cQOw8zjg=",
+							"_id": "AAAAAAFYZRnYI63rHQY=",
 							"_parent": {
 								"$ref": "AAAAAAFYHY2BzuwSxVI="
 							},
-							"name": "montant",
+							"name": "estPayee : Booleen",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
-							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -32723,7 +35521,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFYHX2zxtD2V5w="
 					},
-					"name": "ArticleALoue",
+					"name": "Film",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -32738,28 +35536,55 @@
 								"$ref": "AAAAAAFYHb8VGfFAYwk="
 							},
 							"visibility": "public"
+						},
+						{
+							"_type": "UMLAssociation",
+							"_id": "AAAAAAFYZREjGCar8DM=",
+							"_parent": {
+								"$ref": "AAAAAAFYHZBgxexvM2A="
+							},
+							"end1": {
+								"_type": "UMLAssociationEnd",
+								"_id": "AAAAAAFYZREjGSasTrg=",
+								"_parent": {
+									"$ref": "AAAAAAFYZREjGCar8DM="
+								},
+								"reference": {
+									"$ref": "AAAAAAFYHZBgxexvM2A="
+								},
+								"visibility": "public",
+								"navigable": true,
+								"aggregation": "none",
+								"isReadOnly": false,
+								"isOrdered": false,
+								"isUnique": false,
+								"isDerived": false,
+								"isID": false
+							},
+							"end2": {
+								"_type": "UMLAssociationEnd",
+								"_id": "AAAAAAFYZREjGSatHrE=",
+								"_parent": {
+									"$ref": "AAAAAAFYZREjGCar8DM="
+								},
+								"reference": {
+									"$ref": "AAAAAAFYQfwSL2gTrrQ="
+								},
+								"visibility": "public",
+								"navigable": true,
+								"aggregation": "none",
+								"isReadOnly": false,
+								"isOrdered": false,
+								"isUnique": false,
+								"isDerived": false,
+								"isID": false
+							},
+							"visibility": "public",
+							"isDerived": false
 						}
 					],
 					"visibility": "public",
 					"attributes": [
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAFYHZ9Zve/p1Zc=",
-							"_parent": {
-								"$ref": "AAAAAAFYHZBgxexvM2A="
-							},
-							"name": "estNouveau",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"type": "boolean",
-							"isReadOnly": false,
-							"isOrdered": false,
-							"isUnique": false,
-							"isDerived": false,
-							"aggregation": "none",
-							"isID": false
-						},
 						{
 							"_type": "UMLAttribute",
 							"_id": "AAAAAAFYHaAbSu/0UBw=",
@@ -33352,11 +36177,10 @@
 							"_parent": {
 								"$ref": "AAAAAAFYHb8VGfFAYwk="
 							},
-							"name": "codeArticle",
+							"name": "codeBarre",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
-							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -33694,6 +36518,7 @@
 				},
 				{
 					"_type": "UMLClass",
+<<<<<<< Updated upstream
 					"_id": "AAAAAAFYQfcZlRPIg50=",
 					"_parent": {
 						"$ref": "AAAAAAFYHX2zxtD2V5w="
@@ -33768,59 +36593,13 @@
 				},
 				{
 					"_type": "UMLClass",
+=======
+>>>>>>> Stashed changes
 					"_id": "AAAAAAFYQfwSL2gTrrQ=",
 					"_parent": {
 						"$ref": "AAAAAAFYHX2zxtD2V5w="
 					},
 					"name": "DescriptionFilm",
-					"ownedElements": [
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAFYQgDEYZWLrDA=",
-							"_parent": {
-								"$ref": "AAAAAAFYQfwSL2gTrrQ="
-							},
-							"name": "Décrit",
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAFYQgDEYZWMw38=",
-								"_parent": {
-									"$ref": "AAAAAAFYQgDEYZWLrDA="
-								},
-								"reference": {
-									"$ref": "AAAAAAFYQfwSL2gTrrQ="
-								},
-								"visibility": "public",
-								"navigable": true,
-								"aggregation": "none",
-								"isReadOnly": false,
-								"isOrdered": false,
-								"isUnique": false,
-								"isDerived": false,
-								"isID": false
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAFYQgDEYZWNfCE=",
-								"_parent": {
-									"$ref": "AAAAAAFYQgDEYZWLrDA="
-								},
-								"reference": {
-									"$ref": "AAAAAAFYQfcZlRPIg50="
-								},
-								"visibility": "public",
-								"navigable": true,
-								"aggregation": "none",
-								"isReadOnly": false,
-								"isOrdered": false,
-								"isUnique": false,
-								"isDerived": false,
-								"isID": false
-							},
-							"visibility": "public",
-							"isDerived": false
-						}
-					],
 					"visibility": "public",
 					"attributes": [
 						{
@@ -33894,6 +36673,24 @@
 							"isDerived": false,
 							"aggregation": "none",
 							"isID": false
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFYZSGYasXcmwM=",
+							"_parent": {
+								"$ref": "AAAAAAFYQfwSL2gTrrQ="
+							},
+							"name": "estNouveau",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"type": "Booleen",
+							"isReadOnly": false,
+							"isOrdered": false,
+							"isUnique": false,
+							"isDerived": false,
+							"aggregation": "none",
+							"isID": false
 						}
 					],
 					"isAbstract": false,
@@ -33907,7 +36704,11 @@
 					"_parent": {
 						"$ref": "AAAAAAFYHX2zxtD2V5w="
 					},
+<<<<<<< Updated upstream
 					"name": "Caissier",
+=======
+					"name": "Employé",
+>>>>>>> Stashed changes
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -33996,115 +36797,6 @@
 							"isID": false
 						}
 					],
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFYWafnim+0kwU=",
-					"_parent": {
-						"$ref": "AAAAAAFYHX2zxtD2V5w="
-					},
-					"name": "Retard",
-					"ownedElements": [
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAFYWagd7HJmaXA=",
-							"_parent": {
-								"$ref": "AAAAAAFYWafnim+0kwU="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAFYWagd7XJnPjk=",
-								"_parent": {
-									"$ref": "AAAAAAFYWagd7HJmaXA="
-								},
-								"reference": {
-									"$ref": "AAAAAAFYQfcZlRPIg50="
-								},
-								"visibility": "public",
-								"navigable": true,
-								"aggregation": "none",
-								"multiplicity": "1",
-								"isReadOnly": false,
-								"isOrdered": false,
-								"isUnique": false,
-								"isDerived": false,
-								"isID": false
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAFYWagd7XJof/8=",
-								"_parent": {
-									"$ref": "AAAAAAFYWagd7HJmaXA="
-								},
-								"reference": {
-									"$ref": "AAAAAAFYWafnim+0kwU="
-								},
-								"visibility": "public",
-								"navigable": true,
-								"aggregation": "none",
-								"multiplicity": "0..1",
-								"isReadOnly": false,
-								"isOrdered": false,
-								"isUnique": false,
-								"isDerived": false,
-								"isID": false
-							},
-							"visibility": "public",
-							"isDerived": false
-						},
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAFYWal438J800c=",
-							"_parent": {
-								"$ref": "AAAAAAFYWafnim+0kwU="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAFYWal438J949s=",
-								"_parent": {
-									"$ref": "AAAAAAFYWal438J800c="
-								},
-								"reference": {
-									"$ref": "AAAAAAFYWafnim+0kwU="
-								},
-								"visibility": "public",
-								"navigable": true,
-								"aggregation": "none",
-								"multiplicity": "1..*",
-								"isReadOnly": false,
-								"isOrdered": false,
-								"isUnique": false,
-								"isDerived": false,
-								"isID": false
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAFYWal438J+TeM=",
-								"_parent": {
-									"$ref": "AAAAAAFYWal438J800c="
-								},
-								"reference": {
-									"$ref": "AAAAAAFYHY2BzuwSxVI="
-								},
-								"visibility": "public",
-								"navigable": true,
-								"aggregation": "none",
-								"multiplicity": "1",
-								"isReadOnly": false,
-								"isOrdered": false,
-								"isUnique": false,
-								"isDerived": false,
-								"isID": false
-							},
-							"visibility": "public",
-							"isDerived": false
-						}
-					],
-					"visibility": "public",
 					"isAbstract": false,
 					"isFinalSpecialization": false,
 					"isLeaf": false,
@@ -51652,6 +54344,7 @@
 					"visibility": "public",
 					"isStatic": false,
 					"isLeaf": false,
+					"type": "",
 					"isReadOnly": false,
 					"isOrdered": false,
 					"isUnique": false,
@@ -58476,6 +61169,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -58493,6 +61187,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -58523,6 +61218,7 @@
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
+									"type": "",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -58538,6 +61234,7 @@
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
+									"type": "",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -58623,6 +61320,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -58767,6 +61465,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -58784,6 +61483,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -58878,6 +61578,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -58960,6 +61661,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -58977,6 +61679,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -58994,6 +61697,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -59011,6 +61715,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -59189,6 +61894,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -59318,6 +62024,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -59335,6 +62042,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -59352,6 +62060,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -59369,6 +62078,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -59386,6 +62096,7 @@
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
+							"type": "",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
