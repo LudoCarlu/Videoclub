@@ -127,11 +127,8 @@ public class Database {
 				"yyyy-MM-dd HH:mm");
 
 		ArrayList<Adherent> listeMembre=new ArrayList<Adherent>();
-		Database D=new Database("/Users/maxime/Videoclub/Database/testDB.db"); // A CHANGER
-		D.connexion();
-		Database T=new Database("/Users/maxime/Videoclub/Database/testDB.db"); // A CHANGER
-		ResultSet adh=D.getResultatDe("SELECT * FROM Adherent;");
-		T.connexion();
+		this.connexion();
+		ResultSet adh=this.getResultatDe("SELECT * FROM Adherent;");
 		try {
 			while (adh.next()){
 				numeroTel=(adh.getString("numeroTel"));
@@ -139,32 +136,10 @@ public class Database {
 				nom=(adh.getString("nom"));
 				prenom=(adh.getString("prenom"));
 				adresse=(adh.getString("adresse"));
-				numeroCB=(adh.getString("numeroCB"));
-				ResultSet loc=T.getResultatDe("SELECT * FROM Location WHERE numeroAdherent='"+numeroTel+"'");
-				ArrayList<Location> list=new ArrayList<Location>();
+				numeroCB=(adh.getString("numeroCB"));		
 				Adherent H=new Adherent(numeroTel,codeSecret,nom,prenom,adresse,numeroCB);
 				listeMembre.add(H);
 				System.out.println(H.toString());
-				try {
-					while (loc.next()){
-						codeBarre=(loc.getString("codeBarre"));
-						dateHeure=sdfSource.parse(loc.getString("dateHeure"));
-						datePrevue=sdfSource.parse(loc.getString("datePrevue"));
-						dateRetour=sdfSource.parse(loc.getString("dateRetour"));
-						montant=(loc.getFloat("montant"));
-						Location L=new Location(dateHeure,datePrevue,dateRetour,H,montant);
-						list.add(L);
-						System.out.println(L.toString());
-					}
-					if (list!=null){
-					H.setListeLocation(list);
-					}
-				} catch (SQLException | ParseException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-					System.out.print("test");
-				}
-
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -192,7 +167,6 @@ public class Database {
 		//D.faireRequete(sql);
 		ResultSet res=D.getResultatDe("SELECT * FROM Adherent;");
 		ArrayList<Adherent> F=D.genererAdherent();
-		ArrayList<Location> X=F.get(2).getListeLocation();
 	}
 }
 

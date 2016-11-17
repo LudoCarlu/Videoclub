@@ -18,7 +18,7 @@ public class Videoclub {
 
 	public Videoclub(String nom){
 		this.nom=nom;
-		this.D=new Database("test");
+		this.D=new Database("/Users/maxime/Videoclub/Database/testDB.db");
 		this.controler=new Controler(D.genererAdherent());
 	}
 }
