@@ -25,12 +25,12 @@ public class Amende {
 		if(jrsRetard()<60 && loc.isAuJour(){ //si le retard est moins de 60 jours et le film a été loué à la journée
 			montant = tauxJournée*jrsRetard;
 		}
-		else if(jrsRetard<60 && loc.isSemaine()){
+		else if(jrsRetard<60 && loc.isASemaine()){
 			montant = ((1+jrsRetard/7)%1)*tauxSemaine; //calcul montant pour chaque nouvelle semaine en retard.
 		}							// le premier jour étant une nouvelle semaine.
 		else if(jrsRetard>60){
-			loc.film.isPerdu();//pseudo-code: le film loué est déclaré perdu À MODIFIER
-			montant = loc.film.getCoutAchat()+20; //plus taxes, mais on ajoute ce montant ou?
+			film.setPerdu(); //trouver une façon d'instancier le film de la location
+			montant = film.getCoutAchat()+20; //plus taxes, mais on ajoute ce montant ou?
 		}
 		else {
 			System.out.Println("Le film n'est pas en retard");
