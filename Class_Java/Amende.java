@@ -1,7 +1,11 @@
 
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
+
 public class Amende {
 	private Adherent ad;
 	private Location loc;
+	private jrsRetard;
 	private float montant;
 	private float tauxSemaine; //valeur à assigner
 	private float tauxJournée; //valeur à assigner
@@ -13,17 +17,19 @@ public class Amende {
 		
 		this.loc = loc;
 		this.ad = loc.getAdherent();
-			
-	If(loc.jrsRetard>0){// s'assure que le film est bien en retard. Evite calcul avec 0 ou valeurs négative de jrsRetard
 		
-		if(loc.jrsRetard()<60 && loc.isAuJour(){ //si le retard est moins de 60 jours et le film a été loué à la journée
-			montant = tauxJournée*loc.jrsRetard;
+		setRetard(loc.getDateDue(), loc.getDateRetour()); //calcule le nbr de jours en retard entre la date due et la date de retour de la location
+			
+	If(jrsRetard>0){ // s'assure que le film est bien en retard. Evite calcul avec 0 ou valeurs négative de jrsRetard
+		
+		if(jrsRetard()<60 && loc.isAuJour(){ //si le retard est moins de 60 jours et le film a été loué à la journée
+			montant = tauxJournée*jrsRetard;
 		}
-		else if(loc.jrsRetard<60 && loc.isSemaine()){
-			montant = ((1+loc.jrsRetard/7)%1)*tauxSemaine; //calcul montant pour chaque nouvelle semaine en retard.
+		else if(jrsRetard<60 && loc.isSemaine()){
+			montant = ((1+jrsRetard/7)%1)*tauxSemaine; //calcul montant pour chaque nouvelle semaine en retard.
 		}							// le premier jour étant une nouvelle semaine.
-		else if(loc.jrsRetard>60){
-			loc.film.isPerdu();//pseudo-code: le film loué est déclaré perdu
+		else if(jrsRetard>60){
+			loc.film.isPerdu();//pseudo-code: le film loué est déclaré perdu À MODIFIER
 			montant = loc.film.getCoutAchat()+20; //plus taxes, mais on ajoute ce montant ou?
 		}
 		else {
@@ -48,5 +54,8 @@ public class Amende {
 	public void setMontant(float montant) {
 		this.montant = montant;
 	}
-	
+	private setRetard(Date dateDue, Date dateRetour){
+		this.jrsRetard = ChronoUnit.DAYS.between(dateDue,dateRetour);	
+	}
+		   
 }
