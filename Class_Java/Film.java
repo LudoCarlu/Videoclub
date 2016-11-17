@@ -3,6 +3,11 @@ public class Film extends Article {
 	
 	private boolean estNouveau;
 	private String type;
+	private boolean perdu;
+	
+	public void Film(){
+		this.perdu = False;
+	}
 	
 	public boolean isEstNouveau() {
 		return estNouveau;
@@ -15,5 +20,16 @@ public class Film extends Article {
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+	public void setPerdu(boolean p){
+		
+		if (p == True){
+		this.perdu = True;
+		}
+		else {
+		this.perdu = False;
+		}	
+	public boolean isPerdu(){
+		return perdu;
 	}
 }
