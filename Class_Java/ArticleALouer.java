@@ -1,5 +1,5 @@
 
-public class ArticleALouer extends Article {
+public class Film extends Article {
 	
 	private boolean estNouveau;
 	private String type;
