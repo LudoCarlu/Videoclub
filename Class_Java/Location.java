@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Location extends Operation{
@@ -7,39 +8,42 @@ public class Location extends Operation{
 	private Adherent adherent;
 	private Amende amende;
 	
-	
-	public Location(Date dateDue, Date dateRetour, Adherent adherent, Amende amende) {
-		super();
-		this.dateDue = dateDue;
-		this.dateRetour = dateRetour;
-		this.adherent = adherent;
-		this.amende = amende;
+	public Date getDateHeure() {
+		return dateHeure;
 	}
 	public Date getDateDue() {
 		return dateDue;
 	}
-	public void setDateDue(Date dateDue) {
-		this.dateDue = dateDue;
-	}
 	public Date getDateRetour() {
 		return dateRetour;
-	}
-	public void setDateRetour(Date dateRetour) {
-		this.dateRetour = dateRetour;
 	}
 	public Adherent getAdherent() {
 		return adherent;
 	}
-	public void setAdherent(Adherent adherent) {
-		this.adherent = adherent;
-	}
 	public Amende getAmende() {
 		return amende;
 	}
-	public void setAmende(Amende amende) {
-		this.amende = amende;
+	public Location(Date dateHeure, Date dateDue, Date dateRetour, Adherent adherent,float montant) {
+		super();
+		this.dateHeure = dateHeure;
+		this.dateDue = dateDue;
+		this.dateRetour = dateRetour;
+		this.adherent = adherent;
+		this.montant=montant;
 	}
-	
+	public Location(Date dateHeure, Date dateDue, Date dateRetour, Adherent adherent,ArrayList<LigneArticle> list) {
+		super();
+		this.dateHeure = dateHeure;
+		this.dateDue = dateDue;
+		this.dateRetour = dateRetour;
+		this.adherent = adherent;
+		this.ligneArticle=list;
+	}
+	@Override
+	public String toString() {
+		return "Location [dateDue=" + dateDue + ", dateRetour=" + dateRetour + ", adherent=" + adherent + ", amende="
+				+ amende + "]";
+	}
 	
 
 }

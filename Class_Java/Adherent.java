@@ -2,55 +2,52 @@ import java.util.ArrayList;
 
 public class Adherent extends Client{
 	
-	private int numeroTel;
-	private int codeSecret;
-	private  String adresse;
-	private int numeroCB;
+	private String numeroTel;
+	private String codeSecret;
 	private String nom;
 	private String prenom;
-	private ArrayList<Operation> listeOperation;
+	private  String adresse;
+	private String numeroCB;
+	private ArrayList<Location> listeLocation;
 	
-	public ArrayList<Operation> getListeOperation() {
-		return listeOperation;
-	}
-	public void setListeOperation(ArrayList<Operation> listeOperation) {
-		this.listeOperation = listeOperation;
-	}
-	public int getNumeroTel() {
+	public String getNumeroTel() {
 		return numeroTel;
 	}
-	public void setNumeroTel(int numeroTel) {
-		this.numeroTel = numeroTel;
-	}
-	public int getCodeSecret() {
+	public String getCodeSecret() {
 		return codeSecret;
-	}
-	public void setCodeSecret(int codeSecret) {
-		this.codeSecret = codeSecret;
 	}
 	public String getAdresse() {
 		return adresse;
 	}
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
-	}
-	public int getNumeroCB() {
+	public String getNumeroCB() {
 		return numeroCB;
-	}
-	public void setNumeroCB(int numeroCB) {
-		this.numeroCB = numeroCB;
 	}
 	public String getNom() {
 		return nom;
 	}
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
 	public String getPrenom() {
 		return prenom;
 	}
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public ArrayList<Location> getListeLocation() {
+		return listeLocation;
 	}
+	public Adherent(String numeroTel, String codeSecret, String nom, String prenom, String adresse, String numeroCB) {
+		super();
+		this.numeroTel = numeroTel;
+		this.codeSecret = codeSecret;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.adresse = adresse;
+		this.numeroCB = numeroCB;
+	}
+	public void setListeLocation(ArrayList<Location> listeLocation) {
+		this.listeLocation = listeLocation;
+	}
+	@Override
+	public String toString() {
+		return "Adherent [numeroTel=" + numeroTel + ", codeSecret=" + codeSecret + ", nom=" + nom + ", prenom=" + prenom
+				+ ", adresse=" + adresse + ", numeroCB=" + numeroCB + ", listeLocation=" + listeLocation + "]";
+	}
+	
 	
 }

@@ -4,8 +4,7 @@ CREATE TABLE Adherent (
 	nom VARCHAR(50),
 	prenom VARCHAR(50),
 	adresse TEXT NOT NULL,
-	numeroCB VARCHAR(20) NOT NULL,
-	dateInscription DATETIME NOT NULL
+	numeroCB VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE DescriptionArticle (
@@ -29,7 +28,7 @@ CREATE TABLE Vente (
 CREATE TABLE Location (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	numeroAdherent VARCHAR(15) NOT NULL,
-	codeArticle VARCHAR NOT NULL,
+	codeBarre VARCHAR NOT NULL,
 	dateHeure DATETIME NOT NULL,
 	datePrevue DATETIME NOT NULL,
 	dateRetour DATETIME NOT NULL,

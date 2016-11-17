@@ -41,13 +41,15 @@ public class DisplayPanel extends JPanel implements ActionListener{
 		setBackground(Color.BLUE);
 		this.fenetre=F;
 		String [] title={"Item","Quantite","Prix"};
-		Location L=new Location(Date.from(ZonedDateTime.now().with(LocalTime.MIN).toInstant()),new Date("13/12/1021"), null, null);
+		//Location L=new Location(Date.from(ZonedDateTime.now().with(LocalTime.MIN).toInstant()),new Date("13/12/1021"), null, null);
 		Object[][] data = {
-			      {L.getDateRetour(),L.getAmende(),L.getDateDue()},
+			     // {L.getDateRetour(),L.getAmende(),L.getDateDue()},
+			      //{L.getDateRetour(),L.getAmende(),L.getDateDue()},
 			      {"BZHHydde", "28 ans", "1.80 m"},
 			      {"IamBow", "24 ans", "1.90 m"},
 			      {"FunMan", "32 ans", "1.85 m"}
 			    };
+		Object [] tesa= {"test","test","test"};
 		
 		
 		if (choix==0){
@@ -72,6 +74,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			titre.setBounds(200,5, 90, 20);
 			add(titre);
 			table = new JTable(data,title);
+
 			table.setBounds(60,40,500,80);
 			add(table);
 			JScrollPane scrollPane = new JScrollPane(table);
