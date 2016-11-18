@@ -12,7 +12,7 @@ public class Amende {
 	/* Les opérations du constructeur sont pour l'instant que du pseudo code. 
 	Les méthodes de la classe Location doivent être implémentés*/
 	
-	/*public void Amende(Location loc)
+	public void Amende(Location loc)
 		
 		this.loc = loc;
 		this.ad = loc.getAdherent();
@@ -34,7 +34,7 @@ public class Amende {
 		else {
 			System.out.Println("Le film n'est pas en retard");
 		}	   
-	}	*/
+	}	
 	public Adherent getAd() {
 		return ad;
 	}
@@ -53,9 +53,9 @@ public class Amende {
 	public void setMontant(float montant) {
 		this.montant = montant;
 	}
-	//private setRetard(Date dateDue, Date dateRetour){
-		//this.jrsRetard = ChronoUnit.DAYS.between(dateDue,dateRetour);	
-	//}
+	private setRetard(Date dateDue, Date dateRetour){
+		this.jrsRetard = ChronoUnit.DAYS.between(dateDue,dateRetour);	
+	}
 		   
 }
 
