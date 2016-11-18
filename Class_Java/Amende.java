@@ -1,19 +1,18 @@
-
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 public class Amende {
 	private Adherent ad;
 	private Location loc;
-	private jrsRetard;
+	//private jrsRetard;
 	private float montant;
 	private float tauxSemaine; //valeur à assigner
 	private float tauxJournée; //valeur à assigner
 	
 	/* Les opérations du constructeur sont pour l'instant que du pseudo code. 
-	Les méthodes de la classe Location doivent être implémentés
-	*/
-	public void Amende(Location loc)
+	Les méthodes de la classe Location doivent être implémentés*/
+	
+	/*public void Amende(Location loc)
 		
 		this.loc = loc;
 		this.ad = loc.getAdherent();
@@ -35,7 +34,7 @@ public class Amende {
 		else {
 			System.out.Println("Le film n'est pas en retard");
 		}	   
-	}	
+	}	*/
 	public Adherent getAd() {
 		return ad;
 	}
@@ -54,8 +53,9 @@ public class Amende {
 	public void setMontant(float montant) {
 		this.montant = montant;
 	}
-	private setRetard(Date dateDue, Date dateRetour){
-		this.jrsRetard = ChronoUnit.DAYS.between(dateDue,dateRetour);	
-	}
+	//private setRetard(Date dateDue, Date dateRetour){
+		//this.jrsRetard = ChronoUnit.DAYS.between(dateDue,dateRetour);	
+	//}
 		   
 }
+

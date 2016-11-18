@@ -1,4 +1,4 @@
-
+/*
 public class Film extends Article {
 	
 	private boolean estNouveau;
@@ -6,7 +6,7 @@ public class Film extends Article {
 	private boolean perdu;
 	
 	public void Film(){
-		this.perdu = False;
+		this.perdu = false;
 	}
 	
 	public boolean isEstNouveau() {
@@ -33,3 +33,4 @@ public class Film extends Article {
 		return perdu;
 	}
 }
+*/

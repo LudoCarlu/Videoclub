@@ -7,13 +7,15 @@ import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Hashtable;
 
 public class Database {
 	private String dbName;
-	public Connection connexion;
+	private Connection connexion;
 	private Statement requete;
+	public static Database instanceDB = null;
 
-	public Database (String dbName) {
+	private Database (String dbName) {
 		// Charge le driver sqlite JDBC en utilisant le class loader actuel
 		try {
 			Class.forName("org.sqlite.JDBC");
@@ -25,6 +27,13 @@ public class Database {
 
 		this.dbName = dbName;
 		this.connexion = null;
+	}
+	
+	public static Database instanceDB() {
+		if(instanceDB == null) {
+			instanceDB = new Database("/Users/ludoviccarlu/Github/Videoclub/Database/testDB.db");
+		}
+		return instanceDB;
 	}
 
 	/* Ouvre la base de données spécifiées
@@ -139,7 +148,7 @@ public class Database {
 				numeroCB=(adh.getString("numeroCB"));		
 				Adherent H=new Adherent(numeroTel,codeSecret,nom,prenom,adresse,numeroCB);
 				listeMembre.add(H);
-				System.out.println(H.toString());
+				//System.out.println(H.toString());
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -148,25 +157,65 @@ public class Database {
 		}
 		return listeMembre;
 	}
-	public static void main(String[] args) {
-		Database D=new Database("/Users/maxime/Videoclub/Database/testDB.db");
-		System.out.println(D.connexion());
-		/*String sql = "CREATE TABLE Adherent("
-				+ "numeroTel INTEGER PRIMARY KEY NOT NULL,"
-				+ "codeSecret INTEGER NOT NULL,"
-				+ "nom VARCHAR(50),"
-				+ "prenom VARCHAR(50),"
-				+ "adresse TEXT NOT NULL,"
-				+ "numeroCB INTEGER NOT NULL,"
-				+ "dateInscription DATETIME NOT NULL"
-				+ ");";
+	
+	public Hashtable<String,DescriptionArticle> genererDescriptionArticle() {
+		Hashtable<String,DescriptionArticle> catalogue = new Hashtable<String,DescriptionArticle>();
+		//ArrayList<DescriptionArticle> catalogue = new ArrayList<DescriptionArticle>();
+		this.connexion();
+		ResultSet desc = this.getResultatDe("SELECT * FROM DescriptionArticle;");
+		
+		try {
+			while (desc.next()) {
+				int id = desc.getInt("id");
+				String ca = desc.getString("codeArticle");
+				String description = desc.getString("description");
+				float prixVente = desc.getFloat("prixVente");
+				float prixJournalier = desc.getFloat("prixJournalier");
+				String titre = desc.getString("titre");
+				String genre = desc.getString("genre");
+				boolean estNouveau = desc.getBoolean("estNouveau");
+				
+				DescriptionArticle tmp = new DescriptionArticle(id,ca,description,prixVente,
+						prixJournalier,titre,genre,estNouveau);
+				//System.out.println(tmp);
+				//catalogue.add(tmp);
+				catalogue.put(ca,tmp);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return catalogue;
+	
+	}
+	
+	public void insertLocation(Location l) {
+		this.connexion();
+		int lastId = 0;
+		ResultSet rs = this.getResultatDe("Select count(*) FROM Location;");
+		try {
+			while(rs.next()) {
+				lastId = rs.getInt("count")+1;
+			}
+			
+			for(int i = 0; i < l.getListeLigneArticles().size(); i++) {
+				String sql = "INSERT INTO Location (id,numeroAdherent,codeBarre,dateHeure,datePrevue,dateRetour,montant) "
+						+ "VALUES "
+						+ "(id = " + lastId
+						+ "numeroAdherent = "+l.getAdherent().getNumeroTel()
+						//+ "codeBarre = "+l.getCodeBarre()
+						+ "dateHeure = " + l.getDateHeure()
+						+ "datePrevue = " + l.getListeLigneArticles().get(i).getDateDue()
+						+ "dateRetour = null"
+						+ "montant = " + l.getMontant()
+						+ ");";
+						
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-				D.faireRequete(sql);*/
-
-		//String sql = "INSERT INTO Adherent(numeroTel,codeSecret,nom,prenom,adresse,numeroCB,dateInscription) VALUES (1,1,'ma','AZ','12',1,'11/11/2012');";
-		//D.faireRequete(sql);
-		ResultSet res=D.getResultatDe("SELECT * FROM Adherent;");
-		ArrayList<Adherent> F=D.genererAdherent();
 	}
 }
 

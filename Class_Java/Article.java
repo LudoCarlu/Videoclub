@@ -2,6 +2,7 @@
 public abstract class Article {
 	
 	private DescriptionArticle description;
+	private int codeBarre;
 	private int codeArticle;
 
 	public int getCodeArticle() {
