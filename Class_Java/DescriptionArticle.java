@@ -26,6 +26,9 @@ public class DescriptionArticle {
 	public String getCodeArticle() {
 		return this.codeArticle;
 	}
+	public String getTitre() {
+		return this.titre;
+	}
 	public void setCodeArticle(String codeArticle) {
 		this.codeArticle = codeArticle;
 	}

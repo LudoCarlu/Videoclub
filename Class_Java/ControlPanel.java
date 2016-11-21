@@ -49,7 +49,8 @@ public class ControlPanel extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==this.location){
-			this.gestionnaire.setDisplayPanel(new DisplayPanel(1,this.gestionnaire));
+			this.gestionnaire.setDisplayPanel(new DisplayPanel(7,this.gestionnaire));
+			this.gestionnaire.getController().creerLocation();
 		}
 		if (e.getSource()==this.vente){
 			this.gestionnaire.setDisplayPanel(new DisplayPanel(2,this.gestionnaire));

@@ -10,7 +10,7 @@ public class Amende {
 	private float tauxJournée; //valeur à assigner
 	
 	/* Les opérations du constructeur sont pour l'instant que du pseudo code. 
-	Les méthodes de la classe Location doivent être implémentés*/
+	Les méthodes de la classe Location doivent être implémentés
 	
 	public void Amende(Location loc)
 		
@@ -56,6 +56,6 @@ public class Amende {
 	private setRetard(Date dateDue, Date dateRetour){
 		this.jrsRetard = ChronoUnit.DAYS.between(dateDue,dateRetour);	
 	}
-		   
+		   */
 }
 

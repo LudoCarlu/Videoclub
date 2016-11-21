@@ -10,6 +10,14 @@ public class LigneArticle {
 		this.quantite = quantite;
 	}
 	
+	public int getQuantite() {
+		return quantite;
+	}
+
+	public DescriptionArticle getDesc() {
+		return desc;
+	}
+
 	public float getPrixLocation() {
 		return this.quantite*desc.getPrixJournalier();
 	}

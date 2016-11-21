@@ -9,12 +9,12 @@ public class GestionMain {
 		Controler controler= videoclub.getControler();
 		JFrameGestionnaire frame=new JFrameGestionnaire(controler);
 
-		System.out.println("Location");
-		controler.MenuLocation();
+		//System.out.println("Location");
+		//controler.MenuLocation();
 
 		//boolean b = true;
 		String c="oui";
-		while (c=="oui") {
+		/*while (c=="oui") {
 			System.out.print("Saississez le code de l'article : ");
 			String ca = sc.next();
 
@@ -36,9 +36,9 @@ public class GestionMain {
 				//b=false;
 				
 				break;
-			}
-		}
-		controler.terminerLocation();
+			}*/
+		//}
+		//controler.terminerLocation();
 
 	}
 

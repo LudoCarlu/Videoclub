@@ -31,7 +31,7 @@ public class Database {
 	
 	public static Database instanceDB() {
 		if(instanceDB == null) {
-			instanceDB = new Database("/Users/ludoviccarlu/Github/Videoclub/Database/testDB.db");
+			instanceDB = new Database("/Users/maxime/Videoclub/Database/testDB.db");
 		}
 		return instanceDB;
 	}
@@ -119,7 +119,7 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
-	public ArrayList<Adherent> genererAdherent(){
+	public Hashtable<String,Adherent> genererAdherent(){
 		String numeroTel;
 		String codeSecret;
 		String nom;
@@ -127,15 +127,10 @@ public class Database {
 		String adresse;
 		String numeroCB; //Adherent 
 
-		String codeBarre; //Location
-		Date dateHeure;
-		Date datePrevue;
-		Date dateRetour;
-		float montant;
 		SimpleDateFormat sdfSource = new SimpleDateFormat(
 				"yyyy-MM-dd HH:mm");
 
-		ArrayList<Adherent> listeMembre=new ArrayList<Adherent>();
+		Hashtable<String,Adherent> listeMembre=new Hashtable<String,Adherent>();
 		this.connexion();
 		ResultSet adh=this.getResultatDe("SELECT * FROM Adherent;");
 		try {
@@ -147,7 +142,7 @@ public class Database {
 				adresse=(adh.getString("adresse"));
 				numeroCB=(adh.getString("numeroCB"));		
 				Adherent H=new Adherent(numeroTel,codeSecret,nom,prenom,adresse,numeroCB);
-				listeMembre.add(H);
+				listeMembre.put(numeroTel,H);
 				//System.out.println(H.toString());
 			}
 		} catch (SQLException e) {

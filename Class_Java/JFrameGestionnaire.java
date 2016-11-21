@@ -9,6 +9,7 @@ public class JFrameGestionnaire extends JFrame{
 	private Controler controler;
 	private ControlPanel controlPanel;
 	private DisplayPanel displayPanel;
+	
 
 	public JFrameGestionnaire(Controler c){
 		this.controler=c;
@@ -22,9 +23,12 @@ public class JFrameGestionnaire extends JFrame{
 		setVisible(true);
 		setResizable(false);
 		setBounds(0,0,800,600);
-
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	public Controler getController(){
+		return this.controler;
+	}
+	
 	public void setDisplayPanel(DisplayPanel F){
 		this.remove(displayPanel);
 		this.displayPanel=F;

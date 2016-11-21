@@ -6,7 +6,7 @@ public class Adherent extends Client{
 	private String codeSecret;
 	private String nom;
 	private String prenom;
-	private  String adresse;
+	private String adresse;
 	private String numeroCB;
 	private ArrayList<Location> listeLocation;
 	
