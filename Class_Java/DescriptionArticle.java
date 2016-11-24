@@ -6,6 +6,7 @@ public class DescriptionArticle {
 	private String description;
 	private float prixVente;
 	private float prixJournalier;
+	private float prixHebdomadaire;
 	private String titre;
 	private String genre;
 	private boolean estNouveau;
