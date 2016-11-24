@@ -6,6 +6,7 @@ public class Amende {
 	private Location loc;
 	//private jrsRetard;
 	private float montant;
+	private DescriptionArticle desArticle;
 	private float tauxSemaine; //valeur à assigner
 	private float tauxJournée; //valeur à assigner
 	
@@ -16,7 +17,7 @@ public class Amende {
 		
 		this.loc = loc;
 		this.ad = loc.getAdherent();
-		
+		tauxSemaine = loc.getPrixJournalier()
 		setRetard(loc.getDateDue(), loc.getDateRetour()); //calcule le nbr de jours en retard entre la date due et la date de retour de la location
 			
 	If(jrsRetard>0){ // s'assure que le film est bien en retard. Evite calcul avec 0 ou valeurs négative de jrsRetard
