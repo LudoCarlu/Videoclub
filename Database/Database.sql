@@ -12,10 +12,12 @@ CREATE TABLE DescriptionArticle (
 	codeArticle VARCHAR NOT NULL,
 	description TEXT NOT NULL,
 	prixVente REAL NOT NULL,
-	prixJournalier REAL,
+	prixJournalier REAL
+	prixHebdomadaire REAL,
 	titre VARCHAR(100),
 	genre VARCHAR(50),
-	estNouveau BOOLEAN
+	estNouveau BOOLEAN,
+	estPerdu BOOLEAN
 
 );
 
@@ -30,7 +32,7 @@ CREATE TABLE Location (
 	numeroAdherent VARCHAR(15) NOT NULL,
 	codeBarre VARCHAR NOT NULL,
 	dateHeure DATETIME NOT NULL,
-	datePrevue DATETIME NOT NULL,
+	dateDue DATETIME NOT NULL,
 	dateRetour DATETIME NOT NULL,
 	montant REAL NOT NULL,
 	FOREIGN KEY (numeroAdherent) REFERENCES Adherent (numeroTel)
