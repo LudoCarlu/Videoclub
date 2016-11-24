@@ -38,6 +38,14 @@ CREATE TABLE Location (
 	FOREIGN KEY (numeroAdherent) REFERENCES Adherent (numeroTel)
 );
 
+CREATE TABLE Employe (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	nom VARCHAR(100) NOT NULL,
+	gerant BOOLEAN
+	--Plus simple d'intégrer avec valeur boolean pour définir si l'employé est gérant ou nom que de définir un champs VARCHAR
+);
+
+
 /*CREATE TABLE Film (
 	
 	codeArticle INT NOT NULL,
@@ -66,7 +74,6 @@ Il faut des tarifs de locations soit à la semaine soit journalier
 	et qui peut etre null
 	2. On crée une classe Tarif avec type de tarif et le prix
 
-Employé à ajouter
 */
 
 
