@@ -17,10 +17,12 @@ public class Location extends Operation{
 		super();
 		this.dateHeure = dateHeure;
 		this.dateDue = dateDue;
-		this.dateRetour = dateRetour;
+		this.dateRetour = dateRetour; 
+		
 		this.adherent = adherent;
 		this.montant=montant;
 	}
+	// La date de retour est seulement établie au moment du retour, ne devrait pas faire partie du constructeur
 	public Location(Date dateHeure, Date dateDue, Date dateRetour, Adherent adherent,ArrayList<LigneArticle> list) {
 		super();
 		this.dateHeure = dateHeure;
