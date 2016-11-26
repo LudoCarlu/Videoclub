@@ -194,7 +194,7 @@ public class Database {
 			}
 			
 			for(int i = 0; i < l.getListeLigneArticles().size(); i++) {
-				String sql = "INSERT INTO Location (id,numeroAdherent,codeBarre,dateHeure,datePrevue,dateRetour,montant) "
+				String strSQL = "INSERT INTO Location (id,numeroAdherent,codeBarre,dateHeure,datePrevue,dateRetour,montant) "
 						+ "VALUES "
 						+ "(id = " + lastId
 						+ "numeroAdherent = "+l.getAdherent().getNumeroTel()
@@ -204,8 +204,39 @@ public class Database {
 						+ "dateRetour = null"
 						+ "montant = " + l.getMontant()
 						+ ");";
-						
+			this.faireRequete(strSQL);			
 			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void insertArticle(DescriptionArticle desc) {
+		this.connexion();
+		int lastId = 0;
+		ResultSet rs = this.getResultatDe("Select count(*) FROM DescriptionArticle;");
+		try {
+			while(rs.next()) {
+				lastId = rs.getInt("count")+1;
+			}
+			
+				String strSQL = "INSERT INTO DescriptionArticle (id,codeArticle,description,prixVente,prixJournalier,titre,genre,estNouveau,prixHebdomadaire) "
+						+ "VALUES "
+						+ "(id = " + lastId
+						+ "codeArticle = " + desc.getCodeArticle();
+						+ "description = " + desc.getDescription();
+						+ "prixVente = " + desc.getPrixVente();
+						+ "prixJournalier = " + desc.getPrixJournalier();
+						+ "titre = " + desc.getTitre();
+						+ "genre = " + desc.getGenre();
+						+ "estNouveau = " + desc.isEstNouveau();
+						+ "prixHebdomadaire =" + desc.getPrixHebdomadaire();
+						+ ");";
+				
+		this.faireRequete(strSQL);	
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

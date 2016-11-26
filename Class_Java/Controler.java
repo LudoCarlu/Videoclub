@@ -1,5 +1,6 @@
 import java.text.*; // Pour les formats de date
 import java.util.*;
+import Class_Java.*;
 
 public class Controler {
 	private Hashtable<String,Adherent> listeMembre=null;
@@ -86,4 +87,10 @@ public class Controler {
 		return loc.getMontant();
 	}
 	
+	public void acquisition(DescriptionArticle art,int qte){
+		
+		Acquisition acq = new Acquisition();
+		
+		acq.
+	}
 }

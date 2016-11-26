@@ -6,14 +6,16 @@ public class DescriptionArticle {
 	private String description;
 	private float prixVente;
 	private float prixJournalier;
-	private float prixHebdomadaire;
 	private String titre;
 	private String genre;
-	private boolean estNouveau;
+	private boolean estNouveau; /*Je trouve que le "Est" devrait être enlevé il est inutile est se répète dans la méthode
+	 							* isEstNouveau() is=Est. Qu'est ce que vous en pensez?
+	 							*/
+	private float prixHebdomadaire;
 
 	
 	public DescriptionArticle (int id,String ca, String desc,float prixVente, 
-			float prixJournalier, String titre, String genre, boolean estNouveau) {
+			float prixJournalier, String titre, String genre, boolean estNouveau, float prixHebdomadaire;) {
 		this.id = id;
 		this.codeArticle = ca;
 		this.description = desc;
@@ -22,8 +24,11 @@ public class DescriptionArticle {
 		this.titre = titre;
 		this.genre = genre;
 		this.estNouveau = estNouveau;
+		this.prixHebdomadaire = prixHebdomadaire;
 	}
-		
+	public String getUniqueid()	 {
+		return this.id
+	}
 	public String getCodeArticle() {
 		return this.codeArticle;
 	}
@@ -35,6 +40,12 @@ public class DescriptionArticle {
 	}
 	public String getDescription() {
 		return description;
+	}
+	public void setGenre(String genre){
+		this.genre = genre;
+	}
+	public String getGenre(){
+		return this.genre
 	}
 	public void setDescription(String description) {
 		this.description = description;
@@ -51,8 +62,18 @@ public class DescriptionArticle {
 	public void setPrixJournalier(float prixJ) {
 		this.prixJournalier = prixJ;
 	}
-	
-	
+	public void setPrixHebdomadaire(float prixH){
+		this.prixHebdomadaire = prixH;
+	}
+	public float getPrixHebdomadaire(){
+		return this.prixHebdomadaire;
+	}
+	public void setEstNouveau(boolean estNouveau){
+		this.estNouveau = estNouveau;
+	}
+	public boolean isEstNouveau {
+		return this.estNouveau
+	}
 	public String toString() {
 		return "DescriptionArticle : \n"
 				+ "idDesc : " + this.id 
