@@ -36,4 +36,24 @@ public class Catalogue {
 		}
 		return null;*/
 	}
+	public void ajouterDesc(DescriptionArticle description) {
+		
+		try {
+		
+		if (!listeDescription.isEmpty()){
+			listeDescription.add(description);
+		}
+		}
+		catch (NullPointerException e) {	
+		}
+		
+		try {
+			if (!list.isEmpty()){
+				list.put(description.getCodeArticle(), description);
+			}
+		}
+		catch (NullPointerException e) {	
+		}
+		
+	}
 }
