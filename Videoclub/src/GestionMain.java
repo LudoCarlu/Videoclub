@@ -9,6 +9,15 @@ public class GestionMain {
 		Controler controler= videoclub.getControler();
 		JFrameGestionnaire frame=new JFrameGestionnaire(controler);
 
+		/*test acquisition
+		
+		controler.acquerirAutre("909", "Skittles", (float) 1.7, 1);
+		controler.acquerirAutre("901", "Snikers", (float) 2.0, 1);
+		
+		Fonctionne!
+		*
+		*/
+		
 		//System.out.println("Location");
 		//controler.MenuLocation();
 
