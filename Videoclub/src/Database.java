@@ -30,8 +30,20 @@ public class Database {
 	}
 	
 	public static Database instanceDB() {
+		//Seulement enlevé le // du commentaire pour changer le path de la db
+		
+		String pathDB;
+		//Maxime:
+		//pathDB = "/Users/maxime/Videoclub/Database/testDB.db";
+		
+		//Samuel:
+		pathDB = "/Users/samuel/Documents/Videoclub/Videoclub/database/testDB.db";
+	
+		//Ludo:
+		// pathDB: 
+		
 		if(instanceDB == null) {
-			instanceDB = new Database("/Users/maxime/Videoclub/Database/testDB.db");
+			instanceDB = new Database(pathDB);
 		}
 		return instanceDB;
 	}
@@ -171,7 +183,7 @@ public class Database {
 				boolean estNouveau = desc.getBoolean("estNouveau");
 				float prixHebdomadaire = desc.getFloat("prixHebdomadaire");
 				
-				DescriptionArticle tmp = new DescriptionArticle(id,ca,description,prixVente,
+				DescriptionArticle tmp = new DescriptionArticle(id, ca,description,prixVente,
 						prixJournalier,titre,genre,estNouveau,prixHebdomadaire);
 				//System.out.println(tmp);
 				//catalogue.add(tmp);

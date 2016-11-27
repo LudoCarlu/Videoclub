@@ -2,9 +2,9 @@
 public abstract class Article {
 	
 	private DescriptionArticle description;
-	private int codeBarre;
-	private int codeArticle;
-
+	//private int codeBarre;
+	//private int codeArticle;
+/*
 	public int getCodeArticle() {
 		return codeArticle;
 	}
@@ -12,7 +12,7 @@ public abstract class Article {
 	public void setCodeArticle(int codeArticle) {
 		this.codeArticle = codeArticle;
 	}
-
+*/
 	public DescriptionArticle getDescription() {
 		return description;
 	}

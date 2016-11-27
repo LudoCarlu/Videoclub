@@ -89,7 +89,6 @@ public class Controler {
 	public void acquisition(DescriptionArticle art,int qte){
 		
 
-		
 
 	}
 }

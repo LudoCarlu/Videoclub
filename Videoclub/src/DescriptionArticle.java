@@ -13,10 +13,12 @@ public class DescriptionArticle {
 	 							*/
 	private float prixHebdomadaire;
 
-	
-	public DescriptionArticle (int id,String ca, String desc,float prixVente, 
+	public DescriptionArticle(){
+		//nécessaire pour créer un objet sans id
+	}
+	public DescriptionArticle (int id, String ca, String desc,float prixVente, 
 			float prixJournalier, String titre, String genre, boolean estNouveau, float prixHebdomadaire) {
-		this.id = id;
+		this.id = id; //N'est pas créé ici
 		this.codeArticle = ca;
 		this.description = desc;
 		this.prixVente = prixVente;
