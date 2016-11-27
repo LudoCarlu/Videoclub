@@ -1,14 +1,14 @@
 
-public abstract class Article {
+public class Article {
 	
 	private DescriptionArticle description;
 	//private int codeBarre;
-	//private int codeArticle;
-/*
-	public int getCodeArticle() {
-		return codeArticle;
-	}
+	//private String codeArticle;
 
+	public String getCodeArticle() {
+		return description.getCodeArticle();
+	}
+/*
 	public void setCodeArticle(int codeArticle) {
 		this.codeArticle = codeArticle;
 	}
