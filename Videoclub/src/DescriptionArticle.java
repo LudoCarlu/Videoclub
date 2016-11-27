@@ -37,9 +37,13 @@ public class DescriptionArticle {
 	public String getTitre() {
 		return this.titre;
 	}
+	public void setTitre(String titre){
+		this.titre = titre;
+	}
 	public void setCodeArticle(String codeArticle) {
 		this.codeArticle = codeArticle;
 	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -73,7 +77,7 @@ public class DescriptionArticle {
 	public void setEstNouveau(boolean estNouveau){
 		this.estNouveau = estNouveau;
 	}
-	public boolean isEstNouveau() {
+	public boolean getEstNouveau() {
 		return this.estNouveau;
 	}
 	public String toString() {
