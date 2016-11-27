@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class Database {
 	private String dbName;
 	private Connection connexion;
 	private Statement requete;
+	private PreparedStatement requeteP;
 	public static Database instanceDB = null;
 
 	private Database (String dbName) {
@@ -120,17 +122,30 @@ public class Database {
 	 * Permet de modifier une entrée de la base de données.</br>
 	 * @param requete La requete SQL de modification
 	 */
-	public void faireRequete (String requete)
+	public void faireRequete (String sql)
 	{
 		try
 		{
-			this.requete.executeUpdate(requete);
+			this.requete.executeUpdate(sql);
 		}
 		catch (SQLException e)
 		{
 			e.printStackTrace();
 		}
 	}
+	public void faireRequete2(String sql){
+        
+         try {
+            requete = connexion.createStatement();
+            requete.executeUpdate(sql);
+			connexion.commit();
+				
+		} catch (SQLException e) {
+				
+			e.printStackTrace();
+		}
+	}
+	
 	public Hashtable<String,Adherent> genererAdherent(){
 		String numeroTel;
 		String codeSecret;
@@ -196,11 +211,14 @@ public class Database {
 		return catalogue;
 	
 	}
-	
-	public void insertLocation(Location l) {
+	/*Cette méthode ne fonctionne pas
+	 * Il faudra refaire la méthode insertLocation pour utiliser un PreparedStatement au lieu Statement
+	 * voir insertArticle
+	 */
+	public void insertLocation(Location l) { 
 		this.connexion();
 		int lastId = 0;
-		ResultSet rs = this.getResultatDe("Select count(*) FROM Location;");
+		ResultSet rs = this.getResultatDe("SELECT count(*) FROM Location;");
 		try {
 			while(rs.next()) {
 				lastId = rs.getInt("count")+1;
@@ -225,36 +243,33 @@ public class Database {
 		}
 
 	}
-	
+	/**
+	 * Ajoute un nouvel article à la database. 
+	 * @param desc
+	 */
 	public void insertArticle(DescriptionArticle desc) {
-		this.connexion();
-		int lastId = 0;
-		ResultSet rs = this.getResultatDe("Select count(*) FROM DescriptionArticle;");
+		//Testé et fonctionne :)
 		try {
-			while(rs.next()) {
-				lastId = rs.getInt("count")+1;
-			}
-			
-				String strSQL = "INSERT INTO DescriptionArticle (id,codeArticle,description,prixVente,prixJournalier,titre,genre,estNouveau,prixHebdomadaire) "
-						+ "VALUES "
-						+ "(id = " + lastId
-						+ "codeArticle = " + desc.getCodeArticle()
-						+ "description = " + desc.getDescription()
-						+ "prixVente = " + desc.getPrixVente()
-						+ "prixJournalier = " + desc.getPrixJournalier()
-						+ "titre = " + desc.getTitre()
-						+ "genre = " + desc.getGenre()
-						+ "estNouveau = " + desc.isEstNouveau()
-						+ "prixHebdomadaire =" + desc.getPrixHebdomadaire()
-						+ ");";
-				
-		this.faireRequete(strSQL);	
+		this.connexion();
+		requeteP = connexion.prepareStatement("INSERT INTO DescriptionArticle ('codeArticle','description','prixVente','prixJournalier',"
+				+ "'titre','genre','estNouveau','prixHebdomadaire') VALUES(?,?,?,?,?,?,?,?)");
+		
+		requeteP.setString(1, desc.getCodeArticle());
+		requeteP.setString(2, desc.getDescription());
+		requeteP.setFloat(3, desc.getPrixVente());
+		requeteP.setFloat(4,desc.getPrixJournalier());
+		requeteP.setString(5,desc.getTitre());
+		requeteP.setString(6, desc.getGenre());
+		requeteP.setBoolean(7, desc.getEstNouveau());
+		requeteP.setFloat(8, desc.getPrixHebdomadaire());
+		
+		requeteP.executeUpdate();
+		//this.faireRequete(strSQL);	
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 }
 
