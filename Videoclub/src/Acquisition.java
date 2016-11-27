@@ -10,3 +10,5 @@ public class Acquisition {
 		this.listeAcquisition = listeAcquisition;
 	}
 }
+
+//commentaire test pour synchronisation
