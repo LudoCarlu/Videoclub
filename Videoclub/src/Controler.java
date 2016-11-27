@@ -85,10 +85,72 @@ public class Controler {
 	public float afficherMontant() {
 		return loc.getMontant();
 	}
-	
-	public void acquisition(DescriptionArticle art,int qte){
+	/**
+	 * Pour l'ajout d'un film dédié en la location à l'inventaire
+	 * @param codeArticle
+	 * @param titre
+	 * @param genre
+	 * @param description : texte comprenant une brève description du film
+	 * @param prixJournalier
+	 * @param prixHebdomadaire
+	 * @param prixVente : La valeur dédié à la revente du film ou si perdu
+	 * @param estNouveau
+	 * @param quantite : Le nombre d'articles identiques ajoutés
+	 */
+	public void aquerirFilm(String codeArticle, String titre, String genre, String description, float prixJournalier, 
+			float prixHebdomadaire, float prixVente, boolean estNouveau, int quantite){
 		
+		DescriptionArticle desc;
+		desc = new DescriptionArticle();
+		desc.setCodeArticle(codeArticle);
+		desc.setTitre(titre);
+		desc.setGenre(genre);
+		desc.setDescription(description);
+		desc.setPrixJournalier(prixJournalier);
+		desc.setPrixHebdomadaire(prixHebdomadaire);
+		desc.setPrixVente(prixVente);
+		desc.setEstNouveau(estNouveau);
+	
+		Acquisition acq = new Acquisition();
+		
+		for (int i=1;i<=quantite;i++){
+			acq.ajouterArticle(desc);
+			catalogue.ajouterDesc(desc); 
+			//Ajoute temporairement l'article au catalogue au lieu de le réinitialiser au complet après la mise à jour de la db
+		}
+		acq.updatedb();
+	}
+	/**
+	 * Pour l'ajout de tout article autre qu'un film en location
+	 * @param codeArticle
+	 * @param description
+	 * @param prixVente
+	 * @param quantite : Le nombre d'articles identiques ajoutés
+	 */
+	public void acquerirAutre(String codeArticle, String description, float prixVente, int quantite){
+		
+		DescriptionArticle desc;
+		desc = new DescriptionArticle();
+		desc.setCodeArticle(codeArticle);
+		desc.setDescription(description);
+		desc.setTitre(description);
+		desc.setPrixVente(prixVente);
+		
+		//desc.setTitre(null);
+		//desc.setGenre(null);
 
-
+		//desc.setPrixJournalier(null);
+		//desc.setPrixHebdomadaire(null);
+		//desc.setEstNouveau();
+		
+		Acquisition acq = new Acquisition();
+		
+		for (int i=1;i<=quantite;i++){
+			acq.ajouterArticle(desc);
+			catalogue.ajouterDesc(desc); 
+			//Ajoute temporairement l'article au catalogue au lieu de le réinitialiser au complet après la mise à jour de la db
+		}
+		acq.updatedb();
+		
 	}
 }
