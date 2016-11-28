@@ -10,7 +10,7 @@ public class Location extends Operation{
 	
 	public Location(Calendar cal) {
 		this.cal = cal;
-		new SimpleDateFormat("yyyy/MM/dd HH:mm");
+		new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		this.dateHeure = cal.getTime();
 	}
 	public Location(Date dateHeure, Date dateDue, Date dateRetour, Adherent adherent,float montant) {

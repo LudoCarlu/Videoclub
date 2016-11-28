@@ -4,10 +4,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
+//import java.util.Date;
 import java.util.Hashtable;
 
 public class Database {
@@ -40,7 +41,6 @@ public class Database {
 		//Maxime:
 		//pathDB = "/Users/maxime/Videoclub/Database/testDB.db";
 		
-
 		//Samuel:
 		//pathDB = "/Users/samuel/Documents/Videoclub/Videoclub/database/testDB.db";
 	
@@ -136,18 +136,6 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
-	public void faireRequete2(String sql){
-        
-         try {
-            requete = connexion.createStatement();
-            requete.executeUpdate(sql);
-			connexion.commit();
-				
-		} catch (SQLException e) {
-				
-			e.printStackTrace();
-		}
-	}
 	
 	public Hashtable<String,Adherent> genererAdherent(){
 		String numeroTel;
@@ -214,36 +202,27 @@ public class Database {
 		return catalogue;
 	
 	}
-	/*Cette méthode ne fonctionne pas
-	 * Il faudra refaire la méthode insertLocation pour utiliser un PreparedStatement au lieu Statement
-	 * voir insertArticle
-	 */
-	public void insertLocation(Location l) { 
+
+	public void insertLocation(Location l) { //... à terminer
 		this.connexion();
-		int lastId = 0;
-		ResultSet rs = this.getResultatDe("SELECT count(*) FROM Location;");
+		
 		try {
-			while(rs.next()) {
-				lastId = rs.getInt("count")+1;
+			requeteP = connexion.prepareStatement("INSERT INTO Location (numeroAdherent,codeBarre,dateHeure,datePrevue,dateRetour,montant) "
+					+ "VALUES (?,?,?,?,?,?);");
+			for(int i = 0; i < l.getListeLigneArticles().size(); i++) {
+				requeteP.setString(1, l.getAdherent().getNumeroTel());
+				requeteP.setLong(2, l.getListeLigneArticles().get(i).getDescriptionArticle().getUniqueid());
+				//TODO Convertir un objet java.util.Date à sql.date car non-compatibles
 			}
 			
-			for(int i = 0; i < l.getListeLigneArticles().size(); i++) {
-				String strSQL = "INSERT INTO Location (id,numeroAdherent,codeBarre,dateHeure,datePrevue,dateRetour,montant) "
-						+ "VALUES "
-						+ "(id = " + lastId
-						+ "numeroAdherent = "+l.getAdherent().getNumeroTel()
-						//+ "codeBarre = "+l.getCodeBarre()
-						+ "dateHeure = " + l.getDateHeure()
-						+ "datePrevue = " + l.getListeLigneArticles().get(i).getDateDue()
-						+ "dateRetour = null"
-						+ "montant = " + l.getMontant()
-						+ ");";
-			this.faireRequete(strSQL);			
-			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
+		
+		int lastId = 0;
+		ResultSet rs = this.getResultatDe("SELECT count(*) FROM Location;");
+		
 
 	}
 	/**
