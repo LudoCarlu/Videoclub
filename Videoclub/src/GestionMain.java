@@ -5,8 +5,8 @@ public class GestionMain {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		Videoclub videoclub = new Videoclub("Video");
-		Controler controler= videoclub.getControler();
+		Videoclub videoclub = Videoclub.instanceVideoclub();
+		Controler controler = videoclub.getControler();
 		JFrameGestionnaire frame=new JFrameGestionnaire(controler);
 
 		/*test acquisition

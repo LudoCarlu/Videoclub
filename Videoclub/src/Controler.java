@@ -151,6 +151,12 @@ public class Controler {
 			//Ajoute temporairement l'article au catalogue au lieu de le réinitialiser au complet après la mise à jour de la db
 		}
 		acq.updatedb();
-		
 	}
+	
+	public void Inscription(String nom, String prenom, String num, String cb, String adresse, String mdp) {
+		Inscription ins = new Inscription(nom,prenom,num,cb,adresse,mdp);
+		Adherent ad = ins.ajouterAdherent();
+		this.listeMembre.put(num, ad);
+	}
+	
 }

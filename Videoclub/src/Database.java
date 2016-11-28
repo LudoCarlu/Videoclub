@@ -39,10 +39,10 @@ public class Database {
 		//pathDB = "/Users/maxime/Videoclub/Database/testDB.db";
 		
 		//Samuel:
-		pathDB = "/Users/samuel/Documents/Videoclub/Videoclub/database/testDB.db";
+		//pathDB = "/Users/samuel/Documents/Videoclub/Videoclub/database/testDB.db";
 	
 		//Ludo:
-		// pathDB: 
+		pathDB = "/Users/ludoviccarlu/Github/Videoclub/Videoclub/database/testDB.db";
 		
 		if(instanceDB == null) {
 			instanceDB = new Database(pathDB);
@@ -264,12 +264,37 @@ public class Database {
 		requeteP.setFloat(8, desc.getPrixHebdomadaire());
 		
 		requeteP.executeUpdate();
-		//this.faireRequete(strSQL);	
+		//this.faireRequete(strSQL);
+		this.deconnexion();
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public void insertAdherent(Adherent ad) {
+		//Testé et fonctionnel 
+		try {
+			this.connexion();
+			String sql = "INSERT INTO Adherent ('numeroTel','codeSecret','nom','prenom','adresse','numeroCB') VALUES (?,?,?,?,?,?);";
+			requeteP = connexion.prepareStatement(sql);
+			
+			requeteP.setString(1, ad.getNumeroTel());
+			requeteP.setString(2, ad.getCodeSecret());
+			requeteP.setString(3, ad.getNom());
+			requeteP.setString(4, ad.getPrenom());
+			requeteP.setString(5, ad.getAdresse());
+			requeteP.setString(6, ad.getNumeroCB());
+			requeteP.executeUpdate();
+			
+			//N'oubliez pas de vous deconnecter apres avoir fait vos requetes
+			this.deconnexion();
+			
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
 }
 

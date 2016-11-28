@@ -36,8 +36,9 @@ public class DisplayPanel extends JPanel implements ActionListener{
 	private JTextField carteDeCredit;
 	private JTextField nom;
 	private JTextField prenom;
-	private JButton btnAjouter =null;
+	private JButton btnAjouter = null;
 	private JComboBox<String> duree;
+	private JTextArea adresse;
 
 
 
@@ -268,7 +269,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 
 		}
 
-		if (choix==3){
+		if (choix==3){ // Inscription
 			setLayout(null);
 			this.titre = new JLabel("Inscription");
 			titre.setBounds(0, 0, 600, 26);
@@ -338,22 +339,22 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			});
 			btnGenerer.setBounds(430, 310, 117, 29);
 			add(btnGenerer);
-
-			JButton btnValider = new JButton("Valider");
-			btnValider.setBounds(430, 429, 117, 29);
-			add(btnValider);
-
-			JTextArea adresse = new JTextArea();
+			
+			adresse = new JTextArea();
 			adresse.setLineWrap(true);
 			adresse.setColumns(10);
 			adresse.setRows(1);
 			adresse.setBounds(250, 134, 130, 69);
 			add(adresse);
 
-
+			this.valider = new JButton("Valider");
+			this.valider.setBounds(430, 429, 117, 29);
+			add(this.valider);
+			this.valider.addActionListener(this);
+			
 		}
 
-
+		//Retours
 		if (choix==4){
 			setLayout(null);
 			this.titre = new JLabel("Retours");
@@ -437,6 +438,23 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			this.duree.setSelectedIndex(0);
 			this.codeArticle.setText("0");
 			this.totalCourant.setText(Float.toString(this.fenetre.getController().getLocation().getMontant()));
+		}
+		
+		if(e.getSource() == this.valider && this.type == 3) {
+			if(numTel.getText().isEmpty() == false || carteDeCredit.getText().isEmpty() == false 
+					|| adresse.getText().isEmpty() == false || mdp.getText().isEmpty() == false) {
+				this.fenetre.getController().Inscription(nom.getText(), prenom.getText(), 
+					numTel.getText(), carteDeCredit.getText(), adresse.getText(), mdp.getText());
+				this.nom.setText("");
+				this.prenom.setText("");
+				this.numTel.setText("");
+				this.adresse.setText("");
+				this.carteDeCredit.setText("");
+				this.mdp.setText("");
+			}
+			else {
+				System.out.println("Il manque un element important à la location");
+			}
 		}
 	}
 }
