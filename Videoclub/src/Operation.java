@@ -12,6 +12,9 @@ public abstract class Operation {
 	public int getId() {
 		return this.id;
 	}
+	public boolean isTerminee(){
+		return this.estTerminee;
+	}
 	public void setMontant(float m) {
 		this.montant =m;
 	}
