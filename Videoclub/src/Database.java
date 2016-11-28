@@ -32,17 +32,20 @@ public class Database {
 	}
 	
 	public static Database instanceDB() {
-		//Seulement enlevé le // du commentaire pour changer le path de la db
-		
+		//L'instance utilisera le bon répertoire peut importe l'ordinateur
 		String pathDB;
+		//retourne le répertoire du projet et ajoute l'emplacement du la db au path
+		pathDB = System.getProperty("user.dir")+"/database/testDB.db"; 
+		
 		//Maxime:
 		//pathDB = "/Users/maxime/Videoclub/Database/testDB.db";
 		
+
 		//Samuel:
 		//pathDB = "/Users/samuel/Documents/Videoclub/Videoclub/database/testDB.db";
 	
 		//Ludo:
-		pathDB = "/Users/ludoviccarlu/Github/Videoclub/Videoclub/database/testDB.db";
+		//pathDB = "/Users/ludoviccarlu/Github/Videoclub/Videoclub/database/testDB.db";
 		
 		if(instanceDB == null) {
 			instanceDB = new Database(pathDB);
@@ -272,6 +275,7 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
+	
 	public void insertAdherent(Adherent ad) {
 		//Testé et fonctionnel 
 		try {
@@ -297,4 +301,5 @@ public class Database {
 
 	}
 }
+
 
