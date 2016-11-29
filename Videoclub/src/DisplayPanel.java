@@ -37,6 +37,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 	private JTextField nom;
 	private JTextField prenom;
 	private JButton btnAjouter = null;
+	private JButton btnPayer =null;
 	private JComboBox<String> duree;
 	private JTextArea adresse;
 
@@ -50,13 +51,13 @@ public class DisplayPanel extends JPanel implements ActionListener{
 		//Location L=new Location(Date.from(ZonedDateTime.now().with(LocalTime.MIN).toInstant()),new Date("13/12/1021"), null, null);
 		Object[][] data = {};
 
-		if (choix==-1){
+		if (choix==-1){ // 
 			this.titre = new JLabel("Menu");
 			add(titre);
 		}
 
 		if (choix==0){
-			this.titre = new JLabel("Authentifcation Caissier");
+			this.titre = new JLabel("Authentifcation Caissier"); 
 			add(titre);
 
 			pseudo = new JTextField();
@@ -70,7 +71,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			add(this.valider);
 			this.valider.addActionListener(this);
 		}
-		if (choix==7){
+		if (choix==7){ 
 			this.titre = new JLabel("Authentifcation Location");
 			add(titre);
 
@@ -85,7 +86,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			add(this.valider);
 			this.valider.addActionListener(this);
 		}
-		if(choix==1){
+		if(choix==1){ 
 			setLayout(null);
 			this.titre = new JLabel("Location");
 			titre.setBounds(200,5, 90, 20);
@@ -161,9 +162,10 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			lblMontantTotal.setBounds(300, 400, 115, 15);
 			add(lblMontantTotal);
 
-			JButton btnPayer = new JButton("Payer");
+			this.btnPayer = new JButton("Payer");
 			btnPayer.setBounds(430, 440, 115, 30);
 			add(btnPayer);
+			this.btnPayer.addActionListener(this);
 
 			this.duree = new JComboBox();
 			duree.setModel(new DefaultComboBoxModel(new String[] {"1", "7"}));
@@ -184,7 +186,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			add(Qte);
 
 		}
-		if (choix==2){
+		if (choix==2){ 
 			setLayout(null);
 			this.titre = new JLabel("Vente");
 			titre.setBounds(200,5, 90, 20);
@@ -339,7 +341,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			});
 			btnGenerer.setBounds(430, 310, 117, 29);
 			add(btnGenerer);
-			
+
 			adresse = new JTextArea();
 			adresse.setLineWrap(true);
 			adresse.setColumns(10);
@@ -351,7 +353,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			this.valider.setBounds(430, 429, 117, 29);
 			add(this.valider);
 			this.valider.addActionListener(this);
-			
+
 		}
 
 		//Retours
@@ -404,56 +406,69 @@ public class DisplayPanel extends JPanel implements ActionListener{
 
 	}
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource()== this.valider && this.type==0 /*&& this.fenetre.getController().authentificationMembre(test,mdp)*/){
-			this.fenetre.setControlPanel();
-			this.fenetre.setDisplayPanel(new DisplayPanel(-1,this.fenetre));
-		}
-		if(e.getSource()==this.valider && this.type==7){
-			if (this.fenetre.getController().authentificationMembre(pseudo.getText(), mdp.getText())!=null){
+	public void actionPerformed(ActionEvent e) { // type -1=Menu, type0 = authentification caissier , type 7=authentification lcoation, type 1=location, type 2= vente
 
+		if (this.type==0){ // authentification caissier
+			if (e.getSource()== this.valider){
+				if (this.fenetre.getController().authentificationEmploye(pseudo.getText(),mdp.getText()) != null){
+					this.fenetre.setControlPanel();
+					this.fenetre.setDisplayPanel(new DisplayPanel(-1,this.fenetre));
+				}
+			}
+		}
+		if (this.type==7){ // authentification location
+			if(e.getSource()==this.valider){
+				if (this.fenetre.getController().authentificationMembre(pseudo.getText(), mdp.getText())!=null){
+					this.fenetre.setControlPanel();
+					this.fenetre.setDisplayPanel(new DisplayPanel(1,this.fenetre));
+				}
+			}
+		}
+		if (this.type==1){ //Location
+			if (e.getSource()==this.btnAjouter){
+				String code= this.codeArticle.getText();
+				int quantite=Integer.parseInt(this.quantite.getText());
+				int duree= Integer.parseInt(this.duree.getSelectedItem().toString());
+				ArrayList <LigneArticle>list=this.fenetre.getController().getLocation().getListeLigneArticles();
+
+				if (this.fenetre.getController().saisirArticleLocation(code,quantite,duree)){
+					LigneArticle l= list.get(list.size()-1);
+					String[] data={ l.getDescriptionArticle().getTitre(),
+							new Integer(l.getQuantite()).toString(),
+							new Integer(duree).toString(),
+							new Float(l.getDescriptionArticle().getPrixJournalier()).toString(),
+							new Float(l.getPrixLocation()*duree).toString()
+					};
+					this.defaultModel.addRow(data);
+				};
+				System.out.print(this.fenetre.getController().getLocation());
+				this.quantite.setText("1");
+				this.duree.setSelectedIndex(0);
+				this.codeArticle.setText("0");
+				this.totalCourant.setText(Float.toString(this.fenetre.getController().getLocation().getMontant()));
+			}
+			if (e.getSource()==this.btnPayer){
+				this.fenetre.getController().terminerLocation();
 				this.fenetre.setControlPanel();
-				this.fenetre.setDisplayPanel(new DisplayPanel(1,this.fenetre));
+				this.fenetre.setDisplayPanel(new DisplayPanel(-1,this.fenetre));
 			}
 		}
-		if (e.getSource()==this.btnAjouter && this.type==1){
-			System.out.println("test");
-			String code= this.codeArticle.getText();
-			int quantite=Integer.parseInt(this.quantite.getText());
-			int duree= Integer.parseInt(this.duree.getSelectedItem().toString());
-			ArrayList <LigneArticle>list=this.fenetre.getController().getLocation().getListeLigneArticles();
-			
-			if (this.fenetre.getController().saisirArticleLocation(code,quantite,duree)){
-				LigneArticle l= list.get(list.size()-1);
-				String[] data={ l.getDescriptionArticle().getTitre(),
-						new Integer(l.getQuantite()).toString(),
-						new Integer(duree).toString(),
-						new Float(l.getDescriptionArticle().getPrixJournalier()).toString(),
-						new Float(l.getPrixLocation()*duree).toString()
-						};
-				this.defaultModel.addRow(data);
-			};
-			System.out.print(this.fenetre.getController().getLocation());
-			this.quantite.setText("1");
-			this.duree.setSelectedIndex(0);
-			this.codeArticle.setText("0");
-			this.totalCourant.setText(Float.toString(this.fenetre.getController().getLocation().getMontant()));
-		}
-		
-		if(e.getSource() == this.valider && this.type == 3) {
-			if(numTel.getText().isEmpty() == false || carteDeCredit.getText().isEmpty() == false 
-					|| adresse.getText().isEmpty() == false || mdp.getText().isEmpty() == false) {
-				this.fenetre.getController().Inscription(nom.getText(), prenom.getText(), 
-					numTel.getText(), carteDeCredit.getText(), adresse.getText(), mdp.getText());
-				this.nom.setText("");
-				this.prenom.setText("");
-				this.numTel.setText("");
-				this.adresse.setText("");
-				this.carteDeCredit.setText("");
-				this.mdp.setText("");
-			}
-			else {
-				System.out.println("Il manque un element important à la location");
+		if (this.type==3){ // Inscription
+			if(e.getSource() == this.valider){
+				if(numTel.getText().isEmpty() == false || carteDeCredit.getText().isEmpty() == false 
+						|| adresse.getText().isEmpty() == false || mdp.getText().isEmpty() == false) {
+					this.fenetre.getController().Inscription(nom.getText(), prenom.getText(), 
+							numTel.getText(), carteDeCredit.getText(), adresse.getText(), mdp.getText());
+					this.nom.setText("");
+					this.prenom.setText("");
+					this.numTel.setText("");
+					this.adresse.setText("");
+					this.carteDeCredit.setText("");
+					this.mdp.setText("");
+				}
+				else {
+					System.out.println("Il manque un element important à l'inscription");
+				}
 			}
 		}
 	}

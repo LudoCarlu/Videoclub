@@ -136,7 +136,46 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
-	
+
+	public void faireRequete2(String sql){
+        
+         try {
+            requete = connexion.createStatement();
+            requete.executeUpdate(sql);
+			connexion.commit();
+				
+		} catch (SQLException e) {
+				
+			e.printStackTrace();
+		}
+	}
+	public Hashtable<Integer,Employe> genererEmploye(){
+		int idEmploye;
+		String nom;
+		String mdp;
+		boolean gerant;
+
+		Hashtable<Integer,Employe> listeEmploye=new Hashtable<Integer,Employe>();
+		this.connexion();
+		ResultSet employe=this.getResultatDe("SELECT * FROM Employe;");
+		try {
+			while (employe.next()){
+				idEmploye=employe.getInt("id");
+				nom=(employe.getString("nom"));
+				mdp=(employe.getString("mdp"));
+				gerant=(employe.getBoolean("gerant"));		
+				Employe H=new Employe(idEmploye,nom,gerant,mdp);
+				listeEmploye.put(idEmploye,H);
+				//System.out.println(H.toString());
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.print("test");
+		}
+		return listeEmploye;
+	}
+
 	public Hashtable<String,Adherent> genererAdherent(){
 		String numeroTel;
 		String codeSecret;

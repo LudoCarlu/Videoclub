@@ -1,19 +1,18 @@
+import java.io.IOException;
 import java.text.*; // Pour les formats de date
 import java.util.*;
 
 public class Controler {
 	private Hashtable<String,Adherent> listeMembre=null;
+	private Hashtable <Integer,Employe> listeEmploye=null;
 	private Catalogue catalogue = null;
 	private Location loc = null;
 
-	
-	public Controler(Hashtable<String,Adherent> list,ArrayList<DescriptionArticle> listDesc){
+
+	public Controler(Hashtable<String,Adherent> list,Hashtable<String,DescriptionArticle> listDesc,Hashtable<Integer,Employe> listEmploye){
 		this.listeMembre=list;
 		this.catalogue = new Catalogue(listDesc);
-	}
-	public Controler(Hashtable<String,Adherent> list,Hashtable<String,DescriptionArticle> listDesc){
-		this.listeMembre=list;
-		this.catalogue = new Catalogue(listDesc);
+		this.listeEmploye=listEmploye;
 	}
 	public Hashtable<String,Adherent> getListAdherent(){
 		return this.listeMembre;
@@ -26,15 +25,15 @@ public class Controler {
 		Calendar aujourdhui = Calendar.getInstance();
 		this.loc = new Location(aujourdhui);
 	}
-	
+
 	public Adherent authentificationMembre(String pseudo,String mdp) {
 		try{
 			String num=this.listeMembre.get(pseudo).getNumeroTel();
 			String test=this.listeMembre.get(pseudo).getCodeSecret();
 			if(num.equals(pseudo) && test.equals(mdp)){
 				System.out.println("Authentification");
-					return this.listeMembre.get(pseudo);
-				}
+				return this.listeMembre.get(pseudo);
+			}
 		}
 		catch (NullPointerException e){
 			System.out.print("pas de membre");
@@ -42,7 +41,25 @@ public class Controler {
 		}
 		return null;
 	}
-	
+	public Employe authentificationEmploye(String idEmploye,String mdp) {
+		try{
+			int id=this.listeEmploye.get(Integer.parseInt(idEmploye)).getIdEmploye();
+			String password=this.listeEmploye.get(Integer.parseInt(idEmploye)).getMdp();
+			if(Integer.parseInt(idEmploye)==id && password.equals(mdp)){
+				System.out.println("Authentification");
+				return this.listeEmploye.get(id);
+			}
+		}
+		catch (NullPointerException e){
+			System.out.print(e);
+			return null;
+		}
+		catch (NumberFormatException e){
+			System.out.print(e);
+		}
+		return null;
+	}
+
 	/*public void MenuLocation() {
 		creerLocation();
 		Adherent ad = authentificationMembre("8192396454","1234");
@@ -51,36 +68,40 @@ public class Controler {
 		}
 	}*/
 	public boolean saisirArticleLocation(String codeArticle, int quantite,int duree) {
-		DescriptionArticle desc = catalogue.getDesc(codeArticle);
-		
-		//System.out.println("PJ " +desc.getPrixJournalier());
-		//On peut louer l'article
-		if (desc != null) {
-			if (desc.getPrixJournalier() != -1) {
-				loc.creerLigneArticles(desc,quantite);
-		//		System.out.println(desc);
-				System.out.println("durée"+duree);
-				loc.setDateDue(duree);
-				loc.majMontant();
-				return true;
+		if(this.loc.isTerminee()==false){
+			DescriptionArticle desc = catalogue.getDesc(codeArticle);
+			//System.out.println("PJ " +desc.getPrixJournalier());
+			//On peut louer l'article
+			if (desc != null) {
+				if (desc.getPrixJournalier() != -1) {
+					loc.creerLigneArticles(desc,quantite);
+					//		System.out.println(desc);
+					System.out.println("durée"+duree);
+					loc.setDateDue(duree);
+					loc.majMontant();
+					return true;
+				}
+				else {
+					System.out.println("Pas à louer");
+					return false;
+				}
 			}
 			else {
-				System.out.println("Pas à louer");
+				System.out.println("Code non trouvé");
 				return false;
 			}
 		}
-		else {
-			System.out.println("Code non trouvé");
-			return false;
-		}
+		return false;
 	}
-	
+
 	public void terminerLocation () {
 		loc.setEstTerminee(true);
 		float montantFinal = loc.getMontant();
 		Paiement p = new Paiement(montantFinal);
 		loc.setPaiement(p);
 		afficherMontant();
+		Database D=Database.instanceDB();
+		
 	}
 	public float afficherMontant() {
 		return loc.getMontant();
@@ -99,7 +120,7 @@ public class Controler {
 	 */
 	public void aquerirFilm(String codeArticle, String titre, String genre, String description, float prixJournalier, 
 			float prixHebdomadaire, float prixVente, boolean estNouveau, int quantite){
-		
+
 		DescriptionArticle desc;
 		desc = new DescriptionArticle();
 		desc.setCodeArticle(codeArticle);
@@ -110,9 +131,9 @@ public class Controler {
 		desc.setPrixHebdomadaire(prixHebdomadaire);
 		desc.setPrixVente(prixVente);
 		desc.setEstNouveau(estNouveau);
-	
+
 		Acquisition acq = new Acquisition();
-		
+
 		for (int i=1;i<=quantite;i++){
 			acq.ajouterArticle(desc);
 			catalogue.ajouterDesc(desc); 
@@ -128,23 +149,23 @@ public class Controler {
 	 * @param quantite : Le nombre d'articles identiques ajoutés
 	 */
 	public void acquerirAutre(String codeArticle, String description, float prixVente, int quantite){
-		
+
 		DescriptionArticle desc;
 		desc = new DescriptionArticle();
 		desc.setCodeArticle(codeArticle);
 		desc.setDescription(description);
 		desc.setTitre(description);
 		desc.setPrixVente(prixVente);
-		
+
 		//desc.setTitre(null);
 		//desc.setGenre(null);
 
 		//desc.setPrixJournalier(null);
 		//desc.setPrixHebdomadaire(null);
 		//desc.setEstNouveau();
-		
+
 		Acquisition acq = new Acquisition();
-		
+
 		for (int i=1;i<=quantite;i++){
 			acq.ajouterArticle(desc);
 			catalogue.ajouterDesc(desc); 
@@ -152,11 +173,11 @@ public class Controler {
 		}
 		acq.updatedb();
 	}
-	
+
 	public void Inscription(String nom, String prenom, String num, String cb, String adresse, String mdp) {
 		Inscription ins = new Inscription(nom,prenom,num,cb,adresse,mdp);
 		Adherent ad = ins.ajouterAdherent();
 		this.listeMembre.put(num, ad);
 	}
-	
+
 }
