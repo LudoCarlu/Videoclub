@@ -100,7 +100,8 @@ public class Controler {
 		Paiement p = new Paiement(montantFinal);
 		loc.setPaiement(p);
 		afficherMontant();
-		Database D=Database.instanceDB();
+		Database D = Database.instanceDB();
+		D.insertLocation(loc);
 		
 	}
 	public float afficherMontant() {

@@ -136,19 +136,6 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
-
-	public void faireRequete2(String sql){
-        
-         try {
-            requete = connexion.createStatement();
-            requete.executeUpdate(sql);
-			connexion.commit();
-				
-		} catch (SQLException e) {
-				
-			e.printStackTrace();
-		}
-	}
 	public Hashtable<Integer,Employe> genererEmploye(){
 		int idEmploye;
 		String nom;
@@ -242,7 +229,7 @@ public class Database {
 	
 	}
 
-	public void insertLocation(Location l) { //... à terminer
+	public void insertLocation(Location l) {	//TODO à tester
 		this.connexion();
 		
 		try {
@@ -251,6 +238,10 @@ public class Database {
 			for(int i = 0; i < l.getListeLigneArticles().size(); i++) {
 				requeteP.setString(1, l.getAdherent().getNumeroTel());
 				requeteP.setLong(2, l.getListeLigneArticles().get(i).getDescriptionArticle().getUniqueid());
+				requeteP.setTimestamp(3, new java.sql.Timestamp(l.getDateHeure().getTime())); //Devait être convertie
+				requeteP.setDate(4, new java.sql.Date(l.getDateDue().getTime()));
+				requeteP.setDate(5, new java.sql.Date(l.getDateRetour().getTime()));
+				requeteP.setFloat(6, l.getMontant());
 				//TODO Convertir un objet java.util.Date à sql.date car non-compatibles
 			}
 			
@@ -318,6 +309,6 @@ public class Database {
 		}
 
 	}
-}
 
+}
 
