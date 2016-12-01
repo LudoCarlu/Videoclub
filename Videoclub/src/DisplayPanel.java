@@ -431,7 +431,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 				int duree= Integer.parseInt(this.duree.getSelectedItem().toString());
 				ArrayList <LigneArticle>list=this.fenetre.getController().getLocation().getListeLigneArticles();
 
-				if (this.fenetre.getController().saisirArticleLocation(code,quantite,duree)){
+				if (this.fenetre.getController().saisirArticleLoc(code,duree)){
 					LigneArticle l= list.get(list.size()-1);
 					String[] data={ l.getDescriptionArticle().getTitre(),
 							new Integer(l.getQuantite()).toString(),
@@ -441,7 +441,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 					};
 					this.defaultModel.addRow(data);
 				};
-				System.out.print(this.fenetre.getController().getLocation());
+				//System.out.print(this.fenetre.getController().getLocation());
 				this.quantite.setText("1");
 				this.duree.setSelectedIndex(0);
 				this.codeArticle.setText("0");

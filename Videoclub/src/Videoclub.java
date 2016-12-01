@@ -23,7 +23,8 @@ public class Videoclub {
 	private Videoclub(String nom){
 		this.nom=nom;
 		this.D = Database.instanceDB();
-		this.controler=new Controler(D.genererAdherent(),D.genererDescriptionArticle(),D.genererEmploye());
+		this.controler=new Controler(D.genererAdherent(),D.genererDescriptionArticle(),
+				D.genererEmploye(),D.genererArticle());
 		System.out.println(D.genererEmploye());
 	}
 	

@@ -1,3 +1,4 @@
+import java.util.Hashtable;
 
 public class DescriptionArticle {
 	
@@ -12,6 +13,8 @@ public class DescriptionArticle {
 	 							* isEstNouveau() is=Est. Qu'est ce que vous en pensez?
 	 							*/
 	private float prixHebdomadaire;
+	private Hashtable<String,Article> listeArticle = null;
+	
 
 	public DescriptionArticle(){
 		//nécessaire pour créer un objet sans id
@@ -94,4 +97,27 @@ public class DescriptionArticle {
 				
 	}
 	
+	// Reprendre ici
+	public void setListeArticleLouable(Hashtable<String,Article> liste) {
+		this.listeArticle = new Hashtable<String,Article>();
+		String i;
+		int co = 0;
+		while (co < liste.size()) {
+			i = liste.keys().nextElement();
+			System.out.println(liste.get(i));
+			if(liste.get(i).getCodeDescription().equals(this.codeArticle)) {
+				this.listeArticle.put(this.codeArticle,liste.get(i));
+			}
+			co++;
+		}
+
+	}
+	
+	public Article getArticleLouable() {
+		System.out.println(listeArticle);
+		if(listeArticle.isEmpty() == false) {
+			return this.listeArticle.get(listeArticle.size()-1);
+		}
+		return null;
+	}
 }

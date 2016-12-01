@@ -4,10 +4,17 @@ public class LigneArticle {
 	private int quantite;
 	private DescriptionArticle desc;
 	private Date dateDue;
+	private Article art;
 	
 	public LigneArticle(DescriptionArticle desc, int quantite) {
 		this.desc = desc;
 		this.quantite = quantite;
+	}
+	//Constructeur pour une location
+	public LigneArticle(Article a) {
+		this.art = a;
+		this.quantite = 1;
+		this.desc = art.getDescription();
 	}
 	
 	public int getQuantite() {
@@ -36,5 +43,9 @@ public class LigneArticle {
 	}
 	public String toString() {
 		return "LIGNE ARTICLES : \n + Quantite : "+this.quantite + "\n" + desc;
+	}
+	
+	public String getCodeBarreArticle() {
+		return this.art.getCodeBarre();
 	}
 }

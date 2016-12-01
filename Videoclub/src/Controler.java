@@ -5,33 +5,31 @@ import java.util.*;
 public class Controler {
 	private Hashtable<String,Adherent> listeMembre=null;
 	private Hashtable <Integer,Employe> listeEmploye=null;
+	private Hashtable <String,Article> listeArticle = null;
 	private Catalogue catalogue = null;
 	private Location loc = null;
 
 
-	public Controler(Hashtable<String,Adherent> list,Hashtable<String,DescriptionArticle> listDesc,Hashtable<Integer,Employe> listEmploye){
+	public Controler(Hashtable<String,Adherent> list,Hashtable<String,DescriptionArticle> listDesc,
+			Hashtable<Integer,Employe> listEmploye, Hashtable<String,Article> listeArt){
 		this.listeMembre=list;
 		this.catalogue = new Catalogue(listDesc);
 		this.listeEmploye=listEmploye;
+		this.listeArticle = listeArt;
 	}
 	public Hashtable<String,Adherent> getListAdherent(){
 		return this.listeMembre;
 	}
-	public Location getLocation(){
-		return this.loc;
-	}
-	public void creerLocation() {
-		System.out.println("Création de la location");
-		Calendar aujourdhui = Calendar.getInstance();
-		this.loc = new Location(aujourdhui);
-	}
 
+	
+	/*Methodes pour l'authentification */
 	public Adherent authentificationMembre(String pseudo,String mdp) {
 		try{
 			String num=this.listeMembre.get(pseudo).getNumeroTel();
 			String test=this.listeMembre.get(pseudo).getCodeSecret();
 			if(num.equals(pseudo) && test.equals(mdp)){
-				System.out.println("Authentification");
+				System.out.println("Authentification Adherent");
+				loc.ajouterAdherent(this.listeMembre.get(pseudo));
 				return this.listeMembre.get(pseudo);
 			}
 		}
@@ -46,7 +44,7 @@ public class Controler {
 			int id=this.listeEmploye.get(Integer.parseInt(idEmploye)).getIdEmploye();
 			String password=this.listeEmploye.get(Integer.parseInt(idEmploye)).getMdp();
 			if(Integer.parseInt(idEmploye)==id && password.equals(mdp)){
-				System.out.println("Authentification");
+				System.out.println("Authentification Employé");
 				return this.listeEmploye.get(id);
 			}
 		}
@@ -67,6 +65,18 @@ public class Controler {
 			loc.ajouterAdherent(ad);
 		}
 	}*/
+	
+	/*Methodes pour la location */
+	
+	public Location getLocation(){
+		return this.loc;
+	}
+	public void creerLocation() {
+		System.out.println("Création de la location");
+		Calendar aujourdhui = Calendar.getInstance();
+		this.loc = new Location(aujourdhui);
+	}
+	
 	public boolean saisirArticleLocation(String codeArticle, int quantite,int duree) {
 		if(this.loc.isTerminee()==false){
 			DescriptionArticle desc = catalogue.getDesc(codeArticle);
@@ -93,6 +103,42 @@ public class Controler {
 		}
 		return false;
 	}
+	//Le code article saisit est le code de la description de l'article
+	public boolean saisirArticleLoc (String codeBarre,int duree) {
+		if(this.loc.isTerminee() == false) {
+			//On récupère l'article grace à son code barre
+			Article art = listeArticle.get(codeBarre);
+			
+			//On cherche le code de sa description
+			String codeArticle = art.getCodeDescription();
+			
+			/*On va chercher cette description dans le catalogue
+			 * et on l'ajoute à l'article
+			 */
+			DescriptionArticle desc = catalogue.getDesc(codeArticle);
+			art.ajouterDescription(desc);
+			//desc.setListeArticleLouable(this.listeArticle);
+			
+			if(desc != null) {
+				//Ce n'est pas des confiseries
+				if(desc.getPrixJournalier() != -1) {
+					System.out.println("pas une confiserie");
+					loc.creerLigneArticles(art);
+					//loc.creerLigneArticles(desc, 1);
+					loc.setDateDue(duree);
+					loc.majMontant();
+					loc.toString();
+					return true;
+				}
+				else {
+					System.out.println("Article pas à louer");
+					return false;
+				}
+			}
+		}
+		System.out.println("Code article non trouvé");
+		return false;
+	}
 
 	public void terminerLocation () {
 		loc.setEstTerminee(true);
@@ -100,13 +146,17 @@ public class Controler {
 		Paiement p = new Paiement(montantFinal);
 		loc.setPaiement(p);
 		afficherMontant();
-		Database D = Database.instanceDB();
+		Videoclub v = Videoclub.instanceVideoclub();
+		Database D = v.getDB();
 		D.insertLocation(loc);
 		
 	}
 	public float afficherMontant() {
 		return loc.getMontant();
+	
 	}
+	
+	/* Methodes pour l'acquisition d'un film */
 	/**
 	 * Pour l'ajout d'un film dédié en la location à l'inventaire
 	 * @param codeArticle
@@ -175,6 +225,7 @@ public class Controler {
 		acq.updatedb();
 	}
 
+	/* Methode pour l'inscription */
 	public void Inscription(String nom, String prenom, String num, String cb, String adresse, String mdp) {
 		Inscription ins = new Inscription(nom,prenom,num,cb,adresse,mdp);
 		Adherent ad = ins.ajouterAdherent();

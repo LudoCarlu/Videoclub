@@ -34,16 +34,21 @@ public class Location extends Operation{
 	
 	public void ajouterAdherent(Adherent ad) {
 		this.adherent =  ad;
+		toString();
 	}
 	public void creerLigneArticles(DescriptionArticle desc, int quantite) {
 		LigneArticle lar = new LigneArticle(desc,quantite);
 		//System.out.println(lar);
 		this.ligneArticle.add(lar);
 	}
+	public void creerLigneArticles(Article a) {
+		LigneArticle lar = new LigneArticle(a);
+		this.ligneArticle.add(lar);
+	}
 	
 	public void majMontant() {
 		float montant=0;
-		int duree=0;
+		//int duree=0;
 		for (int i=0;i<this.ligneArticle.size();i++){
 			long difference = Math.abs(this.ligneArticle.get(i).getDateDue().getTime() - dateHeure.getTime());
 			long MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
@@ -81,8 +86,13 @@ public class Location extends Operation{
 
 	@Override
 	public String toString() {
-		return "Location [dateDue=" + dateDue + ", dateRetour=" + dateRetour + ", adherent=" + adherent + ", amende="
-				+ amende + "]";
+		return "Location [\n"
+				+ "\nAdherent=" + adherent 
+				+ "\ndateHeure = " + this.dateHeure
+				//+ "\ndateDue = " + ligneArticle.get(ligneArticle.size()-1).getDateDue()
+				+ "\nDateRetour = " + dateRetour
+				+ "\nAmende="+amende
+				+ "]";
 	}
 	
 

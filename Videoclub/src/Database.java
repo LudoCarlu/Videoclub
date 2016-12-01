@@ -4,11 +4,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
-//import java.util.Date;
+import java.util.Date;
 import java.util.Hashtable;
 
 public class Database {
@@ -171,9 +170,6 @@ public class Database {
 		String adresse;
 		String numeroCB; //Adherent 
 
-		SimpleDateFormat sdfSource = new SimpleDateFormat(
-				"yyyy-MM-dd HH:mm");
-
 		Hashtable<String,Adherent> listeMembre=new Hashtable<String,Adherent>();
 		this.connexion();
 		ResultSet adh=this.getResultatDe("SELECT * FROM Adherent;");
@@ -226,32 +222,75 @@ public class Database {
 			e.printStackTrace();
 		}
 		return catalogue;
-	
 	}
-
+	
+	//Permet de générer tous les articles de la base de données
+	public Hashtable<String,Article> genererArticle() {
+		Hashtable<String,Article> listeArticle = new Hashtable<String,Article>();
+		this.connexion();
+		ResultSet res = this.getResultatDe("SELECT * FROM Article;");
+		
+		try {
+			while (res.next()) {
+				String codeBarre = res.getString("codeBarre");
+				String codeDesc = res.getString("codeDescription");
+				boolean loue = res.getBoolean("estLoue");
+				boolean perdu = res.getBoolean("estPerdu");
+				
+				Article art = new Article(codeBarre,codeDesc,loue,perdu);
+				art.toString();
+				listeArticle.put(codeBarre, art);
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		this.deconnexion();
+		return listeArticle;
+	}
+	
+	//Fonctionne 
 	public void insertLocation(Location l) {	//TODO à tester
 		this.connexion();
 		
 		try {
-			requeteP = connexion.prepareStatement("INSERT INTO Location (numeroAdherent,codeBarre,dateHeure,datePrevue,dateRetour,montant) "
-					+ "VALUES (?,?,?,?,?,?);");
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+			//Pour recuperer le dernier id de Location
+			int lastId = 0;
+			ResultSet rs = this.getResultatDe("SELECT count(*) FROM Location;");
+			while (rs.next()) {
+				lastId = rs.getInt("count(*)");
+				System.out.println(lastId);
+			}
+			
+			requeteP = connexion.prepareStatement("INSERT INTO Location (id,numeroAdherent,codeBarre,dateHeure,datePrevue,dateRetour,montant) "
+					+ "VALUES (?,?,?,?,?,?,?);");
 			for(int i = 0; i < l.getListeLigneArticles().size(); i++) {
-				requeteP.setString(1, l.getAdherent().getNumeroTel());
-				requeteP.setLong(2, l.getListeLigneArticles().get(i).getDescriptionArticle().getUniqueid());
-				requeteP.setTimestamp(3, new java.sql.Timestamp(l.getDateHeure().getTime())); //Devait être convertie
-				requeteP.setDate(4, new java.sql.Date(l.getDateDue().getTime()));
-				requeteP.setDate(5, new java.sql.Date(l.getDateRetour().getTime()));
-				requeteP.setFloat(6, l.getMontant());
-				//TODO Convertir un objet java.util.Date à sql.date car non-compatibles
+				requeteP.setInt(1,lastId+1);
+				requeteP.setString(2,l.getAdherent().getNumeroTel());
+				requeteP.setString(3,l.getListeLigneArticles().get(i).getCodeBarreArticle());
+				
+				//On met les dates au bon format
+				Date dateHeure = l.getDateHeure(); 
+				String dateFormatee = format.format(dateHeure); 
+				Date dateDue = l.getListeLigneArticles().get(i).getDateDue();
+				String dateFormatee2 = format.format(dateDue);
+				
+				requeteP.setString(4,dateFormatee.toString());
+				requeteP.setString(5,dateFormatee2.toString());
+				//La date de retour doit etre a null car la location vient de commencer
+				requeteP.setString(6, null);
+				requeteP.setFloat(7, l.getMontant());
+				
+				requeteP.executeUpdate();
+				this.faireRequete("UPDATE Article SET estLoue = 'true' WHERE codeBarre='"+l.ligneArticle.get(i).getCodeBarreArticle()+"';");
 			}
 			
 		} catch (SQLException e) {
 
 			e.printStackTrace();
 		}
-		
-		int lastId = 0;
-		ResultSet rs = this.getResultatDe("SELECT count(*) FROM Location;");
+		this.deconnexion();
 		
 
 	}
@@ -291,7 +330,6 @@ public class Database {
 			this.connexion();
 			String sql = "INSERT INTO Adherent ('numeroTel','codeSecret','nom','prenom','adresse','numeroCB') VALUES (?,?,?,?,?,?);";
 			requeteP = connexion.prepareStatement(sql);
-			
 			requeteP.setString(1, ad.getNumeroTel());
 			requeteP.setString(2, ad.getCodeSecret());
 			requeteP.setString(3, ad.getNom());
