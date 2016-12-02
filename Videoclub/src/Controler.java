@@ -8,6 +8,7 @@ public class Controler {
 	private Hashtable <String,Article> listeArticle = null;
 	private Catalogue catalogue = null;
 	private Location loc = null;
+	private Hashtable<Integer,Location> listeLocation = null;
 
 
 	public Controler(Hashtable<String,Adherent> list,Hashtable<String,DescriptionArticle> listDesc,
@@ -19,8 +20,7 @@ public class Controler {
 	}
 	public Hashtable<String,Adherent> getListAdherent(){
 		return this.listeMembre;
-	}
-
+	}	
 	
 	/*Methodes pour l'authentification */
 	public Adherent authentificationMembre(String pseudo,String mdp) {
@@ -232,4 +232,11 @@ public class Controler {
 		this.listeMembre.put(num, ad);
 	}
 
+	
+	/*Methode pour charger les locations depuis la base de données */
+	public void addListeLocation(ArrayList<Location> l) {
+		Hashtable<Integer,Location> listeLoc = new Hashtable<Integer,Location>();
+		// A faire
+		
+	}
 }

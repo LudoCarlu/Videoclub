@@ -6,6 +6,7 @@ import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Hashtable;
@@ -254,7 +255,7 @@ public class Database {
 		this.connexion();
 		
 		try {
-			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+			SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 			//Pour recuperer le dernier id de Location
 			int lastId = 0;
 			ResultSet rs = this.getResultatDe("SELECT count(*) FROM Location;");
@@ -271,13 +272,21 @@ public class Database {
 				requeteP.setString(3,l.getListeLigneArticles().get(i).getCodeBarreArticle());
 				
 				//On met les dates au bon format
-				Date dateHeure = l.getDateHeure(); 
+				/* 
 				String dateFormatee = format.format(dateHeure); 
-				Date dateDue = l.getListeLigneArticles().get(i).getDateDue();
-				String dateFormatee2 = format.format(dateDue);
 				
-				requeteP.setString(4,dateFormatee.toString());
-				requeteP.setString(5,dateFormatee2.toString());
+				String dateFormatee2 = format.format(dateDue);*/
+				
+				Date dateHeure = l.getDateHeure();
+				Date dateDue = l.getListeLigneArticles().get(i).getDateDue();
+				//Format des dates dans la base de donnees
+				java.sql.Timestamp ts = new java.sql.Timestamp(dateHeure.getTime());
+				requeteP.setString(4, ts.toString());
+				java.sql.Timestamp ts2 = new java.sql.Timestamp(dateDue.getTime());
+				requeteP.setString(5, ts2.toString());
+				
+				/*requeteP.setString(4,dateFormatee.toString());
+				requeteP.setString(5,dateFormatee2.toString());*/
 				//La date de retour doit etre a null car la location vient de commencer
 				requeteP.setString(6, null);
 				requeteP.setFloat(7, l.getMontant());
@@ -346,6 +355,45 @@ public class Database {
 			e.printStackTrace();
 		}
 
+	}
+	
+	//Ne produit pas d'erreur mais pas tester
+	public ArrayList<Location> genererLocation() {
+		ArrayList<Location> listeLocation = new ArrayList<Location>();
+		try {
+			this.connexion();
+			ResultSet res = this.getResultatDe("SELECT * FROM Location");
+			SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+			while (res.next()) {
+				int id = res.getInt("id");
+				String numAd = res.getString("numeroAdherent");
+				String codeBarre = res.getString("codeBarre").toString();
+				
+				java.sql.Timestamp ts = res.getTimestamp("dateHeure");
+				java.util.Date dateHeure = new java.util.Date(ts.getTime());
+				
+				java.sql.Timestamp ts2 = res.getTimestamp("datePrevue");
+				java.util.Date dateDue = new java.util.Date(ts2.getTime());
+				
+				java.sql.Timestamp ts3 = res.getTimestamp("dateRetour");
+				java.util.Date dateRetour = null;
+				if(ts3 != null) {
+					dateRetour = new java.util.Date(ts3.getTime());
+				}
+				
+				System.out.println(dateHeure);
+				System.out.println(dateDue);
+				System.out.println(dateRetour);
+
+				float montant = res.getFloat("montant");
+				
+				listeLocation.add(new Location(id,numAd,codeBarre,dateHeure,dateDue,dateRetour,montant));
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return listeLocation;
 	}
 
 }

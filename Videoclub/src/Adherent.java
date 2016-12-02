@@ -43,6 +43,10 @@ public class Adherent extends Client{
 	public void setListeLocation(ArrayList<Location> listeLocation) {
 		this.listeLocation = listeLocation;
 	}
+	
+	public void setNumeroTel(String n) {
+		this.numeroTel = n;
+	}
 	@Override
 	public String toString() {
 		return "Adherent [numeroTel=" + numeroTel + ", codeSecret=" + codeSecret + ", nom=" + nom + ", prenom=" + prenom

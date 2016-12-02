@@ -26,6 +26,8 @@ public class Videoclub {
 		this.controler=new Controler(D.genererAdherent(),D.genererDescriptionArticle(),
 				D.genererEmploye(),D.genererArticle());
 		System.out.println(D.genererEmploye());
+		
+		this.controler.addListeLocation(D.genererLocation());
 	}
 	
 	public static Videoclub instanceVideoclub() {

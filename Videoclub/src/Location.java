@@ -3,10 +3,15 @@ import java.util.*;
 
 public class Location extends Operation{
 	
+	private int idLoc;
 	private Date dateDue;
 	private Date dateRetour;
 	private Adherent adherent;
 	private Amende amende;
+	
+	//Pour charger les locations
+	private String codeBarre;
+	private String numAdherent;
 	
 	public Location(Calendar cal) {
 		this.cal = cal;
@@ -31,6 +36,18 @@ public class Location extends Operation{
 		this.adherent = adherent;
 		this.ligneArticle=list;
 	}
+	//Constructeur utilisé pour charger les locations de la BDD
+	public Location(int id, String numAdherent, String codeBarre, Date dateHeure, 
+			Date dateDue, Date dateRetour, float montant) {
+		this.idLoc = id;
+		this.numAdherent = numAdherent;
+		this.codeBarre = codeBarre;
+		this.dateHeure = dateHeure;
+		this.dateDue = dateDue;
+		this.dateRetour = dateRetour;
+		this.montant = montant;
+	}
+	
 	
 	public void ajouterAdherent(Adherent ad) {
 		this.adherent =  ad;
