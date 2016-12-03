@@ -21,7 +21,7 @@ public class Controler {
 	public Hashtable<String,Adherent> getListAdherent(){
 		return this.listeMembre;
 	}	
-	
+
 	/*Methodes pour l'authentification */
 	public Adherent authentificationMembre(String pseudo,String mdp) {
 		try{
@@ -65,9 +65,9 @@ public class Controler {
 			loc.ajouterAdherent(ad);
 		}
 	}*/
-	
+
 	/*Methodes pour la location */
-	
+
 	public Location getLocation(){
 		return this.loc;
 	}
@@ -76,7 +76,7 @@ public class Controler {
 		Calendar aujourdhui = Calendar.getInstance();
 		this.loc = new Location(aujourdhui);
 	}
-	
+
 	public boolean saisirArticleLocation(String codeArticle, int quantite,int duree) {
 		if(this.loc.isTerminee()==false){
 			DescriptionArticle desc = catalogue.getDesc(codeArticle);
@@ -108,17 +108,17 @@ public class Controler {
 		if(this.loc.isTerminee() == false) {
 			//On récupère l'article grace à son code barre
 			Article art = listeArticle.get(codeBarre);
-			
+
 			//On cherche le code de sa description
 			String codeArticle = art.getCodeDescription();
-			
+
 			/*On va chercher cette description dans le catalogue
 			 * et on l'ajoute à l'article
 			 */
 			DescriptionArticle desc = catalogue.getDesc(codeArticle);
 			art.ajouterDescription(desc);
 			//desc.setListeArticleLouable(this.listeArticle);
-			
+
 			if(desc != null) {
 				//Ce n'est pas des confiseries
 				if(desc.getPrixJournalier() != -1) {
@@ -149,13 +149,13 @@ public class Controler {
 		Videoclub v = Videoclub.instanceVideoclub();
 		Database D = v.getDB();
 		D.insertLocation(loc);
-		
+
 	}
 	public float afficherMontant() {
 		return loc.getMontant();
-	
+
 	}
-	
+
 	/* Methodes pour l'acquisition d'un film */
 	/**
 	 * Pour l'ajout d'un film dédié en la location à l'inventaire
@@ -232,11 +232,36 @@ public class Controler {
 		this.listeMembre.put(num, ad);
 	}
 
-	
+
 	/*Methode pour charger les locations depuis la base de données */
 	public void addListeLocation(ArrayList<Location> l) {
-		Hashtable<Integer,Location> listeLoc = new Hashtable<Integer,Location>();
-		// A faire
+		this.listeLocation = new Hashtable<Integer,Location>();
+	
+		for(int i=0;i < l.size(); i++) {
+			Adherent ad = listeMembre.get(l.get(i).getNumAdherent());
+			Article a = listeArticle.get(l.get(i).getCodeBarre());
+			DescriptionArticle desc = catalogue.getDesc(a.getCodeDescription());
+			a.ajouterDescription(desc);
+			ArrayList<LigneArticle> la = new ArrayList<LigneArticle>();
+			la.add(new LigneArticle(a,l.get(i).getDateDue(),l.get(i).getDateRetour()));
+
+			//Pour ajouter tous les articles dans la ligne Article de la location par rapport à son id
+			for(int j = i+1; j < l.size(); j++) {
+				if(l.get(i).getIdLoc() == l.get(j).getIdLoc()) {
+					Article a2 = listeArticle.get(l.get(j).getCodeBarre());
+					DescriptionArticle desc2 = catalogue.getDesc(a2.getCodeDescription());
+					a2.ajouterDescription(desc2);
+					la.add(new LigneArticle(a2,l.get(j).getDateDue(),l.get(j).getDateRetour()));
+				}
+			}
+			if(listeLocation.containsKey(l.get(i).getIdLoc()) ==  false) {
+				Location tmp = new Location(l.get(i).getIdLoc(),ad,l.get(i).getDateHeure(),la,l.get(i).montant);
+				listeLocation.put(tmp.getIdLoc(),tmp);
+				
+			}
+		}
+		//System.out.println(listeLocation);
+		
 		
 	}
 }

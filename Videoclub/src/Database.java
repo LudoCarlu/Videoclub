@@ -363,7 +363,7 @@ public class Database {
 		try {
 			this.connexion();
 			ResultSet res = this.getResultatDe("SELECT * FROM Location");
-			SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+			//SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 			while (res.next()) {
 				int id = res.getInt("id");
 				String numAd = res.getString("numeroAdherent");
@@ -381,12 +381,11 @@ public class Database {
 					dateRetour = new java.util.Date(ts3.getTime());
 				}
 				
-				System.out.println(dateHeure);
-				System.out.println(dateDue);
-				System.out.println(dateRetour);
+				//System.out.println(dateHeure);
+				//System.out.println(dateDue);
+				//System.out.println(dateRetour);
 
 				float montant = res.getFloat("montant");
-				
 				listeLocation.add(new Location(id,numAd,codeBarre,dateHeure,dateDue,dateRetour,montant));
 			}
 		}

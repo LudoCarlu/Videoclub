@@ -5,6 +5,7 @@ public class LigneArticle {
 	private DescriptionArticle desc;
 	private Date dateDue;
 	private Article art;
+	private Date dateRetour;
 	
 	public LigneArticle(DescriptionArticle desc, int quantite) {
 		this.desc = desc;
@@ -15,6 +16,14 @@ public class LigneArticle {
 		this.art = a;
 		this.quantite = 1;
 		this.desc = art.getDescription();
+	}
+	
+	public LigneArticle(Article a, Date dateDue, Date dateRetour) {
+		this.art = a;
+		this.desc = a.getDescription();
+		this.dateDue = dateDue;
+		this.dateRetour = dateRetour;
+		this.quantite = 1;
 	}
 	
 	public int getQuantite() {
@@ -41,8 +50,21 @@ public class LigneArticle {
 	public Date getDateDue() {
 		return this.dateDue;
 	}
+	public void setDateRetour (Date d) {
+		this.dateRetour = d;
+	}
+	public Date getDateRetour() {
+		return this.dateRetour;
+	}
+	
 	public String toString() {
-		return "LIGNE ARTICLES : \n + Quantite : "+this.quantite + "\n" + desc;
+		return "Ligne Articles : "
+				+ "\n Quantite : "+this.quantite 
+				+ "\n Article : "+this.art
+				+ "\n" + desc
+				+ "\n Date Due : " + dateDue
+				+ "\n Date Retour : " + dateRetour
+				+"\n";
 	}
 	
 	public String getCodeBarreArticle() {

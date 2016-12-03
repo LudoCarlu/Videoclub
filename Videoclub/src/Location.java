@@ -36,7 +36,7 @@ public class Location extends Operation{
 		this.adherent = adherent;
 		this.ligneArticle=list;
 	}
-	//Constructeur utilisé pour charger les locations de la BDD
+	//Constructeurs utilisés pour charger les locations de la BDD
 	public Location(int id, String numAdherent, String codeBarre, Date dateHeure, 
 			Date dateDue, Date dateRetour, float montant) {
 		this.idLoc = id;
@@ -47,6 +47,14 @@ public class Location extends Operation{
 		this.dateRetour = dateRetour;
 		this.montant = montant;
 	}
+	public Location(int id, Adherent ad, Date dateHeure, ArrayList<LigneArticle> l, float montant) {
+		this.idLoc = id;
+		this.adherent = ad;
+		this.dateHeure = dateHeure;
+		this.ligneArticle = l;
+		this.montant = montant;
+	}
+	
 	
 	
 	public void ajouterAdherent(Adherent ad) {
@@ -92,6 +100,18 @@ public class Location extends Operation{
 		return amende;
 	}
 	
+	//Getteurs pour location qui vient de la bdd
+	public int getIdLoc() {
+		return idLoc;
+	}
+	public String getCodeBarre() {
+		return codeBarre;
+	}
+	public String getNumAdherent() {
+		return numAdherent;
+	}
+	// Fin
+	
 	public void setDateDue(int duree) {
 		Calendar d = this.cal;
 		d.add(Calendar.DATE,duree);
@@ -102,13 +122,19 @@ public class Location extends Operation{
 	}
 
 	@Override
-	public String toString() {
-		return "Location [\n"
+	/*public String toString2() {
+		return "Location "
 				+ "\nAdherent=" + adherent 
 				+ "\ndateHeure = " + this.dateHeure
 				//+ "\ndateDue = " + ligneArticle.get(ligneArticle.size()-1).getDateDue()
 				+ "\nDateRetour = " + dateRetour
-				+ "\nAmende="+amende
+				+ "\nAmende="+amende;
+	}*/
+	public String toString() {
+		return "Location "+ this.idLoc
+				+ "\nAdherent=" + adherent 
+				+ "\ndateHeure = " + this.dateHeure
+				+ "\n" + this.ligneArticle
 				+ "]";
 	}
 	
