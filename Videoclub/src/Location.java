@@ -118,8 +118,8 @@ public class Location extends Operation{
 		this.ligneArticle.get(this.ligneArticle.size()-1).setDateDue(d.getTime());
 		d.add(Calendar.DATE,-duree);
 		//this.dateDue = d.getTime();
-		
 	}
+	
 
 	@Override
 	/*public String toString2() {

@@ -40,6 +40,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 	private JButton btnPayer =null;
 	private JComboBox<String> duree;
 	private JTextArea adresse;
+	private JButton btnEffectuerUnRetour = null;
 
 
 
@@ -372,9 +373,10 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			lblCodeArticle.setBounds(31, 124, 83, 16);
 			add(lblCodeArticle);
 
-			JButton btnEffectuerUnRetour = new JButton("Effectuer un retour");
-			btnEffectuerUnRetour.setBounds(400, 119, 144, 29);
-			add(btnEffectuerUnRetour);
+			this.btnEffectuerUnRetour = new JButton("Effectuer un retour");
+			this.btnEffectuerUnRetour.setBounds(400, 119, 144, 29);
+			this.add(btnEffectuerUnRetour);
+			this.btnEffectuerUnRetour.addActionListener(this);
 
 		}
 		if (choix==5){
@@ -468,6 +470,14 @@ public class DisplayPanel extends JPanel implements ActionListener{
 				}
 				else {
 					System.out.println("Il manque un element important à l'inscription");
+				}
+			}
+		}
+		if(this.type == 4) {
+			if(e.getSource() == this.btnEffectuerUnRetour) {
+				if(codeArticle.getText().isEmpty() == false) {
+					this.fenetre.getController().effectuerUnRetour(codeArticle.getText());
+					this.codeArticle.setText("");
 				}
 			}
 		}

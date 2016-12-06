@@ -31,22 +31,22 @@ public class Database {
 		this.dbName = dbName;
 		this.connexion = null;
 	}
-	
+
 	public static Database instanceDB() {
 		//L'instance utilisera le bon répertoire peut importe l'ordinateur
 		String pathDB;
 		//retourne le répertoire du projet et ajoute l'emplacement du la db au path
 		pathDB = System.getProperty("user.dir")+"/database/testDB.db"; 
-		
+
 		//Maxime:
 		//pathDB = "/Users/maxime/Videoclub/Database/testDB.db";
-		
+
 		//Samuel:
 		//pathDB = "/Users/samuel/Documents/Videoclub/Videoclub/database/testDB.db";
-	
+
 		//Ludo:
 		//pathDB = "/Users/ludoviccarlu/Github/Videoclub/Videoclub/database/testDB.db";
-		
+
 		if(instanceDB == null) {
 			instanceDB = new Database(pathDB);
 		}
@@ -193,13 +193,13 @@ public class Database {
 		}
 		return listeMembre;
 	}
-	
+
 	public Hashtable<String,DescriptionArticle> genererDescriptionArticle() {
 		Hashtable<String,DescriptionArticle> catalogue = new Hashtable<String,DescriptionArticle>();
 		//ArrayList<DescriptionArticle> catalogue = new ArrayList<DescriptionArticle>();
 		this.connexion();
 		ResultSet desc = this.getResultatDe("SELECT * FROM DescriptionArticle;");
-		
+
 		try {
 			while (desc.next()) {
 				int id = desc.getInt("id");
@@ -211,7 +211,7 @@ public class Database {
 				String genre = desc.getString("genre");
 				boolean estNouveau = desc.getBoolean("estNouveau");
 				float prixHebdomadaire = desc.getFloat("prixHebdomadaire");
-				
+
 				DescriptionArticle tmp = new DescriptionArticle(id, ca,description,prixVente,
 						prixJournalier,titre,genre,estNouveau,prixHebdomadaire);
 				//System.out.println(tmp);
@@ -224,20 +224,39 @@ public class Database {
 		}
 		return catalogue;
 	}
-	
+
 	//Permet de générer tous les articles de la base de données
 	public Hashtable<String,Article> genererArticle() {
 		Hashtable<String,Article> listeArticle = new Hashtable<String,Article>();
 		this.connexion();
 		ResultSet res = this.getResultatDe("SELECT * FROM Article;");
-		
+
 		try {
 			while (res.next()) {
 				String codeBarre = res.getString("codeBarre");
 				String codeDesc = res.getString("codeDescription");
-				boolean loue = res.getBoolean("estLoue");
-				boolean perdu = res.getBoolean("estPerdu");
 				
+				/* 
+				 * Il y a un probleme pour les booleens
+				 * Il faut les recupérer en string et les mettre en booleen apres
+				 */
+				String estLoue = res.getString("estLoue");
+				String estPerdu = res.getString("estPerdu");
+				boolean loue = false;
+				boolean perdu = false;
+				
+				if(estLoue.equals("false") == true) {
+					loue = false;
+				}
+				if(estLoue.equals("true") == true) {
+					loue = true;
+				}
+				if(estPerdu.equals("false")) {
+					perdu = false;
+				}
+				if (estPerdu.equals("true")) {
+					perdu = true;
+				}
 				Article art = new Article(codeBarre,codeDesc,loue,perdu);
 				art.toString();
 				listeArticle.put(codeBarre, art);
@@ -249,34 +268,34 @@ public class Database {
 		this.deconnexion();
 		return listeArticle;
 	}
-	
+
 	//Fonctionne 
-	public void insertLocation(Location l) {	//TODO à tester
+	public void insertLocation(Location l) {
 		this.connexion();
-		
+
 		try {
-			SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+			//SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 			//Pour recuperer le dernier id de Location
 			int lastId = 0;
-			ResultSet rs = this.getResultatDe("SELECT count(*) FROM Location;");
+			ResultSet rs = this.getResultatDe("SELECT id FROM Location;");
 			while (rs.next()) {
-				lastId = rs.getInt("count(*)");
+				lastId = rs.getInt("id");
 				System.out.println(lastId);
 			}
-			
+
 			requeteP = connexion.prepareStatement("INSERT INTO Location (id,numeroAdherent,codeBarre,dateHeure,datePrevue,dateRetour,montant) "
 					+ "VALUES (?,?,?,?,?,?,?);");
 			for(int i = 0; i < l.getListeLigneArticles().size(); i++) {
 				requeteP.setInt(1,lastId+1);
 				requeteP.setString(2,l.getAdherent().getNumeroTel());
 				requeteP.setString(3,l.getListeLigneArticles().get(i).getCodeBarreArticle());
-				
+
 				//On met les dates au bon format
 				/* 
 				String dateFormatee = format.format(dateHeure); 
-				
+
 				String dateFormatee2 = format.format(dateDue);*/
-				
+
 				Date dateHeure = l.getDateHeure();
 				Date dateDue = l.getListeLigneArticles().get(i).getDateDue();
 				//Format des dates dans la base de donnees
@@ -284,23 +303,23 @@ public class Database {
 				requeteP.setString(4, ts.toString());
 				java.sql.Timestamp ts2 = new java.sql.Timestamp(dateDue.getTime());
 				requeteP.setString(5, ts2.toString());
-				
+
 				/*requeteP.setString(4,dateFormatee.toString());
 				requeteP.setString(5,dateFormatee2.toString());*/
 				//La date de retour doit etre a null car la location vient de commencer
 				requeteP.setString(6, null);
 				requeteP.setFloat(7, l.getMontant());
-				
+
 				requeteP.executeUpdate();
-				this.faireRequete("UPDATE Article SET estLoue = 'true' WHERE codeBarre='"+l.ligneArticle.get(i).getCodeBarreArticle()+"';");
+				this.faireRequete("UPDATE Article SET estLoue='true' WHERE codeBarre='"+l.ligneArticle.get(i).getCodeBarreArticle()+"';");
 			}
-			
+
 		} catch (SQLException e) {
 
 			e.printStackTrace();
 		}
 		this.deconnexion();
-		
+
 
 	}
 	/**
@@ -310,29 +329,29 @@ public class Database {
 	public void insertArticle(DescriptionArticle desc) {
 		//Testé et fonctionne :)
 		try {
-		this.connexion();
-		requeteP = connexion.prepareStatement("INSERT INTO DescriptionArticle ('codeArticle','description','prixVente','prixJournalier',"
-				+ "'titre','genre','estNouveau','prixHebdomadaire') VALUES(?,?,?,?,?,?,?,?)");
-		
-		requeteP.setString(1, desc.getCodeArticle());
-		requeteP.setString(2, desc.getDescription());
-		requeteP.setFloat(3, desc.getPrixVente());
-		requeteP.setFloat(4,desc.getPrixJournalier());
-		requeteP.setString(5,desc.getTitre());
-		requeteP.setString(6, desc.getGenre());
-		requeteP.setBoolean(7, desc.getEstNouveau());
-		requeteP.setFloat(8, desc.getPrixHebdomadaire());
-		
-		requeteP.executeUpdate();
-		//this.faireRequete(strSQL);
-		this.deconnexion();
-			
+			this.connexion();
+			requeteP = connexion.prepareStatement("INSERT INTO DescriptionArticle ('codeArticle','description','prixVente','prixJournalier',"
+					+ "'titre','genre','estNouveau','prixHebdomadaire') VALUES(?,?,?,?,?,?,?,?)");
+
+			requeteP.setString(1, desc.getCodeArticle());
+			requeteP.setString(2, desc.getDescription());
+			requeteP.setFloat(3, desc.getPrixVente());
+			requeteP.setFloat(4,desc.getPrixJournalier());
+			requeteP.setString(5,desc.getTitre());
+			requeteP.setString(6, desc.getGenre());
+			requeteP.setBoolean(7, desc.getEstNouveau());
+			requeteP.setFloat(8, desc.getPrixHebdomadaire());
+
+			requeteP.executeUpdate();
+			//this.faireRequete(strSQL);
+			this.deconnexion();
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void insertAdherent(Adherent ad) {
 		//Testé et fonctionnel 
 		try {
@@ -346,17 +365,17 @@ public class Database {
 			requeteP.setString(5, ad.getAdresse());
 			requeteP.setString(6, ad.getNumeroCB());
 			requeteP.executeUpdate();
-			
+
 			//N'oubliez pas de vous deconnecter apres avoir fait vos requetes
 			this.deconnexion();
-			
+
 		}
 		catch(SQLException e) {
 			e.printStackTrace();
 		}
 
 	}
-	
+
 	//Ne produit pas d'erreur mais pas tester
 	public ArrayList<Location> genererLocation() {
 		ArrayList<Location> listeLocation = new ArrayList<Location>();
@@ -368,19 +387,19 @@ public class Database {
 				int id = res.getInt("id");
 				String numAd = res.getString("numeroAdherent");
 				String codeBarre = res.getString("codeBarre").toString();
-				
+
 				java.sql.Timestamp ts = res.getTimestamp("dateHeure");
 				java.util.Date dateHeure = new java.util.Date(ts.getTime());
-				
+
 				java.sql.Timestamp ts2 = res.getTimestamp("datePrevue");
 				java.util.Date dateDue = new java.util.Date(ts2.getTime());
-				
+
 				java.sql.Timestamp ts3 = res.getTimestamp("dateRetour");
 				java.util.Date dateRetour = null;
 				if(ts3 != null) {
 					dateRetour = new java.util.Date(ts3.getTime());
 				}
-				
+
 				//System.out.println(dateHeure);
 				//System.out.println(dateDue);
 				//System.out.println(dateRetour);
@@ -392,7 +411,37 @@ public class Database {
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
+		this.deconnexion();
 		return listeLocation;
+	}
+
+	public void retour(int idLocation,LigneArticle lar) {
+		this.connexion();
+		String requeteArticle = "UPDATE Article SET estLoue = ? WHERE codeBarre = ?;";
+		String requeteLocation = "UPDATE Location SET dateRetour = ? WHERE id = ? AND codeBarre = ?;";
+		try {
+			//Changement de estLoue de l'article a false
+			requeteP = connexion.prepareStatement(requeteArticle);
+			//On insere le boolean sous forme de string pour voir ecrit false et true
+			requeteP.setString(1, "false");
+			requeteP.setString(2, lar.getCodeBarreArticle());
+			requeteP.executeUpdate();
+			
+			//Changement de la date de retour de la location
+			requeteP = connexion.prepareStatement(requeteLocation);
+			java.sql.Timestamp ts = new java.sql.Timestamp(lar.getDateRetour().getTime());
+			requeteP.setString(1,ts.toString());
+			requeteP.setInt(2, idLocation);
+			requeteP.setString(3, lar.getCodeBarreArticle());
+			requeteP.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.deconnexion();
+
 	}
 
 }

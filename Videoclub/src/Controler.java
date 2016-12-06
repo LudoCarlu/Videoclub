@@ -1,5 +1,3 @@
-import java.io.IOException;
-import java.text.*; // Pour les formats de date
 import java.util.*;
 
 public class Controler {
@@ -261,7 +259,32 @@ public class Controler {
 			}
 		}
 		//System.out.println(listeLocation);
-		
-		
+	}
+	
+	//Effectuer un retour
+	public void effectuerUnRetour(String codeBarre) {
+		Retour r;
+		Videoclub v = Videoclub.instanceVideoclub();
+		//System.out.println(this.listeLocation);
+		for(int i=1; i <= this.listeLocation.size(); i++) {
+			int taille = this.listeLocation.get(i).getListeLigneArticles().size();
+			
+			for(int j=0; j < taille; j++) {
+				LigneArticle la = this.listeLocation.get(i).getListeLigneArticles().get(j);
+				if(la.getCodeBarreArticle().equals(codeBarre) && la.getArticle().isLoue() == true) {
+					r = new Retour(this.listeLocation.get(i).getListeLigneArticles().get(j));
+					la = r.getLigneArticles();
+					//this.listeLocation.get(i).getListeLigneArticles().get(j).getArticle().setLoue(false);
+					//this.listeLocation.get(i).getListeLigneArticles().get(j).setDateRetour(la.getDateRetour());
+					v.getDB().retour(this.listeLocation.get(i).getIdLoc(), la);
+					
+					if(r.isEnRetard() == true) {
+						System.out.println("En retard");
+						System.out.println(this.listeLocation.get(i).getListeLigneArticles().get(j));
+						//Cas amende
+					}
+				}
+			}
+		}
 	}
 }

@@ -70,4 +70,8 @@ public class LigneArticle {
 	public String getCodeBarreArticle() {
 		return this.art.getCodeBarre();
 	}
+	
+	public Article getArticle() {
+		return this.art;
+	}
 }
