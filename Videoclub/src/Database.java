@@ -226,7 +226,7 @@ public class Database {
 	}
 
 	//Permet de générer tous les articles de la base de données
-	public Hashtable<String,Article> genererArticle() {
+	public Hashtable<String,Article> genererInventaire() {
 		Hashtable<String,Article> listeArticle = new Hashtable<String,Article>();
 		this.connexion();
 		ResultSet res = this.getResultatDe("SELECT * FROM Article;");
@@ -363,7 +363,7 @@ public class Database {
 			requeteP.setString(1, listeArt.get(i).getDescription().getCodeArticle());
 			requeteP.setBoolean(2, false);
 			requeteP.setBoolean(3, false);
-
+			
 			requeteP.executeUpdate();
 			}
 			//this.faireRequete(strSQL);
@@ -403,14 +403,10 @@ public class Database {
 			this.connexion();
 			requeteP = connexion.prepareStatement("INSERT INTO Vente ('dateHeure','montant','lignesArticles')" 
 					+ "VALUES(?,?,?)");
-			Timestamp ts = new Timestamp(now());
-			Date date = new Date();
-			date.
 			
-			requeteP.setTimestamp(1, ts.getTime());
+			requeteP.setString(1, new java.sql.Timestamp(v.dateHeure.getTime()).toString());
 			requeteP.setBoolean(2, false);
 			requeteP.setBoolean(3, false);
-
 
 			requeteP.executeUpdate();
 			//this.faireRequete(strSQL);

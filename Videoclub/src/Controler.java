@@ -3,18 +3,20 @@ import java.util.*;
 public class Controler {
 	private Hashtable<String,Adherent> listeMembre=null;
 	private Hashtable <Integer,Employe> listeEmploye=null;
-	private Hashtable <String,Article> listeArticle = null;
+	//private Hashtable <String,Article> listeArticle = null;
 	private Catalogue catalogue = null;
+	private Inventaire inventaire = null;
 	private Location loc = null;
+	private Vente vente = null;
 	private Hashtable<Integer,Location> listeLocation = null;
 
 
 	public Controler(Hashtable<String,Adherent> list,Hashtable<String,DescriptionArticle> listDesc,
-			Hashtable<Integer,Employe> listEmploye, Hashtable<String,Article> listeArt){
+			Hashtable<Integer,Employe> listEmploye, Hashtable<String,Article> listArt){
 		this.listeMembre=list;
 		this.catalogue = new Catalogue(listDesc);
 		this.listeEmploye=listEmploye;
-		this.listeArticle = listeArt;
+		this.inventaire = new Inventaire(listArt);
 	}
 	public Hashtable<String,Adherent> getListAdherent(){
 		return this.listeMembre;
@@ -105,7 +107,7 @@ public class Controler {
 	public boolean saisirArticleLoc (String codeBarre,int duree) {
 		if(this.loc.isTerminee() == false) {
 			//On récupère l'article grace à son code barre
-			Article art = listeArticle.get(codeBarre);
+			Article art = inventaire.getArticle(codeBarre);
 
 			//On cherche le code de sa description
 			String codeArticle = art.getCodeDescription();
@@ -119,7 +121,7 @@ public class Controler {
 
 			if(desc != null) {
 				//Ce n'est pas des confiseries
-				if(desc.getPrixJournalier() != -1) {
+				if(desc.getPrixJournalier() > 0) {
 					System.out.println("pas une confiserie");
 					loc.creerLigneArticles(art);
 					//loc.creerLigneArticles(desc, 1);
@@ -237,7 +239,7 @@ public class Controler {
 	
 		for(int i=0;i < l.size(); i++) {
 			Adherent ad = listeMembre.get(l.get(i).getNumAdherent());
-			Article a = listeArticle.get(l.get(i).getCodeBarre());
+			Article a = inventaire.getArticle(l.get(i).getCodeBarre());
 			DescriptionArticle desc = catalogue.getDesc(a.getCodeDescription());
 			a.ajouterDescription(desc);
 			ArrayList<LigneArticle> la = new ArrayList<LigneArticle>();
@@ -246,7 +248,7 @@ public class Controler {
 			//Pour ajouter tous les articles dans la ligne Article de la location par rapport à son id
 			for(int j = i+1; j < l.size(); j++) {
 				if(l.get(i).getIdLoc() == l.get(j).getIdLoc()) {
-					Article a2 = listeArticle.get(l.get(j).getCodeBarre());
+					Article a2 = inventaire.getArticle(l.get(j).getCodeBarre());
 					DescriptionArticle desc2 = catalogue.getDesc(a2.getCodeDescription());
 					a2.ajouterDescription(desc2);
 					la.add(new LigneArticle(a2,l.get(j).getDateDue(),l.get(j).getDateRetour()));
@@ -286,5 +288,11 @@ public class Controler {
 				}
 			}
 		}
+	}
+	public void creerligneVente(String codeBarre, int qte){
+		if (vente==null){
+			this.vente = new Vente();
+		}
+	this.vente.ajouterLigneArticles(inventaire.getArticle(codeBarre), qte);
 	}
 }

@@ -17,6 +17,12 @@ public class LigneArticle {
 		this.quantite = 1;
 		this.desc = art.getDescription();
 	}
+	//Constructeur pour une vente
+	public LigneArticle(Article a, int qte) {
+		this.art = a;
+		this.quantite = qte;
+		this.desc = art.getDescription();
+	}
 	
 	public LigneArticle(Article a, Date dateDue, Date dateRetour) {
 		this.art = a;
@@ -60,7 +66,7 @@ public class LigneArticle {
 	public String toString() {
 		return "Ligne Articles : "
 				+ "\n Quantite : "+this.quantite 
-				+ "\n Article : "+this.art
+				+ "\n Article : "+art.getCodeBarre()
 				+ "\n" + desc
 				+ "\n Date Due : " + dateDue
 				+ "\n Date Retour : " + dateRetour

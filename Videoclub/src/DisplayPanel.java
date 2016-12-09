@@ -46,9 +46,10 @@ public class DisplayPanel extends JPanel implements ActionListener{
 
 	public DisplayPanel(int choix,JFrameGestionnaire F){
 		this.type=choix;
-		setBackground(Color.BLUE);
+		setBackground(Color.WHITE);
 		this.fenetre=F;
-		String [] title={"Item","Quantite","Duree","Prix Journalier","Prix total"};
+		String [] title={"Item","Quantité","Durée","Prix Journalier","Prix total"};
+		String [] titleV={"Item","code","Quantité","Prix u"};
 		//Location L=new Location(Date.from(ZonedDateTime.now().with(LocalTime.MIN).toInstant()),new Date("13/12/1021"), null, null);
 		Object[][] data = {};
 
@@ -187,12 +188,13 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			add(Qte);
 
 		}
+		//VENTE
 		if (choix==2){ 
 			setLayout(null);
 			this.titre = new JLabel("Vente");
 			titre.setBounds(200,5, 90, 20);
 			add(titre);
-			table = new JTable(data,title);
+			table = new JTable(data,titleV);
 			table.setBounds(60,40,500,80);
 			add(table);
 			JScrollPane scrollPane = new JScrollPane(table);
@@ -203,7 +205,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			lblSaisirArticle.setBounds(40, 180, 90, 20);
 			add(lblSaisirArticle);
 
-			codeArticle = new JTextField("0000");
+			codeArticle = new JTextField("");
 			codeArticle.setBounds(120, 177, 130, 25);
 			add(codeArticle);
 			codeArticle.setColumns(10);
@@ -477,6 +479,14 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			if(e.getSource() == this.btnEffectuerUnRetour) {
 				if(codeArticle.getText().isEmpty() == false) {
 					this.fenetre.getController().effectuerUnRetour(codeArticle.getText());
+					this.codeArticle.setText("");
+				}
+			}
+		}
+		if(this.type == 2) { //vente
+			if(e.getSource() == this.btnAjouter) {
+				if(codeArticle.getText().isEmpty()==false) {
+					this.fenetre.getController().vente().creerLigneArticles(this.codeArticle.getText(), 1);;
 					this.codeArticle.setText("");
 				}
 			}
