@@ -183,11 +183,13 @@ public class Controler {
 
 		Acquisition acq = new Acquisition();
 
-		for (int i=1;i<=quantite;i++){
-			acq.ajouterArticle(desc);
+		acq.ajouterArticle(desc, quantite);
+		if (catalogue.getDesc(codeArticle) == null){
+			acq.ajouterDescriptionArticle(desc);
 			catalogue.ajouterDesc(desc); 
-			//Ajoute temporairement l'article au catalogue au lieu de le réinitialiser au complet après la mise à jour de la db
 		}
+
+		//Ajoute temporairement l'article au catalogue au lieu de le réinitialiser au complet après la mise à jour de la db
 		acq.updatedb();
 	}
 	/**
@@ -206,20 +208,18 @@ public class Controler {
 		desc.setTitre(description);
 		desc.setPrixVente(prixVente);
 
-		//desc.setTitre(null);
-		//desc.setGenre(null);
-
-		//desc.setPrixJournalier(null);
-		//desc.setPrixHebdomadaire(null);
-		//desc.setEstNouveau();
-
 		Acquisition acq = new Acquisition();
-
-		for (int i=1;i<=quantite;i++){
-			acq.ajouterArticle(desc);
+		/*Ajoutera le nombre d'articles indiqués mais ajoutera seulement une nouvelle description si elle n'est
+		 * pas déjà présente dans le catalogue
+		 */
+		acq.ajouterArticle(desc, quantite);
+		
+		if (catalogue.getDesc(codeArticle) == null){
+			acq.ajouterDescriptionArticle(desc);
 			catalogue.ajouterDesc(desc); 
-			//Ajoute temporairement l'article au catalogue au lieu de le réinitialiser au complet après la mise à jour de la db
 		}
+
+		//Ajoute temporairement l'article au catalogue au lieu de le réinitialiser au complet après la mise à jour de la db
 		acq.updatedb();
 	}
 

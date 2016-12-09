@@ -323,26 +323,27 @@ public class Database {
 
 	}
 	/**
-	 * Ajoute un nouvel article à la database. 
+	 * Ajoute une nouvelle Description d'article à la database. 
 	 * @param desc
 	 */
-	public void insertArticle(DescriptionArticle desc) {
+	public void insertDescriptionArticle(ArrayList<DescriptionArticle> listeDesc) {
 		//Testé et fonctionne :)
 		try {
 			this.connexion();
 			requeteP = connexion.prepareStatement("INSERT INTO DescriptionArticle ('codeArticle','description','prixVente','prixJournalier',"
 					+ "'titre','genre','estNouveau','prixHebdomadaire') VALUES(?,?,?,?,?,?,?,?)");
-
-			requeteP.setString(1, desc.getCodeArticle());
-			requeteP.setString(2, desc.getDescription());
-			requeteP.setFloat(3, desc.getPrixVente());
-			requeteP.setFloat(4,desc.getPrixJournalier());
-			requeteP.setString(5,desc.getTitre());
-			requeteP.setString(6, desc.getGenre());
-			requeteP.setBoolean(7, desc.getEstNouveau());
-			requeteP.setFloat(8, desc.getPrixHebdomadaire());
+			for (int i =0;i<listeDesc.size();i++){
+			requeteP.setString(1, listeDesc.get(i).getCodeArticle());
+			requeteP.setString(2, listeDesc.get(i).getDescription());
+			requeteP.setFloat(3, listeDesc.get(i).getPrixVente());
+			requeteP.setFloat(4,listeDesc.get(i).getPrixJournalier());
+			requeteP.setString(5,listeDesc.get(i).getTitre());
+			requeteP.setString(6, listeDesc.get(i).getGenre());
+			requeteP.setBoolean(7, listeDesc.get(i).getEstNouveau());
+			requeteP.setFloat(8, listeDesc.get(i).getPrixHebdomadaire());
 
 			requeteP.executeUpdate();
+			}
 			//this.faireRequete(strSQL);
 			this.deconnexion();
 
@@ -352,6 +353,27 @@ public class Database {
 		}
 	}
 
+	public void insertArticle(ArrayList<Article> listeArt) {
+		
+		try {
+			this.connexion();
+			requeteP = connexion.prepareStatement("INSERT INTO Article ('codeDescription','estLoue','estPerdu')" 
+					+ "VALUES(?,?,?)");
+			for (int i = 0;i<listeArt.size();i++){
+			requeteP.setString(1, listeArt.get(i).getDescription().getCodeArticle());
+			requeteP.setBoolean(2, false);
+			requeteP.setBoolean(3, false);
+
+			requeteP.executeUpdate();
+			}
+			//this.faireRequete(strSQL);
+			this.deconnexion();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	public void insertAdherent(Adherent ad) {
 		//Testé et fonctionnel 
 		try {
@@ -375,7 +397,30 @@ public class Database {
 		}
 
 	}
+	public void insertVente(Vente v) {
+		
+		try {
+			this.connexion();
+			requeteP = connexion.prepareStatement("INSERT INTO Vente ('dateHeure','montant','lignesArticles')" 
+					+ "VALUES(?,?,?)");
+			Timestamp ts = new Timestamp(now());
+			Date date = new Date();
+			date.
+			
+			requeteP.setTimestamp(1, ts.getTime());
+			requeteP.setBoolean(2, false);
+			requeteP.setBoolean(3, false);
 
+
+			requeteP.executeUpdate();
+			//this.faireRequete(strSQL);
+			this.deconnexion();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	//Ne produit pas d'erreur mais pas tester
 	public ArrayList<Location> genererLocation() {
 		ArrayList<Location> listeLocation = new ArrayList<Location>();
