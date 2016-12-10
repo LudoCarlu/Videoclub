@@ -9,7 +9,7 @@ public class Controler {
 	private Location loc = null;
 	private Vente vente = null;
 	private Hashtable<Integer,Location> listeLocation = null;
-
+	
 
 	public Controler(Hashtable<String,Adherent> list,Hashtable<String,DescriptionArticle> listDesc,
 			Hashtable<Integer,Employe> listEmploye, Hashtable<String,Article> listArt){
@@ -17,6 +17,8 @@ public class Controler {
 		this.catalogue = new Catalogue(listDesc);
 		this.listeEmploye=listEmploye;
 		this.inventaire = new Inventaire(listArt);
+		inventaire.reconcile(catalogue);
+		
 	}
 	public Hashtable<String,Adherent> getListAdherent(){
 		return this.listeMembre;
@@ -289,10 +291,24 @@ public class Controler {
 			}
 		}
 	}
+	public void initierVente(){
+		if (vente==null){
+			this.vente = new Vente();
+		}
+	}
+	public Vente instanceVente(){
+		return this.vente;
+	}
 	public void creerligneVente(String codeBarre, int qte){
 		if (vente==null){
 			this.vente = new Vente();
 		}
 	this.vente.ajouterLigneArticles(inventaire.getArticle(codeBarre), qte);
 	}
+	
+	public Inventaire instanceInventaire(){
+		return inventaire;
+	}
 }
+
+	

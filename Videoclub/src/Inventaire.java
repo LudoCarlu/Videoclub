@@ -1,4 +1,5 @@
 import java.util.Hashtable;
+import java.util.Set;
 
 public class Inventaire {
 
@@ -19,4 +20,17 @@ public class Inventaire {
 	public void ajouterArticle(Article article){
 		inv.put(article.getCodeBarre(), article);
 	}
+	public int count(){
+		return inv.size();
+	}
+	
+	public void reconcile(Catalogue c){
+		Set<String> keys = inv.keySet();
+        for(String key: keys){
+        	DescriptionArticle desc = c.getDesc(inv.get(key).getCodeDescription());
+        	inv.get(key).setDescription(desc);
+        
+		}
+	}
+	
 }

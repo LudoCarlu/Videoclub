@@ -226,7 +226,7 @@ public class Database {
 	}
 
 	//Permet de générer tous les articles de la base de données
-	public Hashtable<String,Article> genererInventaire() {
+	public Hashtable<String,Article> genererArticle() {
 		Hashtable<String,Article> listeArticle = new Hashtable<String,Article>();
 		this.connexion();
 		ResultSet res = this.getResultatDe("SELECT * FROM Article;");
@@ -258,7 +258,7 @@ public class Database {
 					perdu = true;
 				}
 				Article art = new Article(codeBarre,codeDesc,loue,perdu);
-				art.toString();
+				//art.toString();
 				listeArticle.put(codeBarre, art);
 			}
 		}

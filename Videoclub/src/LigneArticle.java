@@ -67,10 +67,10 @@ public class LigneArticle {
 		return "Ligne Articles : "
 				+ "\n Quantite : "+this.quantite 
 				+ "\n Article : "+art.getCodeBarre()
-				+ "\n" + desc
+				+ "\n item: " + desc.getDescription()
 				+ "\n Date Due : " + dateDue
 				+ "\n Date Retour : " + dateRetour
-				+"\n";
+				+"\n prix vente: "+ desc.getPrixVente();
 	}
 	
 	public String getCodeBarreArticle() {

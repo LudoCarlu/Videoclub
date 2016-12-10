@@ -18,6 +18,7 @@ public class Article {
 		this.codeDescription = codeDescription;
 		this.loue = loue;
 		this.perdu = perdu;
+		
 	}
 	
 	public String getCodeBarre() {
@@ -47,7 +48,8 @@ public class Article {
 		return "codeBarre = "+ codeBarre +
 				"\ncodeDesc = "+ codeDescription +
 				"\n estPerdu = "+ perdu+
-				"\n estLoue = "+ loue;
+				"\n estLoue = "+ loue +
+				"\n desc: "+ desc.getTitre();
 				
 	}
 	public void setDescription(DescriptionArticle desc) {

@@ -43,7 +43,6 @@ public class DisplayPanel extends JPanel implements ActionListener{
 	private JButton btnEffectuerUnRetour = null;
 
 
-
 	public DisplayPanel(int choix,JFrameGestionnaire F){
 		this.type=choix;
 		setBackground(Color.WHITE);
@@ -52,6 +51,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 		String [] titleV={"Item","code","Quantité","Prix u"};
 		//Location L=new Location(Date.from(ZonedDateTime.now().with(LocalTime.MIN).toInstant()),new Date("13/12/1021"), null, null);
 		Object[][] data = {};
+
 
 		if (choix==-1){ // 
 			this.titre = new JLabel("Menu");
@@ -194,25 +194,36 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			this.titre = new JLabel("Vente");
 			titre.setBounds(200,5, 90, 20);
 			add(titre);
-			table = new JTable(data,titleV);
+			
+			
+			DefaultTableModel model = new DefaultTableModel();
+			table = new JTable(model);
+			model.addColumn("Item");
+			model.addColumn("Code");
+			model.addColumn("Prix u");
+			model.addColumn("Quantité");	
+			//table = new JTable(data,titleV);
 			table.setBounds(60,40,500,80);
 			add(table);
 			JScrollPane scrollPane = new JScrollPane(table);
 			scrollPane.setBounds(60, 40, 500, 80);
 			add(scrollPane);
-
+			
+			fenetre.getController().initierVente();
+			
 			JLabel lblSaisirArticle = new JLabel("Code Article");
 			lblSaisirArticle.setBounds(40, 180, 90, 20);
 			add(lblSaisirArticle);
 
-			codeArticle = new JTextField("");
-			codeArticle.setBounds(120, 177, 130, 25);
+			this.codeArticle = new JTextField("");
+			this.codeArticle.setBounds(120, 177, 130, 25);
 			add(codeArticle);
-			codeArticle.setColumns(10);
+			this.codeArticle.setColumns(10);
 
-			JButton btnAjouter = new JButton("Ajouter");
+			this.btnAjouter = new JButton("Ajouter");
 			btnAjouter.setBounds(430, 175, 120, 30);
 			add(btnAjouter);
+			this.btnAjouter.addActionListener(this);
 
 			JLabel lblQt = new JLabel("Qté:");
 			lblQt.setBounds(248, 183, 60, 15);
@@ -270,7 +281,8 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			quantite.setBounds(280, 177, 60, 26);
 			add(quantite);
 			quantite.setColumns(10);
-
+			
+			
 
 		}
 
@@ -484,10 +496,32 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			}
 		}
 		if(this.type == 2) { //vente
-			if(e.getSource() == this.btnAjouter) {
-				if(codeArticle.getText().isEmpty()==false) {
-					this.fenetre.getController().vente().creerLigneArticles(this.codeArticle.getText(), 1);;
-					this.codeArticle.setText("");
+			Controler c = this.fenetre.getController();
+
+			if(e.getSource() == btnAjouter) {
+				if(codeArticle.getText() != "") {
+					System.out.println("ok");
+					c.creerligneVente(this.codeArticle.getText(), 1);
+					System.out.println(this.codeArticle.getText());
+					
+					int position = c.instanceVente().getListeLigneArticles().size()-1;
+					LigneArticle lar = c.instanceVente().getListeLigneArticles().get(position);
+					System.out.println(lar.toString());
+					
+					DefaultTableModel m = (DefaultTableModel)table.getModel();
+					
+					String item = lar.getArticle().getDescription().getDescription();
+					String code = lar.getCodeBarreArticle();
+					String prixU = lar.getPrixVente()+" $";
+					int qte = lar.getQuantite();
+					Object[] dataV = {item,code,prixU,qte};
+					
+					m.addRow(dataV);
+					
+					System.out.println(m.getValueAt(1, 1));
+					table.setModel(m);
+					m.fireTableDataChanged();
+					
 				}
 			}
 		}
