@@ -240,24 +240,10 @@ public class Database {
 				 * Il y a un probleme pour les booleens
 				 * Il faut les recupérer en string et les mettre en booleen apres
 				 */
-				String estLoue = res.getString("estLoue");
-				String estPerdu = res.getString("estPerdu");
-				boolean loue = false;
-				boolean perdu = false;
+				boolean estLoue = res.getBoolean("estLoue");
+				boolean estPerdu = res.getBoolean("estPerdu");
 				
-				if(estLoue.equals("false") == true) {
-					loue = false;
-				}
-				if(estLoue.equals("true") == true) {
-					loue = true;
-				}
-				if(estPerdu.equals("false")) {
-					perdu = false;
-				}
-				if (estPerdu.equals("true")) {
-					perdu = true;
-				}
-				Article art = new Article(codeBarre,codeDesc,loue,perdu);
+				Article art = new Article(codeBarre,codeDesc,estLoue,estPerdu);
 				//art.toString();
 				listeArticle.put(codeBarre, art);
 			}
@@ -270,23 +256,33 @@ public class Database {
 	}
 
 	//Fonctionne 
-	public void insertLocation(Location l) {
+	public int insertLocation(Location l) {
 		this.connexion();
-
+		int lastId = 0;
+		int co = 0;
+		
 		try {
 			//SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 			//Pour recuperer le dernier id de Location
-			int lastId = 0;
-			ResultSet rs = this.getResultatDe("SELECT id FROM Location;");
+			
+			ResultSet rs = this.getResultatDe("SELECT id,count(*) FROM Location;");
 			while (rs.next()) {
 				lastId = rs.getInt("id");
-				System.out.println(lastId);
+				co = rs.getInt("count(*)");
+				//System.out.println(lastId);
 			}
 
 			requeteP = connexion.prepareStatement("INSERT INTO Location (id,numeroAdherent,codeBarre,dateHeure,datePrevue,dateRetour,montant) "
 					+ "VALUES (?,?,?,?,?,?,?);");
 			for(int i = 0; i < l.getListeLigneArticles().size(); i++) {
-				requeteP.setInt(1,lastId+1);
+				if(co == 0 && lastId == 0) {
+					requeteP.setInt(1,lastId);
+				}
+				else {
+					requeteP.setInt(1,lastId+1);
+					lastId = lastId + 1;
+				}
+				
 				requeteP.setString(2,l.getAdherent().getNumeroTel());
 				requeteP.setString(3,l.getListeLigneArticles().get(i).getCodeBarreArticle());
 
@@ -311,16 +307,16 @@ public class Database {
 				requeteP.setFloat(7, l.getMontant());
 
 				requeteP.executeUpdate();
-				this.faireRequete("UPDATE Article SET estLoue='true' WHERE codeBarre='"+l.ligneArticle.get(i).getCodeBarreArticle()+"';");
+				this.faireRequete("UPDATE Article SET estLoue=1 WHERE codeBarre='"+l.ligneArticle.get(i).getCodeBarreArticle()+"';");
 			}
+			
 
 		} catch (SQLException e) {
 
 			e.printStackTrace();
 		}
 		this.deconnexion();
-
-
+		return lastId;
 	}
 	/**
 	 * Ajoute une nouvelle Description d'article à la database. 
@@ -417,7 +413,7 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
-	//Ne produit pas d'erreur mais pas tester
+
 	public ArrayList<Location> genererLocation() {
 		ArrayList<Location> listeLocation = new ArrayList<Location>();
 		try {
@@ -464,7 +460,7 @@ public class Database {
 			//Changement de estLoue de l'article a false
 			requeteP = connexion.prepareStatement(requeteArticle);
 			//On insere le boolean sous forme de string pour voir ecrit false et true
-			requeteP.setString(1, "false");
+			requeteP.setBoolean(1, false);
 			requeteP.setString(2, lar.getCodeBarreArticle());
 			requeteP.executeUpdate();
 			

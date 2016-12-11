@@ -34,4 +34,12 @@ public abstract class Operation {
 	public ArrayList<LigneArticle> getListeLigneArticles() {
 		return this.ligneArticle;
 	}
+	
+	public Date getDateHeure() {
+		return this.dateHeure;
+	}
+	public void setDateHeure(Date d) {
+		this.dateHeure = d;
+	}
+	
 }

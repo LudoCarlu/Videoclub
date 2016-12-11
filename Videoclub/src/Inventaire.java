@@ -23,6 +23,9 @@ public class Inventaire {
 	public int count(){
 		return inv.size();
 	}
+	public Hashtable<String,Article> getInventaire() {
+		return this.inv;
+	}
 	
 	public void reconcile(Catalogue c){
 		Set<String> keys = inv.keySet();

@@ -1,5 +1,25 @@
+<<<<<<< Updated upstream
 /Paiement.class
 /Vente.class
 /Videoclub.class
 /Retour.class
 /Inventaire.class
+=======
+/Database.class
+/DescriptionArticle.class
+/DisplayPanel$1.class
+/DisplayPanel.class
+/Employe.class
+/Gerant.class
+/GestionMain.class
+/Inscription.class
+/JFrameGestionnaire.class
+/LigneArticle.class
+/Location.class
+/NonAdherent.class
+/Operation.class
+/Paiement.class
+/Retour.class
+/Vente.class
+/Videoclub.class
+>>>>>>> Stashed changes

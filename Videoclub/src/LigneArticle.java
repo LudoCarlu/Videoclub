@@ -7,6 +7,8 @@ public class LigneArticle {
 	private Article art;
 	private Date dateRetour;
 	
+	private Amende amende = null;
+	
 	public LigneArticle(DescriptionArticle desc, int quantite) {
 		this.desc = desc;
 		this.quantite = quantite;
@@ -42,7 +44,7 @@ public class LigneArticle {
 
 	public float getPrixLocation() {
 		return this.quantite*desc.getPrixJournalier();
-	}
+	}	
 	public DescriptionArticle getDescriptionArticle(){
 		return this.desc;
 	}
@@ -79,5 +81,20 @@ public class LigneArticle {
 	
 	public Article getArticle() {
 		return this.art;
+	}
+	
+	public float getMontant(Date d) {
+		float m = 0;
+		
+		long difference = Math.abs(this.dateDue.getTime()-d.getTime());
+		long MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
+		long nombreJour = (long)difference/MILLISECONDS_PER_DAY;
+		
+		m = this.quantite * desc.getPrixJournalier()*nombreJour;
+		
+		return m;
+	}
+	public void setAmende(Amende am) {
+		this.amende = am;
 	}
 }

@@ -41,7 +41,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 	private JComboBox<String> duree;
 	private JTextArea adresse;
 	private JButton btnEffectuerUnRetour = null;
-
+	private JButton btnAmende = null;
 
 	public DisplayPanel(int choix,JFrameGestionnaire F){
 		this.type=choix;
@@ -393,11 +393,15 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			this.btnEffectuerUnRetour.addActionListener(this);
 
 		}
-		if (choix==5){
+		if (choix==5){ //Retard / Amende
 			setLayout(null);
 			this.titre = new JLabel("Gerer les retards");
 			titre.setBounds(264, 5, 150, 16);
 			add(titre);
+			this.btnAmende = new JButton("Generer les amendes");
+			this.btnAmende.setBounds(400, 119, 144, 29);
+			this.add(btnAmende);
+			this.btnAmende.addActionListener(this);
 		}
 
 		if (choix==6){
@@ -494,6 +498,13 @@ public class DisplayPanel extends JPanel implements ActionListener{
 					this.codeArticle.setText("");
 				}
 			}
+		}
+		
+		if(this.type == 5) { //Retard
+			if(e.getSource() == btnAmende) {
+				this.fenetre.getController().gererRetard();
+			}
+			
 		}
 		if(this.type == 2) { //vente
 			Controler c = this.fenetre.getController();

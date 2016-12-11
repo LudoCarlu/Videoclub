@@ -7,7 +7,9 @@ public class Location extends Operation{
 	private Date dateDue;
 	private Date dateRetour;
 	private Adherent adherent;
-	private Amende amende;
+	
+	//Vu que chaque ligne d'articles est une amende potentielle il faut une liste d'amende
+	private ArrayList<Amende> listeAmende = null;
 	
 	//Pour charger les locations
 	private String codeBarre;
@@ -96,8 +98,8 @@ public class Location extends Operation{
 	public Adherent getAdherent() {
 		return adherent;
 	}
-	public Amende getAmende() {
-		return amende;
+	public ArrayList<Amende> getAmende() {
+		return this.listeAmende;
 	}
 	
 	//Getteurs pour location qui vient de la bdd
@@ -111,6 +113,10 @@ public class Location extends Operation{
 		return numAdherent;
 	}
 	// Fin
+	
+	public void setIdLoc(int id) {
+		this.idLoc = id;
+	}
 	
 	public void setDateDue(int duree) {
 		Calendar d = this.cal;
@@ -138,5 +144,28 @@ public class Location extends Operation{
 				+ "]";
 	}
 	
+	public void ajouterAmende(Amende am) {
+		if(listeAmende == null) {
+			listeAmende = new ArrayList<Amende>();
+			listeAmende.add(am);
+		}
+		else {
+			int co = 0;
+			String codeArtAmende = am.getCodeArticleAmende();
+			for(int i=0; i<listeAmende.size(); i++) {
+				if(listeAmende.get(i).getCodeArticleAmende().equals(codeArtAmende) == true) {
+					listeAmende.get(i).setMontant(am.getMontant());
+					listeAmende.get(i).setDateHeure(am.getDateHeure());
+					co++;
+					
+				}
+			}
+			//Amende pas encore présente et il y a deja une autre amende
+			if (co == 0) {
+				listeAmende.add(am);
+			}
+		}
+		System.out.println(listeAmende);
+	}
 
 }

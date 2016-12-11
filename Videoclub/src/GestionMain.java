@@ -9,7 +9,7 @@ public class GestionMain {
 		Controler controler = videoclub.getControler();
 		JFrameGestionnaire frame=new JFrameGestionnaire(controler);
 		
-		System.out.println(controler.instanceInventaire().getArticle("126").toString());
+		//System.out.println(controler.instanceInventaire().getArticle("126").toString());
 		/*test acquisition
 		
 		controler.aquerirFilm("9873", "Logan", "Action", "Years after the epilogue of X-Men: Days of Future Past, some of the last mutants, an aging Logan—whose healing factor is starting to fail—and Charles Xavier, protect a young girl named Laura who is very similar"+
