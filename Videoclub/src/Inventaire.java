@@ -15,7 +15,19 @@ public class Inventaire {
 		return inv.get(codeBarre).getDescription();
 	}
 	public void retirerArticle(String codeBarre){
+		
+		Database d = Videoclub.instanceVideoclub().getDB();
+		d.removeArticle(inv.get(codeBarre));
+		
 		inv.remove(codeBarre);
+	}
+	
+	public void retirerArticle(Article art){
+		
+		Database d = Videoclub.instanceVideoclub().getDB();
+		d.removeArticle(art);
+		
+		inv.remove(art.getCodeBarre());
 	}
 	public void ajouterArticle(Article article){
 		inv.put(article.getCodeBarre(), article);

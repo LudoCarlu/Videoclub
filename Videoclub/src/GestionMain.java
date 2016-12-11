@@ -19,7 +19,6 @@ public class GestionMain {
 		//FONCTIONNE
 		*/
 		
-		
 		//System.out.println("Location");
 		//controler.MenuLocation();
 

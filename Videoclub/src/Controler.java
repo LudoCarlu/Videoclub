@@ -279,6 +279,9 @@ public class Controler {
 			this.vente = new Vente();
 		}
 	}
+	public void terminerVente(){
+		this.vente = null;
+	}
 	public Vente instanceVente(){
 		return this.vente;
 	}

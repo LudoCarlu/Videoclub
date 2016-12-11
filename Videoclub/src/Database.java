@@ -480,6 +480,21 @@ public class Database {
 		this.deconnexion();
 
 	}
+	public void removeArticle(Article art){
+		this.connexion();
+		String strSQL = "DELETE FROM Article WHERE codeBarre = ?";
+		try {
+			requeteP = connexion.prepareStatement(strSQL);
+			requeteP.setString(1, art.getCodeBarre());
+			requeteP.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		this.deconnexion();
+		
+	}
 
 }
 

@@ -17,6 +17,8 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
+import java.text.DecimalFormat;
+
 public class DisplayPanel extends JPanel implements ActionListener{
 	private int type=0;
 	private JLabel titre;
@@ -273,9 +275,10 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			lblMontantTotal.setBounds(300, 400, 115, 15);
 			add(lblMontantTotal);
 
-			JButton btnPayer = new JButton("Payer");
+			this.btnPayer = new JButton("Payer");
 			btnPayer.setBounds(430, 440, 115, 30);
 			add(btnPayer);
+			this.btnPayer.addActionListener(this);
 
 			quantite = new JTextField("1");
 			quantite.setBounds(280, 177, 60, 26);
@@ -511,7 +514,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 
 			if(e.getSource() == btnAjouter) {
 				if(codeArticle.getText() != "") {
-					System.out.println("ok");
+
 					c.creerligneVente(this.codeArticle.getText(), 1);
 					System.out.println(this.codeArticle.getText());
 					
@@ -529,10 +532,40 @@ public class DisplayPanel extends JPanel implements ActionListener{
 					
 					m.addRow(dataV);
 					
-					System.out.println(m.getValueAt(1, 1));
 					table.setModel(m);
 					m.fireTableDataChanged();
+					c.instanceVente().majMontant();
 					
+					DecimalFormat df = new DecimalFormat("0.00");
+							
+					totalCourant.setText(df.format(c.instanceVente().getMontant()) + " $");
+					double ttps = c.instanceVente().getMontant()*0.05;
+					double ttvq = (c.instanceVente().getMontant()+ttps)*0.0975;
+					tps.setText(df.format(ttps) + " $");
+					tpq.setText(df.format(ttvq) + " $");
+					montantTotal.setText(df.format(c.instanceVente().getMontant() + ttps + ttvq) + " $");
+					
+				}
+			}
+			
+			if (e.getSource() == btnPayer){
+				if (c.instanceVente().getMontant()>0){
+					
+					for (int i= 0; i<c.instanceVente().getListeLigneArticles().size();i++){
+						LigneArticle lar = c.instanceVente().getListeLigneArticles().get(i);
+						
+						for (int j = 0; j<lar.getQuantite();j++){
+						c.instanceInventaire().retirerArticle(lar.getArticle());
+						}
+					}
+				c.terminerVente();
+				codeArticle.setText("");
+				tps.setText("");
+				tpq.setText("");
+				montantTotal.setText("");
+				totalCourant.setText("");
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				model.setRowCount(0);
 				}
 			}
 		}
