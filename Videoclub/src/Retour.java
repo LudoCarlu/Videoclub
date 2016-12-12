@@ -19,7 +19,7 @@ public class Retour {
 	
 	public boolean isEnRetard() {
 		
-		if(this.lar.getDateRetour().compareTo(this.lar.getDateDue()) > 0) {
+		if(this.lar.getDateRetour().compareTo(this.lar.getDateDue()) >= 1) {
 			return true;
 		}
 		
