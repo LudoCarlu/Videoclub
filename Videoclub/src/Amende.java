@@ -27,7 +27,9 @@ public class Amende extends Operation{
 		prixSemaine = la.getDescriptionArticle().getPrixJournalier()*7;
 		
 		if(la.getDateRetour() == null) {
-			this.jrsRetard = calculJourEntreDate(la.getDateDue(), this.dateHeure);
+			System.out.println(la.getDateDue());
+			this.jrsRetard = calculJourEntreDate(this.dateHeure,la.getDateDue());
+			
 		}
 		//calcule le nbr de jours en retard entre la date due et la date de retour de la location
 		else {

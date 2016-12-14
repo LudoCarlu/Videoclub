@@ -9,7 +9,7 @@ public class Controler {
 	private Location loc = null;
 	private Vente vente = null;
 	private Hashtable<Integer,Location> listeLocation = null;
-	
+	private Hashtable<Integer,Amende> listeAmende= null;
 
 	//Constructeur
 	public Controler(Hashtable<String,Adherent> list,Hashtable<String,DescriptionArticle> listDesc,
@@ -23,7 +23,10 @@ public class Controler {
 	}
 	public Hashtable<String,Adherent> getListAdherent(){
 		return this.listeMembre;
-	}	
+	}
+	public Hashtable<Integer,Amende> getListeAmende() {
+		return this.listeAmende;
+	}
 
 	/*Methodes pour l'authentification */
 	public Adherent authentificationMembre(String pseudo,String mdp) {
@@ -305,6 +308,7 @@ public class Controler {
 	 * On gère les amendes
 	 */
 	public void gererRetard() {
+		this.listeAmende= new Hashtable<Integer,Amende>();
 		
 		Set<Integer> keys = this.listeLocation.keySet();
 		for(Integer k: keys) {
@@ -320,10 +324,25 @@ public class Controler {
 				//System.out.println(nombreJourRetard);
 				//System.out.println(dateDue.before(aujourdhui));
 				//En retard
+
+				
 				if(dateDue.before(aujourdhui) && (dateRetour == null || dateDue.before(dateRetour))){
-					Amende am = new Amende(this.listeLocation.get(k),j);
+					long diff;
+					if(dateRetour != null) {
+						diff = Math.abs(dateRetour.getTime() - dateDue.getTime());
+					}
+					else {
+						diff = Math.abs(aujourdhui.getTime()-dateDue.getTime());
+					}
+					long MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
+					long jRet = (long)diff/MILLISECONDS_PER_DAY;
+					
+					if(jRet > 0) {
+						Amende am = new Amende(this.listeLocation.get(k),j);
 					//System.out.println(listeLocation.get(k));
-					listeLocation.get(k).ajouterAmende(am);
+						listeLocation.get(k).ajouterAmende(am);
+						listeAmende.put(listeLocation.get(k).getIdLoc(),am);
+					}
 					//System.out.println(am);
 				}
 				

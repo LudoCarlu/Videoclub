@@ -9,7 +9,9 @@ import java.time.LocalTime;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Hashtable;
 import java.util.Random;
+import java.util.Set;
 
 import javax.swing.JButton;
 import javax.swing.JTable;
@@ -415,8 +417,21 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			this.titre = new JLabel("Gerer les retards");
 			titre.setBounds(264, 5, 150, 16);
 			add(titre);
+			
+			this.defaultModel = new DefaultTableModel();
+			table = new JTable(defaultModel);
+			defaultModel.addColumn("Location");
+			defaultModel.addColumn("Adherent");
+			defaultModel.addColumn("Code Barre");
+			defaultModel.addColumn("Prix Amende");
+			table.setBounds(60,40,500,400);
+			add(table);
+			JScrollPane scrollPane = new JScrollPane(table);
+			scrollPane.setBounds(60, 40, 500, 80);
+			add(scrollPane);
+			
 			this.btnAmende = new JButton("Generer les amendes");
-			this.btnAmende.setBounds(400, 119, 144, 29);
+			this.btnAmende.setBounds(240,250,200, 20);
 			this.add(btnAmende);
 			this.btnAmende.addActionListener(this);
 		}
@@ -529,6 +544,17 @@ public class DisplayPanel extends JPanel implements ActionListener{
 		if(this.type == 5) { //Retard
 			if(e.getSource() == btnAmende) {
 				this.fenetre.getController().gererRetard();
+				Hashtable<Integer,Amende> am = this.fenetre.getController().getListeAmende();
+				Set<Integer> keys = am.keySet();
+				for(Integer k: keys) {
+					String[] data = {
+							new Integer(am.get(k).getLoc().getIdLoc()).toString(),
+							am.get(k).getAd().getNumeroTel(),
+							am.get(k).getCodeArticleAmende(),
+							new Float(am.get(k).getMontant()).toString()
+					};
+					this.defaultModel.addRow(data);
+				}
 			}
 			
 		}
