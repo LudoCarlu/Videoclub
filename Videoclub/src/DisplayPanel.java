@@ -61,19 +61,32 @@ public class DisplayPanel extends JPanel implements ActionListener{
 		}
 
 		if (choix==0){
+			setLayout(null);
 			this.titre = new JLabel("Authentifcation Caissier"); 
 			add(titre);
-
+			this.titre.setBounds(250,20, 200,20);
+			
+			JLabel id = new JLabel("Identifiant : ");
+			add(id);
+			id.setBounds(20,100,200,20);
+			
 			pseudo = new JTextField();
 			add(pseudo);
 			pseudo.setColumns(10);
+			pseudo.setBounds(130,100,200,20);
 
+			JLabel jl = new JLabel("Mot de passe : ");
+			add(jl);
+			jl.setBounds(20,140,200,20);
 			mdp = new JTextField();
 			add(mdp);
 			mdp.setColumns(10);
+			mdp.setBounds(130,140,200,20);
+			
 			this.valider= new JButton("Valider");
 			add(this.valider);
 			this.valider.addActionListener(this);
+			this.valider.setBounds(250,200,100,20);
 		}
 		if (choix==7){ 
 			this.titre = new JLabel("Authentifcation Location");
@@ -82,6 +95,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			pseudo = new JTextField();
 			add(pseudo);
 			pseudo.setColumns(10);
+			
 
 			mdp = new JTextField();
 			add(mdp);
@@ -428,8 +442,17 @@ public class DisplayPanel extends JPanel implements ActionListener{
 		}
 
 	}
+	/*
+	 *  type -1 : Menu,
+	 *  type 0 : authentification caissier
+	 *  type 1 : location
+	 *   type 2 : vente(non-Javadoc)
+	 *  type 5 : Retard
+	 *  type 6 : acquisition
+	 *  type 7 : authentification location
+	 */
 	@Override
-	public void actionPerformed(ActionEvent e) { // type -1=Menu, type0 = authentification caissier , type 7=authentification lcoation, type 1=location, type 2= vente
+	public void actionPerformed(ActionEvent e) { 
 
 		if (this.type==0){ // authentification caissier
 			if (e.getSource()== this.valider){

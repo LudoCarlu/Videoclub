@@ -226,25 +226,29 @@ public class Controler {
 		for(int i=0;i < l.size(); i++) {
 			Adherent ad = listeMembre.get(l.get(i).getNumAdherent());
 			Article a = inventaire.getArticle(l.get(i).getCodeBarre());
-			//System.out.println(catalogue.getDesc(a.getCodeDescription()));
-			DescriptionArticle desc = catalogue.getDesc(a.getCodeDescription());
-			a.ajouterDescription(desc);
-			ArrayList<LigneArticle> la = new ArrayList<LigneArticle>();
-			la.add(new LigneArticle(a,l.get(i).getDateDue(),l.get(i).getDateRetour()));
+			//System.out.println(a);
+			//Condition si l'article a ete enlever des articles
+			if(a != null) {
+				DescriptionArticle desc = catalogue.getDesc(a.getCodeDescription());
+				a.ajouterDescription(desc);
+				ArrayList<LigneArticle> la = new ArrayList<LigneArticle>();
+				la.add(new LigneArticle(a,l.get(i).getDateDue(),l.get(i).getDateRetour()));
 
-			//Pour ajouter tous les articles dans la ligne Article de la location par rapport à son id
-			for(int j = i+1; j < l.size(); j++) {
-				if(l.get(i).getIdLoc() == l.get(j).getIdLoc()) {
-					Article a2 = inventaire.getArticle(l.get(j).getCodeBarre());
-					DescriptionArticle desc2 = catalogue.getDesc(a2.getCodeDescription());
-					a2.ajouterDescription(desc2);
-					la.add(new LigneArticle(a2,l.get(j).getDateDue(),l.get(j).getDateRetour()));
+				//Pour ajouter tous les articles dans la ligne Article de la location par rapport à son id
+				for(int j = i+1; j < l.size(); j++) {
+					if(l.get(i).getIdLoc() == l.get(j).getIdLoc()) {
+						Article a2 = inventaire.getArticle(l.get(j).getCodeBarre());
+						DescriptionArticle desc2 = catalogue.getDesc(a2.getCodeDescription());
+						a2.ajouterDescription(desc2);
+						la.add(new LigneArticle(a2,l.get(j).getDateDue(),l.get(j).getDateRetour()));
+					}
+				}
+				if(listeLocation.containsKey(l.get(i).getIdLoc()) ==  false) {
+					Location tmp = new Location(l.get(i).getIdLoc(),ad,l.get(i).getDateHeure(),la,l.get(i).montant);
+					listeLocation.put(tmp.getIdLoc(),tmp);	
 				}
 			}
-			if(listeLocation.containsKey(l.get(i).getIdLoc()) ==  false) {
-				Location tmp = new Location(l.get(i).getIdLoc(),ad,l.get(i).getDateHeure(),la,l.get(i).montant);
-				listeLocation.put(tmp.getIdLoc(),tmp);	
-			}
+
 		}
 	}
 	
