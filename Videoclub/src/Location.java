@@ -56,13 +56,11 @@ public class Location extends Operation{
 		this.ligneArticle = l;
 		this.montant = montant;
 	}
-	
-	
-	
+
 	public void ajouterAdherent(Adherent ad) {
 		this.adherent =  ad;
-		toString();
 	}
+	
 	public void creerLigneArticles(DescriptionArticle desc, int quantite) {
 		LigneArticle lar = new LigneArticle(desc,quantite);
 		//System.out.println(lar);
@@ -123,19 +121,10 @@ public class Location extends Operation{
 		d.add(Calendar.DATE,duree);
 		this.ligneArticle.get(this.ligneArticle.size()-1).setDateDue(d.getTime());
 		d.add(Calendar.DATE,-duree);
-		//this.dateDue = d.getTime();
 	}
 	
 
 	@Override
-	/*public String toString2() {
-		return "Location "
-				+ "\nAdherent=" + adherent 
-				+ "\ndateHeure = " + this.dateHeure
-				//+ "\ndateDue = " + ligneArticle.get(ligneArticle.size()-1).getDateDue()
-				+ "\nDateRetour = " + dateRetour
-				+ "\nAmende="+amende;
-	}*/
 	public String toString() {
 		return "Location "+ this.idLoc
 				+ "\nAdherent=" + adherent 
@@ -145,24 +134,29 @@ public class Location extends Operation{
 	}
 	
 	public void ajouterAmende(Amende am) {
+		Videoclub v = Videoclub.instanceVideoclub();
+		
 		if(listeAmende == null) {
 			listeAmende = new ArrayList<Amende>();
 			listeAmende.add(am);
+			v.getDB().insertAmende(am);
 		}
 		else {
 			int co = 0;
-			String codeArtAmende = am.getCodeArticleAmende();
+			String codeArtAmende = am.getCodeBarre();
 			for(int i=0; i<listeAmende.size(); i++) {
-				if(listeAmende.get(i).getCodeArticleAmende().equals(codeArtAmende) == true) {
+				if(listeAmende.get(i).getCodeBarre().equals(codeArtAmende) == true) {
 					listeAmende.get(i).setMontant(am.getMontant());
 					listeAmende.get(i).setDateHeure(am.getDateHeure());
 					co++;
+					v.getDB().udpateAmende(am);
 					
 				}
 			}
 			//Amende pas encore présente et il y a deja une autre amende
 			if (co == 0) {
 				listeAmende.add(am);
+				v.getDB().insertAmende(am);
 			}
 		}
 		System.out.println(listeAmende);

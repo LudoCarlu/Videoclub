@@ -9,7 +9,6 @@ public class Controler {
 	private Location loc = null;
 	private Vente vente = null;
 	private Hashtable<Integer,Location> listeLocation = null;
-	private Hashtable<Integer,Amende> listeAmende= null;
 
 	//Constructeur
 	public Controler(Hashtable<String,Adherent> list,Hashtable<String,DescriptionArticle> listDesc,
@@ -24,8 +23,8 @@ public class Controler {
 	public Hashtable<String,Adherent> getListAdherent(){
 		return this.listeMembre;
 	}
-	public Hashtable<Integer,Amende> getListeAmende() {
-		return this.listeAmende;
+	public Hashtable<Integer,Location> getListeLocation() {
+		return this.listeLocation;
 	}
 
 	/*Methodes pour l'authentification */
@@ -159,7 +158,7 @@ public class Controler {
 	 * @param estNouveau
 	 * @param quantite : Le nombre d'articles identiques ajoutés
 	 */
-	public void aquerirFilm(String codeArticle, String titre, String genre, String description, float prixJournalier, 
+	public void acquerirFilm(String codeArticle, String titre, String genre, String description, float prixJournalier, 
 			float prixHebdomadaire, float prixVente, boolean estNouveau, int quantite){
 
 		DescriptionArticle desc;
@@ -307,8 +306,8 @@ public class Controler {
 	 * Gestion des retards
 	 * On gère les amendes
 	 */
+	
 	public void gererRetard() {
-		this.listeAmende= new Hashtable<Integer,Amende>();
 		
 		Set<Integer> keys = this.listeLocation.keySet();
 		for(Integer k: keys) {
@@ -341,7 +340,6 @@ public class Controler {
 						Amende am = new Amende(this.listeLocation.get(k),j);
 					//System.out.println(listeLocation.get(k));
 						listeLocation.get(k).ajouterAmende(am);
-						listeAmende.put(listeLocation.get(k).getIdLoc(),am);
 					}
 					//System.out.println(am);
 				}
@@ -349,6 +347,13 @@ public class Controler {
 				
 			}
 		}
+	}
+	
+	public void finAmende(int idLoc, String numAd, String codeBarre) {
+		Location loc = this.listeLocation.get(idLoc);
+		Adherent ad = this.listeMembre.get(numAd);
+		
+		ad.payerAmende(loc, codeBarre);
 	}
 }
 

@@ -46,6 +46,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 	private JTextArea adresse;
 	private JButton btnEffectuerUnRetour = null;
 	private JButton btnAmende = null;
+	private JTextField numLocation = null;
 
 	public DisplayPanel(int choix,JFrameGestionnaire F){
 		this.type=choix;
@@ -64,7 +65,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 
 		if (choix==0){
 			setLayout(null);
-			this.titre = new JLabel("Authentifcation Caissier"); 
+			this.titre = new JLabel("Authentifcation Employe"); 
 			add(titre);
 			this.titre.setBounds(250,20, 200,20);
 			
@@ -106,6 +107,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			add(this.valider);
 			this.valider.addActionListener(this);
 		}
+		
 		if(choix==1){ 
 			setLayout(null);
 			this.titre = new JLabel("Location");
@@ -120,7 +122,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			scrollPane.setBounds(60, 40, 500, 80);
 			add(scrollPane);
 
-			JLabel lblSaisirArticle = new JLabel("Code Article");
+			JLabel lblSaisirArticle = new JLabel("Code Barre");
 			lblSaisirArticle.setBounds(40, 180, 90, 20);
 			add(lblSaisirArticle);
 
@@ -402,7 +404,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			add(codeArticle);
 			codeArticle.setColumns(10);
 
-			JLabel lblCodeArticle = new JLabel("Code Article:");
+			JLabel lblCodeArticle = new JLabel("CodeBarre :");
 			lblCodeArticle.setBounds(31, 124, 83, 16);
 			add(lblCodeArticle);
 
@@ -431,9 +433,41 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			add(scrollPane);
 			
 			this.btnAmende = new JButton("Generer les amendes");
-			this.btnAmende.setBounds(240,250,200, 20);
+			this.btnAmende.setBounds(230,150,150, 20);
 			this.add(btnAmende);
 			this.btnAmende.addActionListener(this);
+			
+			JLabel paiement = new JLabel("Payer une amende : ");
+			paiement.setBounds(60,200,200,20);
+			add(paiement);
+			
+			JLabel num = new JLabel("Adherent numero :");
+			this.numTel = new JTextField();
+			num.setBounds(60,230,150,20);
+			add(num);
+			numTel.setBounds(220,230,150,20);
+			add(numTel);
+			
+			JLabel loc = new JLabel("Location numero : ");
+			this.numLocation = new JTextField();
+			loc.setBounds(60,260,150,20);
+			add(loc);
+			numLocation.setBounds(220,260,150,20);
+			add(numLocation);
+			
+			JLabel c = new JLabel("codeBarre : ");
+			this.codeArticle = new JTextField();
+			c.setBounds(60,290,150,20);
+			add(c);
+			codeArticle.setBounds(220,290,150,20);
+			add(codeArticle);
+			
+			
+			this.btnPayer = new JButton("Payer");
+			this.btnPayer.addActionListener(this);
+			this.btnPayer.setBounds(60,340,70,20);
+			add(this.btnPayer);
+
 		}
 
 		if (choix==6){
@@ -544,17 +578,44 @@ public class DisplayPanel extends JPanel implements ActionListener{
 		if(this.type == 5) { //Retard
 			if(e.getSource() == btnAmende) {
 				this.fenetre.getController().gererRetard();
-				Hashtable<Integer,Amende> am = this.fenetre.getController().getListeAmende();
+				Hashtable<Integer,Location> am = this.fenetre.getController().getListeLocation();
 				Set<Integer> keys = am.keySet();
 				for(Integer k: keys) {
-					String[] data = {
-							new Integer(am.get(k).getLoc().getIdLoc()).toString(),
-							am.get(k).getAd().getNumeroTel(),
-							am.get(k).getCodeArticleAmende(),
-							new Float(am.get(k).getMontant()).toString()
-					};
-					this.defaultModel.addRow(data);
+					Location loc = am.get(k);
+					if(loc.getAmende() != null) {
+						for(int i=0; i < loc.getAmende().size(); i++) {
+							if(loc.getAmende().get(i).isTerminee() == false) {
+								String[] data = {
+										new Integer(am.get(k).getIdLoc()).toString(),
+										am.get(k).getAdherent().getNumeroTel(),
+										loc.getAmende().get(i).getCodeBarre(),
+										new Float(loc.getAmende().get(i).getMontant()).toString()
+								};
+								this.defaultModel.addRow(data);
+							}
+						}
+					}
 				}
+			}
+			
+			if(e.getSource() == btnPayer) {
+				Controler c = this.fenetre.getController();
+				JLabel ok;
+				if(numLocation.getText().isEmpty() == false && numTel.getText().isEmpty() == false 
+						&& codeArticle.getText().isEmpty() == false) {
+					c.finAmende(Integer.parseInt(numLocation.getText()),numTel.getText(),codeArticle.getText());
+					ok = new JLabel("Paiement accepté !");
+					ok.setBounds(200,340,150,20);
+					add(ok);
+					repaint();
+				}
+				else {
+					ok = new JLabel("Il manque un élément") ;
+					ok.setBounds(200,340,200,20);
+					add(ok);
+				}
+				
+					
 			}
 			
 		}

@@ -53,13 +53,17 @@ CREATE TABLE Article (
 	FOREIGN KEY (codeDescription) REFERENCES DescriptionArticle(codeArticle)
 );
 
-INSERT INTO Article VALUES ("12A","12","false","false");
-INSERT INTO Article VALUES ("13A","13","false","false");
-INSERT INTO Article VALUES ("133A","133","false","false");
-INSERT INTO Article VALUES ("19A","19","false","false");
-INSERT INTO Article VALUES ("14A","14","false","false");
-INSERT INTO Article VALUES ("15A","15","false","false");
-INSERT INTO Article VALUES ("16A","16","false","false");
+CREATE TABLE Amende (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	numLocation INTEGER NOT NULL,
+	numAdherent VARCHAR NOT NULL,
+	codeBarre VARCHAR NOT NULL,
+	montant REAL NOT NULL,
+	payee BOOLEAN NOT NULL,
+	FOREIGN KEY (numLocation) REFERENCES Location (id),
+	FOREIGN KEY (numAdherent) REFERENCES Adherent (numeroTel),
+	FOREIGN KEY (codeBarre) REFERENCES Article (codeBarre)
+);
 
 
 

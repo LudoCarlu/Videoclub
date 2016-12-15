@@ -8,13 +8,7 @@ public class Amende extends Operation{
 	private float prixSemaine; 
 	private float prixJournee;
 	private int indexLA;
-	
-	
-	
-	/*
-	 * Les opérations du constructeur sont pour l'instant que du pseudo code. 
-	 * Les méthodes de la classe Location doivent être implémentés
-	 */
+	private String codeBarre;	
 	
 	public Amende(Location loc,int indexLA) {
 		this.dateHeure = new Date();
@@ -25,6 +19,7 @@ public class Amende extends Operation{
 		LigneArticle la = loc.ligneArticle.get(indexLA);
 		prixJournee = la.getDescriptionArticle().getPrixJournalier();
 		prixSemaine = la.getDescriptionArticle().getPrixJournalier()*7;
+		this.codeBarre = this.loc.getListeLigneArticles().get(indexLA).getCodeBarreArticle();
 		
 		if(la.getDateRetour() == null) {
 			System.out.println(la.getDateDue());
@@ -93,6 +88,7 @@ public class Amende extends Operation{
 		this.montant = montantAmende;
 		//System.out.println("Montant amende = "+this.montant);
 	}
+
 	
 	
 	public Adherent getAd() {
@@ -116,6 +112,9 @@ public class Amende extends Operation{
 	public int getIndexLA() {
 		return this.indexLA;
 	}
+	public String getCodeBarre() {
+		return this.codeBarre;
+	}
 
 	private long calculJourEntreDate (Date d1, Date d2) {
 		long diff = Math.abs(d1.getTime()-d2.getTime());
@@ -123,9 +122,8 @@ public class Amende extends Operation{
 		return (long)diff/MILLISECONDS_PER_DAY;
 		 
 	}
-	public String getCodeArticleAmende() {
-		return this.loc.getListeLigneArticles().get(indexLA).getCodeBarreArticle();
-	}
+
+
 	
 	public String toString() {
 		return "AMENDE \n "+

@@ -40,6 +40,8 @@ public class Adherent extends Client{
 		this.adresse = adresse;
 		this.numeroCB = numeroCB;
 	}
+
+	
 	public void setListeLocation(ArrayList<Location> listeLocation) {
 		this.listeLocation = listeLocation;
 	}
@@ -51,6 +53,20 @@ public class Adherent extends Client{
 	public String toString() {
 		return "Adherent [numeroTel=" + numeroTel + ", codeSecret=" + codeSecret + ", nom=" + nom + ", prenom=" + prenom
 				+ ", adresse=" + adresse + ", numeroCB=" + numeroCB + ", listeLocation=" + listeLocation + "]";
+	}
+	
+	public void payerAmende(Location l,String codeBarre) {
+
+		Database d = Videoclub.instanceVideoclub().getDB();
+		int taille =  l.getAmende().size();
+		for(int i = 0; i < taille; i++) {
+			Amende am = l.getAmende().get(i);
+			if(am.getCodeBarre().equals(codeBarre) == true) {
+				am.setEstTerminee(true);
+				am.setPaiement(new Paiement(am.getMontant()));
+				d.udpateAmende(am);
+			}
+		}
 	}
 	
 	

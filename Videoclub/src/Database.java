@@ -495,6 +495,49 @@ public class Database {
 		this.deconnexion();
 		
 	}
+	public void insertAmende(Amende am) {
+		this.connexion();
+		String requete = "INSERT INTO Amende (numLocation,numAdherent,codeBarre,montant,payee) VALUES(?,?,?,?,?);";
+		try {
+			requeteP = connexion.prepareStatement(requete);
+			requeteP.setInt(1, am.getLoc().getIdLoc());
+			requeteP.setString(2, am.getAd().getNumeroTel());
+			requeteP.setString(3, am.getCodeBarre());
+			requeteP.setFloat(4, am.getMontant());
+			requeteP.setBoolean(5, am.isTerminee());
+			requeteP.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.deconnexion();
+	}
+	public void udpateAmende(Amende am) {
+		this.connexion();
+		String requete = "UPDATE Amende "
+				+ "SET numLocation = ?, numAdherent = ?, codeBarre = ?, montant = ?, payee = ?"
+				+ "WHERE numLocation = ? AND numAdherent = ?;";
+		try {
+			requeteP = connexion.prepareStatement(requete);
+			requeteP.setInt(1,am.getLoc().getIdLoc());
+			requeteP.setString(2,am.getAd().getNumeroTel());
+			requeteP.setString(3, am.getCodeBarre());
+			requeteP.setFloat(4,am.getMontant());
+			requeteP.setBoolean(5,am.isTerminee());
+			requeteP.setInt(6,am.getLoc().getIdLoc());
+			requeteP.setString(7,am.getAd().getNumeroTel());
+			
+			requeteP.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.deconnexion();
+	}
+	
+	
 
 }
 
