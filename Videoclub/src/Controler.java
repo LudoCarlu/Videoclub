@@ -196,7 +196,7 @@ public class Controler {
 	 * @param prixVente
 	 * @param quantite : Le nombre d'articles identiques ajoutés
 	 */
-	public void acquerirAutre(String codeArticle, String description, float prixVente, int quantite){
+	public void acquerirAutre(String codeArticle,String description, float prixVente, int quantite){
 
 		DescriptionArticle desc;
 		desc = new DescriptionArticle();

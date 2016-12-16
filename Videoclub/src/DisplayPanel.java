@@ -43,6 +43,16 @@ public class DisplayPanel extends JPanel implements ActionListener{
 	private JButton btnEffectuerUnRetour = null;
 	private JButton btnAmende = null;
 	private JTextField numLocation = null;
+	private JTextField titleA;
+	private JTextField genre;
+	private JTextArea description;
+	private JTextField prixVente;
+	private JTextField prixJournalier;
+	private JTextField prixHebdo;
+	private JTextField estNouveau;
+	private JTextField qte;
+	
+	
 
 	public DisplayPanel(int choix,JFrameGestionnaire F){
 		this.type=choix;
@@ -469,271 +479,336 @@ public class DisplayPanel extends JPanel implements ActionListener{
 
 		}
 
-			if (choix==6){
-		Hashtable<String,DescriptionArticle> list;
-		list=this.fenetre.getController().getCatalogue().getList();
+		if (choix==6){
+			Hashtable<String,DescriptionArticle> list;
+			list=this.fenetre.getController().getCatalogue().getList();
 
-		this.titre = new JLabel("Acquisition");
-		titre.setBounds(264, 5, 72, 16);
-		add(titre);
-		setLayout(null);
+			this.titre = new JLabel("Acquisition");
+			titre.setBounds(264, 5, 72, 16);
+			add(titre);
+			setLayout(null);
 
-		codeArticle = new JTextField();
-		codeArticle.setBounds(146, 160, 130, 26);
-		add(codeArticle);
-		codeArticle.setColumns(10);
+			this.defaultModel = new DefaultTableModel();
+			table = new JTable(defaultModel);
+			defaultModel.addColumn("Code Article");
+			defaultModel.addColumn("Titre");
+			defaultModel.addColumn("Prix de vente");
+			defaultModel.addColumn("Description");
+			table.setBounds(60,40,500,400);
+			add(table);
+			JScrollPane scrollPane = new JScrollPane(table);
+			scrollPane.setBounds(31, 78, 500, 80);
+			add(scrollPane);
 
-		this.defaultModel = new DefaultTableModel();
-		table = new JTable(defaultModel);
-		defaultModel.addColumn("Code Article");
-		defaultModel.addColumn("Titre");
-		defaultModel.addColumn("Prix de vente");
-		defaultModel.addColumn("Description");
-		table.setBounds(60,40,500,400);
-		add(table);
-		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(31, 78, 500, 80);
-		add(scrollPane);
+			Set<String> keys =list.keySet();
+			DefaultTableModel t = (DefaultTableModel)table.getModel();
+			for(String k: keys) {
+				DescriptionArticle desc=list.get(k);
+				//String [] descProduit={"Code Article","titre","prix de vente","description"};
+				String code =desc.getCodeArticle();
+				String titre =desc.getTitre();
+				String prix = new Float(desc.getPrixJournalier()).toString();
+				String description =desc.getDescription();
+				Object[] dataV = {code,titre,prix,description};
 
-		Set<String> keys =list.keySet();
-		DefaultTableModel t = (DefaultTableModel)table.getModel();
-		for(String k: keys) {
-			DescriptionArticle desc=list.get(k);
-			//String [] descProduit={"Code Article","titre","prix de vente","description"};
-			String code =desc.getCodeArticle();
-			String titre =desc.getTitre();
-			String prix = new Float(desc.getPrixJournalier()).toString();
-			String description =desc.getDescription();
-			Object[] dataV = {code,titre,prix,description};
+				t.addRow(dataV);
+			}
+			table.setModel(t);
+			t.fireTableDataChanged();
+			
+			JTextArea txtrDescriptionsDisponibles = new JTextArea();
+			txtrDescriptionsDisponibles.setEditable(false);
+			txtrDescriptionsDisponibles.setText("Descriptions disponibles :");
+			txtrDescriptionsDisponibles.setBounds(31, 50, 172, 16);
+			add(txtrDescriptionsDisponibles);
+			
+			JLabel jl = new JLabel("Acquerir un article");
+			JLabel jl2 = new JLabel("Si l'article n'est pas un film de pas remplir les champs");
+			JLabel jl3 = new JLabel ("genre,prix journalier, prix hebdomadaire, nouveauté");
+			
+			JLabel lblCodeArticle = new JLabel("Code Article:");
+			JLabel jl4 = new JLabel("Titre");
+			JLabel jl5 = new JLabel("Genre");
+			JLabel jl6 = new JLabel("Description");
+			JLabel jl7 = new JLabel("prix journalier");
+			JLabel jl8 = new JLabel("prix Hebdomadaire");
+			JLabel jl9 = new JLabel("prix de vente");
+			JLabel jl10 = new JLabel("Nouveauté");
+			JLabel jl11 = new JLabel("quantité");
+			
+			jl.setBounds(200,160,150,16);
+			jl2.setBounds(30,180,500,16);
+			jl3.setBounds(30,200,500,16);
+			lblCodeArticle.setBounds(30,220,150,16);
+			jl4.setBounds(30,240,150,16);
+			jl5.setBounds(30,260,150,16);
+			jl6.setBounds(30,280,150,16);
+			jl7.setBounds(30,320,150,16);
+			jl8.setBounds(30,340,150,16);
+			jl9.setBounds(30,360,150,16);
+			jl10.setBounds(30,380,150,16);
+			jl11.setBounds(30,400,150,16);
+			
+			add(jl);
+			add(jl2);
+			add(jl3);
+			add(lblCodeArticle);
+			add(jl4);
+			add(jl5);
+			add(jl6);
+			add(jl7);
+			add(jl8);
+			add(jl9);
+			add(jl10);
+			add(jl11);
+			
+			codeArticle = new JTextField();
+			titleA = new JTextField();
+			genre = new JTextField();
+			description = new JTextArea();
+			prixJournalier = new JTextField();
+			prixHebdo = new JTextField();
+			prixVente = new JTextField();
+			estNouveau = new JTextField();
+			quantite = new JTextField();
+			
+			codeArticle.setBounds(170,220,130,16);
+			titleA.setBounds(170,240,130,16);
+			genre.setBounds(170,260,130,16);
+			description.setBounds(170,280,130,40);
+			description.setLineWrap(true);
+			description.setColumns(10);
+			description.setRows(1);
+			prixJournalier.setBounds(170,320,130,16);
+			prixHebdo.setBounds(170,340,130,16);
+			prixVente.setBounds(170,360,130,16);
+			estNouveau.setBounds(170,380,130,16);
+			quantite.setBounds(170,400,130,16);
+			
 
-			t.addRow(dataV);
+			add(codeArticle);
+			add(description);
+			add(titleA);
+			add(genre);
+			add(prixJournalier);
+			add(prixHebdo);
+			add(prixVente);
+			add(estNouveau);
+			add(quantite);
+			
+			
+			
+			JButton btnAcquisition = new JButton("Effectuer une acquisition");
+			btnAcquisition.setBounds(402, 156, 200, 30);
+			add(btnAcquisition);
+
+
+
 		}
-		table.setModel(t);
-		t.fireTableDataChanged();
 
-		JLabel lblCodeArticle = new JLabel("Code Article:");
-		lblCodeArticle.setBounds(31, 170, 83, 16);
-		add(lblCodeArticle);
-
-		JButton btnAcquisition = new JButton("Effectuer une acquisition");
-		btnAcquisition.setBounds(402, 156, 200, 30);
-		add(btnAcquisition);
-		
-		JTextArea txtrDescriptionsDisponibles = new JTextArea();
-		txtrDescriptionsDisponibles.setEditable(false);
-		txtrDescriptionsDisponibles.setText("Descriptions disponibles :");
-		txtrDescriptionsDisponibles.setBounds(31, 50, 172, 16);
-		add(txtrDescriptionsDisponibles);
-		
-		JTextArea txtrAjouterUnNouvelle = new JTextArea();
-		txtrAjouterUnNouvelle.setText("Ajouter un nouvel article :");
-		txtrAjouterUnNouvelle.setBounds(31, 232, 200, 16);
-		add(txtrAjouterUnNouvelle);
 	}
+	/*
+	 *  type -1 : Menu,
+	 *  type 0 : authentification caissier
+	 *  type 1 : location
+	 *   type 2 : vente(non-Javadoc)
+	 *  type 5 : Retard
+	 *  type 6 : acquisition
+	 *  type 7 : authentification location
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e) { 
 
-}
-/*
- *  type -1 : Menu,
- *  type 0 : authentification caissier
- *  type 1 : location
- *   type 2 : vente(non-Javadoc)
- *  type 5 : Retard
- *  type 6 : acquisition
- *  type 7 : authentification location
- */
-@Override
-public void actionPerformed(ActionEvent e) { 
-
-	if (this.type==0){ // authentification caissier
-		if (e.getSource()== this.valider){
-			Employe caissier=this.fenetre.getController().authentificationEmploye(pseudo.getText(),mdp.getText());
-			if (caissier!=null){
-				this.fenetre.setDisplayPanel(new DisplayPanel(-1,this.fenetre));
-				this.fenetre.setControlPanel();
-			}
-			else {
-				JOptionPane.showMessageDialog(this,"Erreur d'authentification","Erreur..",JOptionPane.ERROR_MESSAGE);
+		if (this.type==0){ // authentification caissier
+			if (e.getSource()== this.valider){
+				Employe caissier=this.fenetre.getController().authentificationEmploye(pseudo.getText(),mdp.getText());
+				if (caissier!=null){
+					this.fenetre.setDisplayPanel(new DisplayPanel(-1,this.fenetre));
+					this.fenetre.setControlPanel();
+				}
+				else {
+					JOptionPane.showMessageDialog(this,"Erreur d'authentification","Erreur..",JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		}
-	}
-	if (this.type==7){ // authentification location
-		if(e.getSource()==this.valider){
-			if (this.fenetre.getController().authentificationMembre(pseudo.getText(), mdp.getText())!=null){
-				this.fenetre.setDisplayPanel(new DisplayPanel(1,this.fenetre));
-				this.fenetre.setControlPanel();
-			}
-			else {
-				JOptionPane.showMessageDialog(this,"Erreur d'authentification","Erreur..",JOptionPane.ERROR_MESSAGE);
+		if (this.type==7){ // authentification location
+			if(e.getSource()==this.valider){
+				if (this.fenetre.getController().authentificationMembre(pseudo.getText(), mdp.getText())!=null){
+					this.fenetre.setDisplayPanel(new DisplayPanel(1,this.fenetre));
+					this.fenetre.setControlPanel();
+				}
+				else {
+					JOptionPane.showMessageDialog(this,"Erreur d'authentification","Erreur..",JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		}
-	}
-	if (this.type==1){ //Location
-		if (e.getSource()==this.btnAjouter){
-			Controler c= this.fenetre.getController();
-			String code= this.codeArticle.getText();
-			int duree= Integer.parseInt(this.duree.getSelectedItem().toString());
-			ArrayList <LigneArticle>list=c.getLocation().getListeLigneArticles();
+		if (this.type==1){ //Location
+			if (e.getSource()==this.btnAjouter){
+				Controler c= this.fenetre.getController();
+				String code= this.codeArticle.getText();
+				int duree= Integer.parseInt(this.duree.getSelectedItem().toString());
+				ArrayList <LigneArticle>list=c.getLocation().getListeLigneArticles();
 
-			if (c.saisirArticleLoc(code,duree)){
-				LigneArticle l= list.get(list.size()-1);
-				String[] data={ l.getDescriptionArticle().getTitre(),
-						new Integer(l.getQuantite()).toString(),
-						new Integer(duree).toString(),
-						new Float(l.getDescriptionArticle().getPrixJournalier()).toString(),
-						new Float(l.getPrixLocation()*duree).toString()
+				if (c.saisirArticleLoc(code,duree)){
+					LigneArticle l= list.get(list.size()-1);
+					String[] data={ l.getDescriptionArticle().getTitre(),
+							new Integer(l.getQuantite()).toString(),
+							new Integer(duree).toString(),
+							new Float(l.getDescriptionArticle().getPrixJournalier()).toString(),
+							new Float(l.getPrixLocation()*duree).toString()
+					};
+					this.defaultModel.addRow(data);
 				};
-				this.defaultModel.addRow(data);
-			};
-			//System.out.print(this.fenetre.getController().getLocation());
-			this.quantite.setText("1");
-			this.duree.setSelectedIndex(0);
-			this.codeArticle.setText("0");
-			this.totalCourant.setText(Float.toString(c.getLocation().getMontant()));
-			DecimalFormat df = new DecimalFormat("0.00");
-			Location loc=c.getLocation();
-			totalCourant.setText(df.format(loc.getMontant()) + " $");
-			double ttps = loc.getMontant()*0.05;
-			double ttvq = (loc.getMontant()+ttps)*0.0975;
-			tps.setText(df.format(ttps) + " $");
-			tpq.setText(df.format(ttvq) + " $");
-			montantTotal.setText(df.format(loc.getMontant() + ttps + ttvq) + " $");
-		}
-		if (e.getSource()==this.btnPayer){
-			this.fenetre.getController().terminerLocation();
-			this.fenetre.setControlPanel();
-			this.fenetre.setDisplayPanel(new DisplayPanel(-1,this.fenetre));
-		}
-	}
-	if (this.type==3){ // Inscription
-		if(e.getSource() == this.valider){
-			if(numTel.getText().isEmpty() == false || carteDeCredit.getText().isEmpty() == false 
-					|| adresse.getText().isEmpty() == false || mdp.getText().isEmpty() == false) {
-				this.fenetre.getController().Inscription(nom.getText(), prenom.getText(), 
-						numTel.getText(), carteDeCredit.getText(), adresse.getText(), mdp.getText());
-				this.nom.setText("");
-				this.prenom.setText("");
-				this.numTel.setText("");
-				this.adresse.setText("");
-				this.carteDeCredit.setText("");
-				this.mdp.setText("");
+				//System.out.print(this.fenetre.getController().getLocation());
+				this.quantite.setText("1");
+				this.duree.setSelectedIndex(0);
+				this.codeArticle.setText("0");
+				this.totalCourant.setText(Float.toString(c.getLocation().getMontant()));
+				DecimalFormat df = new DecimalFormat("0.00");
+				Location loc=c.getLocation();
+				totalCourant.setText(df.format(loc.getMontant()) + " $");
+				double ttps = loc.getMontant()*0.05;
+				double ttvq = (loc.getMontant()+ttps)*0.0975;
+				tps.setText(df.format(ttps) + " $");
+				tpq.setText(df.format(ttvq) + " $");
+				montantTotal.setText(df.format(loc.getMontant() + ttps + ttvq) + " $");
 			}
-			else {
-				System.out.println("Il manque un element important à l'inscription");
+			if (e.getSource()==this.btnPayer){
+				this.fenetre.getController().terminerLocation();
+				this.fenetre.setControlPanel();
+				this.fenetre.setDisplayPanel(new DisplayPanel(-1,this.fenetre));
 			}
 		}
-	}
-	if(this.type == 4) {
-		if(e.getSource() == this.btnEffectuerUnRetour) {
-			if(codeArticle.getText().isEmpty() == false) {
-				this.fenetre.getController().effectuerUnRetour(codeArticle.getText());
-				this.codeArticle.setText("");
+		if (this.type==3){ // Inscription
+			if(e.getSource() == this.valider){
+				if(numTel.getText().isEmpty() == false || carteDeCredit.getText().isEmpty() == false 
+						|| adresse.getText().isEmpty() == false || mdp.getText().isEmpty() == false) {
+					this.fenetre.getController().Inscription(nom.getText(), prenom.getText(), 
+							numTel.getText(), carteDeCredit.getText(), adresse.getText(), mdp.getText());
+					this.nom.setText("");
+					this.prenom.setText("");
+					this.numTel.setText("");
+					this.adresse.setText("");
+					this.carteDeCredit.setText("");
+					this.mdp.setText("");
+				}
+				else {
+					System.out.println("Il manque un element important à l'inscription");
+				}
 			}
 		}
-	}
+		if(this.type == 4) {
+			if(e.getSource() == this.btnEffectuerUnRetour) {
+				if(codeArticle.getText().isEmpty() == false) {
+					this.fenetre.getController().effectuerUnRetour(codeArticle.getText());
+					this.codeArticle.setText("");
+				}
+			}
+		}
 
-	if(this.type == 5) { //Retard
-		if(e.getSource() == btnAmende) {
-			this.fenetre.getController().gererRetard();
-			Hashtable<Integer,Location> am = this.fenetre.getController().getListeLocation();
-			Set<Integer> keys = am.keySet();
-			for(Integer k: keys) {
-				Location loc = am.get(k);
-				if(loc.getAmende() != null) {
-					for(int i=0; i < loc.getAmende().size(); i++) {
-						if(loc.getAmende().get(i).isTerminee() == false) {
-							String[] data = {
-									new Integer(am.get(k).getIdLoc()).toString(),
-									am.get(k).getAdherent().getNumeroTel(),
-									loc.getAmende().get(i).getCodeBarre(),
-									new Float(loc.getAmende().get(i).getMontant()).toString()
-							};
-							this.defaultModel.addRow(data);
+		if(this.type == 5) { //Retard
+			if(e.getSource() == btnAmende) {
+				this.fenetre.getController().gererRetard();
+				Hashtable<Integer,Location> am = this.fenetre.getController().getListeLocation();
+				Set<Integer> keys = am.keySet();
+				for(Integer k: keys) {
+					Location loc = am.get(k);
+					if(loc.getAmende() != null) {
+						for(int i=0; i < loc.getAmende().size(); i++) {
+							if(loc.getAmende().get(i).isTerminee() == false) {
+								String[] data = {
+										new Integer(am.get(k).getIdLoc()).toString(),
+										am.get(k).getAdherent().getNumeroTel(),
+										loc.getAmende().get(i).getCodeBarre(),
+										new Float(loc.getAmende().get(i).getMontant()).toString()
+								};
+								this.defaultModel.addRow(data);
+							}
 						}
 					}
 				}
 			}
-		}
 
-		if(e.getSource() == btnPayer) {
-			Controler c = this.fenetre.getController();
-			JLabel ok;
-			if(numLocation.getText().isEmpty() == false && numTel.getText().isEmpty() == false 
-					&& codeArticle.getText().isEmpty() == false) {
-				c.finAmende(Integer.parseInt(numLocation.getText()),numTel.getText(),codeArticle.getText());
-				ok = new JLabel("Paiement accepté !");
-				ok.setBounds(200,340,150,20);
-				add(ok);
-				repaint();
-			}
-			else {
-				ok = new JLabel("Il manque un élément") ;
-				ok.setBounds(200,340,200,20);
-				add(ok);
-			}
-
-
-		}
-
-	}
-	if(this.type == 2) { //vente
-		Controler c = this.fenetre.getController();
-
-		if(e.getSource() == btnAjouter) {
-			if(codeArticle.getText() != "") {
-
-				c.creerligneVente(this.codeArticle.getText(), 1);
-				System.out.println(this.codeArticle.getText());
-
-				int position = c.instanceVente().getListeLigneArticles().size()-1;
-				LigneArticle lar = c.instanceVente().getListeLigneArticles().get(position);
-				System.out.println(lar.toString());
-
-				DefaultTableModel m = (DefaultTableModel)table.getModel();
-
-				String item = lar.getArticle().getDescription().getDescription();
-				String code = lar.getCodeBarreArticle();
-				String prixU = lar.getPrixVente()+" $";
-				int qte = lar.getQuantite();
-				Object[] dataV = {item,code,prixU,qte};
-
-				m.addRow(dataV);
-
-				table.setModel(m);
-				m.fireTableDataChanged();
-				c.instanceVente().majMontant();
-
-				DecimalFormat df = new DecimalFormat("0.00");
-
-				totalCourant.setText(df.format(c.instanceVente().getMontant()) + " $");
-				double ttps = c.instanceVente().getMontant()*0.05;
-				double ttvq = (c.instanceVente().getMontant()+ttps)*0.0975;
-				tps.setText(df.format(ttps) + " $");
-				tpq.setText(df.format(ttvq) + " $");
-				montantTotal.setText(df.format(c.instanceVente().getMontant() + ttps + ttvq) + " $");
-
-			}
-		}
-
-		if (e.getSource() == btnPayer){
-			if (c.instanceVente().getMontant()>0){
-
-				for (int i= 0; i<c.instanceVente().getListeLigneArticles().size();i++){
-					LigneArticle lar = c.instanceVente().getListeLigneArticles().get(i);
-
-					for (int j = 0; j<lar.getQuantite();j++){
-						c.instanceInventaire().retirerArticle(lar.getArticle());
-					}
+			if(e.getSource() == btnPayer) {
+				Controler c = this.fenetre.getController();
+				JLabel ok;
+				if(numLocation.getText().isEmpty() == false && numTel.getText().isEmpty() == false 
+						&& codeArticle.getText().isEmpty() == false) {
+					c.finAmende(Integer.parseInt(numLocation.getText()),numTel.getText(),codeArticle.getText());
+					ok = new JLabel("Paiement accepté !");
+					ok.setBounds(200,340,150,20);
+					add(ok);
+					repaint();
 				}
-				c.terminerVente();
-				codeArticle.setText("");
-				tps.setText("");
-				tpq.setText("");
-				montantTotal.setText("");
-				totalCourant.setText("");
-				DefaultTableModel model = (DefaultTableModel) table.getModel();
-				model.setRowCount(0);
+				else {
+					ok = new JLabel("Il manque un élément") ;
+					ok.setBounds(200,340,200,20);
+					add(ok);
+				}
+
+
+			}
+
+		}
+		if(this.type == 2) { //vente
+			Controler c = this.fenetre.getController();
+
+			if(e.getSource() == btnAjouter) {
+				if(codeArticle.getText() != "") {
+
+					c.creerligneVente(this.codeArticle.getText(), 1);
+					System.out.println(this.codeArticle.getText());
+
+					int position = c.instanceVente().getListeLigneArticles().size()-1;
+					LigneArticle lar = c.instanceVente().getListeLigneArticles().get(position);
+					System.out.println(lar.toString());
+
+					DefaultTableModel m = (DefaultTableModel)table.getModel();
+
+					String item = lar.getArticle().getDescription().getDescription();
+					String code = lar.getCodeBarreArticle();
+					String prixU = lar.getPrixVente()+" $";
+					int qte = lar.getQuantite();
+					Object[] dataV = {item,code,prixU,qte};
+
+					m.addRow(dataV);
+
+					table.setModel(m);
+					m.fireTableDataChanged();
+					c.instanceVente().majMontant();
+
+					DecimalFormat df = new DecimalFormat("0.00");
+
+					totalCourant.setText(df.format(c.instanceVente().getMontant()) + " $");
+					double ttps = c.instanceVente().getMontant()*0.05;
+					double ttvq = (c.instanceVente().getMontant()+ttps)*0.0975;
+					tps.setText(df.format(ttps) + " $");
+					tpq.setText(df.format(ttvq) + " $");
+					montantTotal.setText(df.format(c.instanceVente().getMontant() + ttps + ttvq) + " $");
+
+				}
+			}
+
+			if (e.getSource() == btnPayer){
+				if (c.instanceVente().getMontant()>0){
+
+					for (int i= 0; i<c.instanceVente().getListeLigneArticles().size();i++){
+						LigneArticle lar = c.instanceVente().getListeLigneArticles().get(i);
+
+						for (int j = 0; j<lar.getQuantite();j++){
+							c.instanceInventaire().retirerArticle(lar.getArticle());
+						}
+					}
+					c.terminerVente();
+					codeArticle.setText("");
+					tps.setText("");
+					tpq.setText("");
+					montantTotal.setText("");
+					totalCourant.setText("");
+					DefaultTableModel model = (DefaultTableModel) table.getModel();
+					model.setRowCount(0);
+				}
 			}
 		}
 	}
-}
 }
