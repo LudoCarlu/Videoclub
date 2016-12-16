@@ -15,8 +15,6 @@ public class JFrameGestionnaire extends JFrame{
 		this.controler=c;
 		this.displayPanel=new DisplayPanel(0,this);
 		getContentPane().setLayout(null);
-		this.controlPanel= new ControlPanel(this);
-		this.controlPanel.setBounds(20, 20, 100, 300);
 		this.displayPanel.setBounds(120, 20, 600,500);
 		//getContentPane().add(this.controlPanel);
 		getContentPane().add(this.displayPanel);
@@ -37,6 +35,7 @@ public class JFrameGestionnaire extends JFrame{
 		getContentPane().validate();
 	}
 	public void setControlPanel(){
+		this.controlPanel= new ControlPanel(this);
 		this.controlPanel.setBounds(20, 20, 100, 300);
 		getContentPane().add(this.controlPanel);
 		getContentPane().validate();

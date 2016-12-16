@@ -27,7 +27,13 @@ public class Employe {
 	public String getMdp() {
 		return mdp;
 	}
-
+	public String presentation(){
+		String message=this.getNom();
+		if (this.gerant==true){
+			message=message.concat("\n (gérant)");
+		}
+		return message;
+	}
 	@Override
 	public String toString() {
 		return "Employe [idEmploye=" + idEmploye + ", nom=" + nom + ", gerant=" + gerant + ", mdp=" + mdp + "]";

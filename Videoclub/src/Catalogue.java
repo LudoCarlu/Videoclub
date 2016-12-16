@@ -2,24 +2,17 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class Catalogue {
-	private ArrayList<DescriptionArticle> listeDescription;
 	private Hashtable<String,DescriptionArticle> list;
 	
-	
-	public Catalogue(ArrayList<DescriptionArticle> liste) {
-		this.listeDescription = liste;
-	}
+
 	public Catalogue(Hashtable<String,DescriptionArticle> liste) {
 		this.list = liste;
 	}
 	
+	public Hashtable<String,DescriptionArticle> getList(){
+		return this.list;
+	}
 	
-	public ArrayList<DescriptionArticle> getListeDescription() {
-		return listeDescription;
-	}
-	public void setListeDescription(ArrayList<DescriptionArticle> listeDescription) {
-		this.listeDescription = listeDescription;
-	}
 
 	public DescriptionArticle getDesc (String codeArticle) {
 		//System.out.println(list.toString());
@@ -40,8 +33,8 @@ public class Catalogue {
 		
 		try {
 		
-		if (!listeDescription.isEmpty()){
-			listeDescription.add(description);
+		if (!list.isEmpty()){
+			list.put(description.getCodeArticle(),description);
 		}
 		}
 		catch (NullPointerException e) {	

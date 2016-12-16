@@ -3,12 +3,12 @@ import java.util.*;
 public class Controler {
 	private Hashtable<String,Adherent> listeMembre=null;
 	private Hashtable <Integer,Employe> listeEmploye=null;
-	//private Hashtable <String,Article> listeArticle = null;
 	private Catalogue catalogue = null;
 	private Inventaire inventaire = null;
 	private Location loc = null;
 	private Vente vente = null;
 	private Hashtable<Integer,Location> listeLocation = null;
+	private Employe caissier=null;
 
 	//Constructeur
 	public Controler(Hashtable<String,Adherent> list,Hashtable<String,DescriptionArticle> listDesc,
@@ -25,6 +25,12 @@ public class Controler {
 	}
 	public Hashtable<Integer,Location> getListeLocation() {
 		return this.listeLocation;
+	}
+	public Employe getCaissier(){
+		return this.caissier;
+	}
+	public Catalogue getCatalogue(){
+		return this.catalogue;
 	}
 
 	/*Methodes pour l'authentification */
@@ -50,7 +56,8 @@ public class Controler {
 			String password=this.listeEmploye.get(Integer.parseInt(idEmploye)).getMdp();
 			if(Integer.parseInt(idEmploye)==id && password.equals(mdp)){
 				System.out.println("Authentification Employé");
-				return this.listeEmploye.get(id);
+				this.caissier=this.listeEmploye.get(id);
+				return this.caissier;
 			}
 		}
 		catch (NullPointerException e){
@@ -124,7 +131,6 @@ public class Controler {
 		float montantFinal = loc.getMontant();
 		Paiement p = new Paiement(montantFinal);
 		loc.setPaiement(p);
-		afficherMontant();
 		Videoclub v = Videoclub.instanceVideoclub();
 		Database D = v.getDB();
 		int id = D.insertLocation(loc);
@@ -266,9 +272,9 @@ public class Controler {
 			int taille = this.listeLocation.get(k).getListeLigneArticles().size();
 			for(int j=0; j < taille; j++) {
 				LigneArticle la = this.listeLocation.get(k).getListeLigneArticles().get(j);
-				if(la.getCodeBarreArticle().equals(codeBarre) && la.getArticle().isLoue() == true) {
+				if(la.getCodeBarreArticle().equals(codeBarre)) {
 					r = new Retour(this.listeLocation.get(k).getListeLigneArticles().get(j));
-					la = r.getLigneArticles();	
+					la = r.getLigneArticles();
 					v.getDB().retour(this.listeLocation.get(k).getIdLoc(), la);
 					
 					if(r.isEnRetard() == true) {
