@@ -1,16 +1,36 @@
 import java.util.Date;
 
-
+//Une amende est une opération c'est à dire qu'elle a une date et un montant
 public class Amende extends Operation{
-	private Adherent ad;
-	private Location loc;
+	
+	/*
+	 * Une amende connait son adhérent, la location à laquelle
+	 * elle appartient
+	 * Elle a le nombre de jours de retards
+	 * Elle connait le prix à la semaine et à la journée du film sur lequel elle porte
+	 */
+
+	private Adherent ad; 
+	private Location loc; 
 	private long jrsRetard;
 	private float prixSemaine; 
 	private float prixJournee;
 	private int indexLA;
 	private String codeBarre;	
 	
+	
+	/* Constructeur amende */
+	/**
+	* @param Location : 
+	* Elle contient la ligne d'articles contenant le film sur lequel il y a un retard donc une amende
+	* @param indexLigneArticles :
+	* Index de la ligne d'articles où se trouvent le retard dans la location passée en paramètres
+	* 
+	* Le constructeur met à jour le montant de l'amende
+	*/
+	
 	public Amende(Location loc,int indexLA) {
+		
 		this.dateHeure = new Date();
 		float montantAmende = 0;
 		this.indexLA = indexLA;
@@ -21,11 +41,14 @@ public class Amende extends Operation{
 		prixSemaine = la.getDescriptionArticle().getPrixJournalier()*7;
 		this.codeBarre = this.loc.getListeLigneArticles().get(indexLA).getCodeBarreArticle();
 		
+		/* Le film n'a pas encore été retourné mais il est en retard
+		 * On calcule le nombre de jour de retard entre la date due et aujourd'hui
+		 */
 		if(la.getDateRetour() == null) {
 			this.jrsRetard = calculJourEntreDate(this.dateHeure,la.getDateDue());
 			
 		}
-		//calcule le nbr de jours en retard entre la date due et la date de retour de la location
+		// Sinon on calcule le nombre de jour de retard entre la date due et la date de retour
 		else {
 			this.jrsRetard = calculJourEntreDate(la.getDateDue(), la.getDateRetour());
 		}
@@ -36,7 +59,8 @@ public class Amende extends Operation{
 		 */
 		if(jrsRetard > 0) { 
 			DescriptionArticle desc = la.getDescriptionArticle();
-			//Si le film est nouveau forcement louer à la journee
+			//Code écrit mais la nouveauté n'est pas implémenté dans le code
+			//Si le film est nouveau il est forcement louer à la journée
 			if(desc.getEstNouveau() == true) {
 				//Film perdu
 				if(jrsRetard > 10) {
@@ -50,7 +74,10 @@ public class Amende extends Operation{
 			
 			//Si le film est régulier
 			if(desc.getEstNouveau() == false) {
+				//Calcul la durée de location qui sera de 1 ou 7 jours
 				long duree = calculJourEntreDate(la.getDateDue(),loc.getDateHeure());
+				
+				//Le film est perdu
 				if(jrsRetard > 60) {
 					montantAmende =  montantAmende + desc.getPrixVente()+20/*+taxes*/;
 					la.getArticle().setPerdu(true);
@@ -85,6 +112,7 @@ public class Amende extends Operation{
 	}
 
 	
+	// Getteurs / setteurs
 	
 	public Adherent getAd() {
 		return this.ad;
@@ -111,6 +139,7 @@ public class Amende extends Operation{
 		return this.codeBarre;
 	}
 
+	//Calcul le nombre de jour entre 2 dates
 	private long calculJourEntreDate (Date d1, Date d2) {
 		long diff = Math.abs(d1.getTime()-d2.getTime());
 		long MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;

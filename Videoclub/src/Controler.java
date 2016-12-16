@@ -86,7 +86,7 @@ public class Controler {
 				 * et on l'ajoute à l'article
 				 */
 				DescriptionArticle desc = catalogue.getDesc(codeArticle);
-				art.ajouterDescription(desc);
+				art.setDescription(desc);
 				//desc.setListeArticleLouable(this.listeArticle);
 	
 				if(desc != null) {
@@ -124,10 +124,6 @@ public class Controler {
 		this.loc = null;
 		
 		
-
-	}
-	public float afficherMontant() {
-		return loc.getMontant();
 
 	}
 
@@ -217,7 +213,7 @@ public class Controler {
 			//Condition si l'article a ete enlever des articles
 			if(a != null) {
 				DescriptionArticle desc = catalogue.getDesc(a.getCodeDescription());
-				a.ajouterDescription(desc);
+				a.setDescription(desc);
 				ArrayList<LigneArticle> la = new ArrayList<LigneArticle>();
 				la.add(new LigneArticle(a,l.get(i).getDateDue(),l.get(i).getDateRetour()));
 
@@ -226,7 +222,7 @@ public class Controler {
 					if(l.get(i).getIdLoc() == l.get(j).getIdLoc()) {
 						Article a2 = inventaire.getArticle(l.get(j).getCodeBarre());
 						DescriptionArticle desc2 = catalogue.getDesc(a2.getCodeDescription());
-						a2.ajouterDescription(desc2);
+						a2.setDescription(desc2);
 						la.add(new LigneArticle(a2,l.get(j).getDateDue(),l.get(j).getDateRetour()));
 					}
 				}

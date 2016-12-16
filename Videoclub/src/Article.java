@@ -1,13 +1,14 @@
 
 public class Article {
 	
-	private String codeBarre;
-	private String codeDescription;
-	private boolean perdu = false;
-	private boolean loue = false;
 	
-	private DescriptionArticle desc;
+	private String codeBarre; // un code barre unique à chacun des articles
+	private String codeDescription; // le code de la description de cette article
+	private boolean perdu = false; // l'article est-il perdu 
+	private boolean loue = false; // l'article est-il loué
+	private DescriptionArticle desc; // La description complète de l'article
 	
+	//Constructeur utilisé dans acquisition
 	public Article() {
 		
 	}
@@ -20,6 +21,8 @@ public class Article {
 		this.perdu = perdu;
 		
 	}
+	
+	//Getteurs / Setteurs 
 	
 	public String getCodeBarre() {
 		return this.codeBarre;
@@ -39,10 +42,14 @@ public class Article {
 	public void setLoue(boolean l) {
 		this.loue = l;
 	}
-	
-	public void ajouterDescription (DescriptionArticle desc) {
+	public DescriptionArticle getDescription() {
+		return this.desc;
+	}
+	public void setDescription(DescriptionArticle desc) {
 		this.desc = desc;
 	}
+	
+
 
 	public String toString() {
 		return "codeBarre = "+ codeBarre +
@@ -52,11 +59,7 @@ public class Article {
 				"\n desc: "+ desc.getTitre();
 				
 	}
-	public void setDescription(DescriptionArticle desc) {
-		this.desc = desc;
-	}
-	public DescriptionArticle getDescription() {
-		return this.desc;
-	}
+
+
 	
 }

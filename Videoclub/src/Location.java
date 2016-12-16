@@ -11,34 +11,19 @@ public class Location extends Operation{
 	//Vu que chaque ligne d'articles est une amende potentielle il faut une liste d'amende
 	private ArrayList<Amende> listeAmende = null;
 	
-	//Pour charger les locations
+	//Pour charger les locations depuis la database
 	private String codeBarre;
 	private String numAdherent;
 	
+	//Constructeur
 	public Location(Calendar cal) {
 		this.cal = cal;
 		new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		this.dateHeure = cal.getTime();
 	}
-	public Location(Date dateHeure, Date dateDue, Date dateRetour, Adherent adherent,float montant) {
-		super();
-		this.dateHeure = dateHeure;
-		this.dateDue = dateDue;
-		this.dateRetour = dateRetour; 
-		
-		this.adherent = adherent;
-		this.montant=montant;
-	}
-	// La date de retour est seulement établie au moment du retour, ne devrait pas faire partie du constructeur
-	public Location(Date dateHeure, Date dateDue, Date dateRetour, Adherent adherent,ArrayList<LigneArticle> list) {
-		super();
-		this.dateHeure = dateHeure;
-		this.dateDue = dateDue;
-		this.dateRetour = dateRetour;
-		this.adherent = adherent;
-		this.ligneArticle=list;
-	}
-	//Constructeurs utilisés pour charger les locations de la BDD
+	
+
+	//Constructeur utilisé pour charger les locations de la BDD
 	public Location(int id, String numAdherent, String codeBarre, Date dateHeure, 
 			Date dateDue, Date dateRetour, float montant) {
 		this.idLoc = id;
@@ -49,6 +34,9 @@ public class Location extends Operation{
 		this.dateRetour = dateRetour;
 		this.montant = montant;
 	}
+	
+	//Constructeur pour charger correctement les locations dans le système après le chargement depuis la base
+	//de données
 	public Location(int id, Adherent ad, Date dateHeure, ArrayList<LigneArticle> l, float montant) {
 		this.idLoc = id;
 		this.adherent = ad;
@@ -63,9 +51,9 @@ public class Location extends Operation{
 	
 	public void creerLigneArticles(DescriptionArticle desc, int quantite) {
 		LigneArticle lar = new LigneArticle(desc,quantite);
-		//System.out.println(lar);
 		this.ligneArticle.add(lar);
 	}
+	
 	public void creerLigneArticles(Article a) {
 		LigneArticle lar = new LigneArticle(a);
 		this.ligneArticle.add(lar);
@@ -73,17 +61,16 @@ public class Location extends Operation{
 	
 	public void majMontant() {
 		float montant=0;
-		//int duree=0;
 		for (int i=0;i<this.ligneArticle.size();i++){
 			long difference = Math.abs(this.ligneArticle.get(i).getDateDue().getTime() - dateHeure.getTime());
 			long MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
 			long nombreJourLocation = (long)difference/MILLISECONDS_PER_DAY;
-			System.out.println("JLOC "+nombreJourLocation);
 			montant=montant+this.ligneArticle.get(i).getPrixLocation()*nombreJourLocation;
 		}
 		this.setMontant(montant);
 	}
 	
+	//Getteurs / Setteurs
 	public Date getDateHeure() {
 		return dateHeure;
 	}
@@ -100,18 +87,6 @@ public class Location extends Operation{
 		return this.listeAmende;
 	}
 	
-	//Getteurs pour location qui vient de la bdd
-	public int getIdLoc() {
-		return idLoc;
-	}
-	public String getCodeBarre() {
-		return codeBarre;
-	}
-	public String getNumAdherent() {
-		return numAdherent;
-	}
-	// Fin
-	
 	public void setIdLoc(int id) {
 		this.idLoc = id;
 	}
@@ -122,6 +97,17 @@ public class Location extends Operation{
 		this.ligneArticle.get(this.ligneArticle.size()-1).setDateDue(d.getTime());
 		d.add(Calendar.DATE,-duree);
 	}
+	//Getteurs pour locations qui viennent de la database
+	public int getIdLoc() {
+		return idLoc;
+	}
+	public String getCodeBarre() {
+		return codeBarre;
+	}
+	public String getNumAdherent() {
+		return numAdherent;
+	}
+	// Fin
 	
 
 	@Override
@@ -136,12 +122,14 @@ public class Location extends Operation{
 	public void ajouterAmende(Amende am) {
 		Videoclub v = Videoclub.instanceVideoclub();
 		
+		//Si il n'y a pas d'amende sur la location et on en ajoute une
 		if(listeAmende == null) {
 			listeAmende = new ArrayList<Amende>();
 			listeAmende.add(am);
 			v.getDB().insertAmende(am);
 		}
 		else {
+			//On regarde si l'amende existe déjà et on l'a met à jour
 			int co = 0;
 			String codeArtAmende = am.getCodeBarre();
 			for(int i=0; i<listeAmende.size(); i++) {

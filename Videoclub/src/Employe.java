@@ -1,3 +1,4 @@
+//Classe réprentant un employé
 
 public class Employe {
 	private int idEmploye;

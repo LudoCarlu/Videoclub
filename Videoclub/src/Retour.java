@@ -2,11 +2,9 @@ import java.util.Date;
 
 public class Retour {
 
-	//private Location loc;
 	private LigneArticle lar;
 	
 	public Retour(LigneArticle l){
-		//this.loc = l;
 		this.lar = l;
 		this.lar.getArticle().setLoue(false);
 		this.lar.setDateRetour(new Date());

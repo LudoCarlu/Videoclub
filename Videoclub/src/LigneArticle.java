@@ -1,5 +1,12 @@
 import java.util.Date;
 
+/*
+ * Nous avons décidé qu'une ligne d'articles pouvait à la fois représenter
+ * une ligne de vente et une ligne de location
+ * Il y a donc 2 paramètres que la ligne de vente n'utilise pas et qui seront donc null
+ * qui sont la date de retour et la date due
+ * Ces paramètres sont implémentés pour la location seulement
+ */
 public class LigneArticle {
 	private int quantite;
 	private DescriptionArticle desc;
@@ -7,7 +14,6 @@ public class LigneArticle {
 	private Article art;
 	private Date dateRetour;
 	
-	private Amende amende = null;
 	
 	public LigneArticle(DescriptionArticle desc, int quantite) {
 		this.desc = desc;
@@ -34,14 +40,13 @@ public class LigneArticle {
 		this.quantite = 1;
 	}
 	
+	//Getteurs / Setteurs
 	public int getQuantite() {
 		return quantite;
 	}
-
 	public DescriptionArticle getDesc() {
 		return desc;
 	}
-
 	public float getPrixLocation() {
 		return this.quantite*desc.getPrixJournalier();
 	}	
@@ -51,7 +56,6 @@ public class LigneArticle {
 	public float getPrixVente() {
 		return this.quantite*desc.getPrixVente();
 	}
-	
 	public void setDateDue(Date d) {
 		this.dateDue = d;
 	}
@@ -64,6 +68,12 @@ public class LigneArticle {
 	public Date getDateRetour() {
 		return this.dateRetour;
 	}
+	public String getCodeBarreArticle() {
+		return this.art.getCodeBarre();
+	}
+	public Article getArticle() {
+		return this.art;
+	}
 	
 	public String toString() {
 		return "Ligne Articles : "
@@ -75,14 +85,9 @@ public class LigneArticle {
 				+"\n prix vente: "+ desc.getPrixVente();
 	}
 	
-	public String getCodeBarreArticle() {
-		return this.art.getCodeBarre();
-	}
+
 	
-	public Article getArticle() {
-		return this.art;
-	}
-	
+	//Calcul le montant de la ligne d'articles
 	public float getMontant(Date d) {
 		float m = 0;
 		
@@ -93,8 +98,5 @@ public class LigneArticle {
 		m = this.quantite * desc.getPrixJournalier()*nombreJour;
 		
 		return m;
-	}
-	public void setAmende(Amende am) {
-		this.amende = am;
 	}
 }

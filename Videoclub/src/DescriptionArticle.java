@@ -1,4 +1,10 @@
-import java.util.Hashtable;
+/*
+ * Une description d'article est général
+ * Nous avons fait le choix de mélanger les articles à vendre aux films
+ * Ils ont donc le même pattern de description à l'exception que quand 
+ * nous ajoutons une description à un article qui n'est pas un film
+ * certain attribut seront null ou inutilisé
+ */
 
 public class DescriptionArticle {
 	
@@ -11,12 +17,14 @@ public class DescriptionArticle {
 	private String genre;
 	private boolean estNouveau; 
 	private float prixHebdomadaire;
-	private Hashtable<String,Article> listeArticle = null;
 	
 
+	//Constructeurs
+	
 	public DescriptionArticle(){
 		//nécessaire pour créer un objet sans id
 	}
+	
 	public DescriptionArticle (int id, String ca, String desc,float prixVente, 
 			float prixJournalier, String titre, String genre, boolean estNouveau, float prixHebdomadaire) {
 		this.id = id; //N'est pas créé ici
@@ -29,6 +37,8 @@ public class DescriptionArticle {
 		this.estNouveau = estNouveau;
 		this.prixHebdomadaire = prixHebdomadaire;
 	}
+	
+	// Getteurs / Setteurs
 	public int getUniqueid()	 {
 		return this.id;
 	}
@@ -81,6 +91,7 @@ public class DescriptionArticle {
 	public boolean getEstNouveau() {
 		return this.estNouveau;
 	}
+	
 	public String toString() {
 		return "DescriptionArticle : \n"
 				+ "idDesc : " + this.id 
@@ -94,28 +105,5 @@ public class DescriptionArticle {
 				+ "\n";
 				
 	}
-	
-	// Reprendre ici
-	public void setListeArticleLouable(Hashtable<String,Article> liste) {
-		this.listeArticle = new Hashtable<String,Article>();
-		String i;
-		int co = 0;
-		while (co < liste.size()) {
-			i = liste.keys().nextElement();
-			System.out.println(liste.get(i));
-			if(liste.get(i).getCodeDescription().equals(this.codeArticle)) {
-				this.listeArticle.put(this.codeArticle,liste.get(i));
-			}
-			co++;
-		}
 
-	}
-	
-	public Article getArticleLouable() {
-		System.out.println(listeArticle);
-		if(listeArticle.isEmpty() == false) {
-			return this.listeArticle.get(listeArticle.size()-1);
-		}
-		return null;
-	}
 }

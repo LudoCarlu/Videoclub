@@ -17,6 +17,11 @@ import java.awt.GridLayout;
 import java.text.DecimalFormat;
 import java.awt.Font;
 
+/*
+ * Le display panel est le panel qui réprésente l'affichage de nos différents menus
+ * Il est initié dans le controlPanel 
+ */
+
 public class DisplayPanel extends JPanel implements ActionListener{
 	private int type=0;
 	private JLabel titre;
@@ -50,17 +55,16 @@ public class DisplayPanel extends JPanel implements ActionListener{
 	private JTextField prixJournalier;
 	private JTextField prixHebdo;
 	private JTextField estNouveau;
-	private JTextField qte;
 	
 	
 
 	public DisplayPanel(int choix,JFrameGestionnaire F){
+		
 		this.type=choix;
 		setBackground(Color.WHITE);
 		this.fenetre=F;
 		String [] title={"Item","Quantité","Durée","Prix Journalier","Prix total"};
 		String [] descProduit={"Code Article","titre","prix de vente","description"};
-		//Location L=new Location(Date.from(ZonedDateTime.now().with(LocalTime.MIN).toInstant()),new Date("13/12/1021"), null, null);
 		Object[][] data = {};
 
 		if (choix==-1){ // Menu principale
@@ -71,8 +75,8 @@ public class DisplayPanel extends JPanel implements ActionListener{
 
 
 		}
-
-		if (choix==0){ // Authentification caissier
+		// Menu authentification caissier
+		if (choix==0){ 
 			setLayout(null);
 			this.titre = new JLabel("Authentifcation Employe"); 
 			add(titre);
@@ -100,23 +104,26 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			this.valider.addActionListener(this);
 			this.valider.setBounds(250,200,100,20);
 		}
+		
+		//Menu authentification adherent
 		if (choix==7){ 
 			this.titre = new JLabel("Authentifcation Location");
 			add(titre);
-
+			
 			pseudo = new JTextField();
 			add(pseudo);
 			pseudo.setColumns(10);
-
-
+			
 			mdp = new JTextField();
 			add(mdp);
 			mdp.setColumns(10);
+			
 			this.valider= new JButton("Valider");
 			add(this.valider);
 			this.valider.addActionListener(this);
 		}
 
+		//Menu Location
 		if(choix==1){ 
 			setLayout(null);
 			this.titre = new JLabel("Location");
@@ -217,7 +224,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			add(Qte);
 
 		}
-		//VENTE
+		//Menu vente
 		if (choix==2){ 
 			setLayout(null);
 			this.titre = new JLabel("Vente");
@@ -316,7 +323,8 @@ public class DisplayPanel extends JPanel implements ActionListener{
 
 		}
 
-		if (choix==3){ // Inscription
+		// Menu Inscription 
+		if (choix==3){ 
 			setLayout(null);
 			this.titre = new JLabel("Inscription");
 			titre.setBounds(0, 0, 600, 26);
@@ -374,6 +382,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			add(mdp);
 			mdp.setColumns(10);
 
+			//Pour générer un mot de passe
 			JButton btnGenerer = new JButton("Generer");
 			Random rand = new Random();
 			btnGenerer.addActionListener(new ActionListener() {
@@ -400,7 +409,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 
 		}
 
-		//Retours
+		//Menu des retours
 		if (choix==4){
 			setLayout(null);
 			this.titre = new JLabel("Retours");
@@ -422,7 +431,8 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			this.btnEffectuerUnRetour.addActionListener(this);
 
 		}
-		if (choix==5){ //Retard / Amende
+		//Menu de la gestion des retards
+		if (choix==5){ 
 			setLayout(null);
 			this.titre = new JLabel("Gerer les retards");
 			titre.setBounds(264, 5, 150, 16);
@@ -478,6 +488,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 
 		}
 
+		//Menu Acquisition
 		if (choix==6){
 			Hashtable<String,DescriptionArticle> list;
 			list=this.fenetre.getController().getCatalogue().getList();
@@ -594,9 +605,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			add(prixVente);
 			add(estNouveau);
 			add(quantite);
-			
-			
-			
+
 			JButton btnAcquisition = new JButton("Effectuer une acquisition");
 			btnAcquisition.setBounds(402, 156, 200, 30);
 			add(btnAcquisition);
@@ -610,10 +619,13 @@ public class DisplayPanel extends JPanel implements ActionListener{
 	 *  type -1 : Menu,
 	 *  type 0 : authentification caissier
 	 *  type 1 : location
-	 *   type 2 : vente(non-Javadoc)
+	 *  type 2 : vente
 	 *  type 5 : Retard
 	 *  type 6 : acquisition
 	 *  type 7 : authentification location
+	 *  L'endroit où nous gérons l'interaction avec nos boutons
+	 *  C'est la que nous appelons les fonctions du contrôleur
+	 *  et que nous mettons à jour notre affichage
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) { 
@@ -648,7 +660,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 				int duree= Integer.parseInt(this.duree.getSelectedItem().toString());
 				ArrayList <LigneArticle>list=c.getLocation().getListeLigneArticles();
 
-				if (c.saisirArticleLoc(code,duree)){
+				if (c.saisirArticleLoc(code,duree)){ //On appelle la fonction saisirArticleLoc du controleur
 					LigneArticle l= list.get(list.size()-1);
 					String[] data={ l.getDescriptionArticle().getTitre(),
 							new Integer(l.getQuantite()).toString(),
@@ -670,14 +682,18 @@ public class DisplayPanel extends JPanel implements ActionListener{
 				tps.setText(df.format(ttps) + " $");
 				tpq.setText(df.format(ttvq) + " $");
 				montantTotal.setText(df.format(loc.getMontant() + ttps + ttvq) + " $");
+				loc.setMontant(loc.getMontant()+(float)ttps+(float)ttvq);
 			}
+			//Appel de la fonction terminer Location
 			if (e.getSource()==this.btnPayer){
 				this.fenetre.getController().terminerLocation();
 				this.fenetre.setControlPanel();
 				this.fenetre.setDisplayPanel(new DisplayPanel(-1,this.fenetre));
 			}
 		}
-		if (this.type==3){ // Inscription
+		// Inscription
+		//Appel de la fonction Inscription
+		if (this.type==3){ 
 			if(e.getSource() == this.valider){
 				if(numTel.getText().isEmpty() == false || carteDeCredit.getText().isEmpty() == false 
 						|| adresse.getText().isEmpty() == false || mdp.getText().isEmpty() == false) {
@@ -695,6 +711,8 @@ public class DisplayPanel extends JPanel implements ActionListener{
 				}
 			}
 		}
+		// Retour
+		//Appel de la fonction effectuerUnRetour
 		if(this.type == 4) {
 			if(e.getSource() == this.btnEffectuerUnRetour) {
 				if(codeArticle.getText().isEmpty() == false) {
@@ -703,8 +721,8 @@ public class DisplayPanel extends JPanel implements ActionListener{
 				}
 			}
 		}
-
-		if(this.type == 5) { //Retard
+		//Retard
+		if(this.type == 5) { 
 			if(e.getSource() == btnAmende) {
 				this.defaultModel.setRowCount(0);
 				this.fenetre.getController().gererRetard();
@@ -727,7 +745,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 					}
 				}
 			}
-
+			//Paiement et on appelle la fonction finAmende du controlleur qui termine une amende
 			if(e.getSource() == btnPayer) {
 				Controler c = this.fenetre.getController();
 				JLabel ok;
@@ -749,7 +767,8 @@ public class DisplayPanel extends JPanel implements ActionListener{
 			}
 
 		}
-		if(this.type == 2) { //vente
+		//Vente
+		if(this.type == 2) { 
 			Controler c = this.fenetre.getController();
 
 			if(e.getSource() == btnAjouter) {
@@ -786,6 +805,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 				}
 			}
 
+			//Quand nous appuyons sur payer cela termine la vente
 			if (e.getSource() == btnPayer){
 				if (c.instanceVente().getMontant()>0){
 

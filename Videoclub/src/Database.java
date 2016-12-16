@@ -38,14 +38,6 @@ public class Database {
 		//retourne le répertoire du projet et ajoute l'emplacement du la db au path
 		pathDB = System.getProperty("user.dir")+"/database/testDB.db"; 
 
-		//Maxime:
-		//pathDB = "/Users/maxime/Videoclub/Database/testDB.db";
-
-		//Samuel:
-		//pathDB = "/Users/samuel/Documents/Videoclub/Videoclub/database/testDB.db";
-
-		//Ludo:
-		//pathDB = "/Users/ludoviccarlu/Github/Videoclub/Videoclub/database/testDB.db";
 
 		if(instanceDB == null) {
 			instanceDB = new Database(pathDB);
@@ -54,14 +46,14 @@ public class Database {
 	}
 
 	/* Ouvre la base de données spécifiées
-	 * Return true si la connexion reussit / false sinon
+	 * Return true si la connexion a réussi / false sinon
 	 */
 
 	public boolean connexion ()
 	{
 		try
 		{
-			// Etabli la connection
+			// Etabli la connexion
 			this.connexion = DriverManager.getConnection("jdbc:sqlite:"+this.dbName);
 			// Déclare l'objet qui permet de faire les requêtes
 			this.requete = connexion.createStatement();
@@ -72,7 +64,6 @@ public class Database {
 			// changements fait sur la base
 			// Résultats de mes tests :
 			// synchronous OFF, une insertion est 20 fois plus rapide.
-			// La différences avec le count_changes est de l'ordre de la µs.
 			// Les autres PRAGMA : http://www.sqlite.org/pragma.html
 
 			requete.executeUpdate("PRAGMA synchronous = OFF;");
@@ -87,6 +78,8 @@ public class Database {
 			return false;
 		}
 	}
+
+	//Pour fermer la connexion 
 	public boolean deconnexion ()
 	{
 		try
@@ -121,8 +114,9 @@ public class Database {
 
 		return null;
 	}
+
 	/**
-	 * Permet de modifier une entrée de la base de données.</br>
+	 * Permet de modifier une entrée de la base de données
 	 * @param requete La requete SQL de modification
 	 */
 	public void faireRequete (String sql)
@@ -136,6 +130,11 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * Méthode pour générer la liste des employés du vidéoclub
+	 * @return Hasthable<Integer,Employe> Le Integer est identifiant de l'employé
+	 */
 	public Hashtable<Integer,Employe> genererEmploye(){
 		int idEmploye;
 		String nom;
@@ -153,23 +152,26 @@ public class Database {
 				gerant=(employe.getBoolean("gerant"));		
 				Employe H=new Employe(idEmploye,nom,gerant,mdp);
 				listeEmploye.put(idEmploye,H);
-				//System.out.println(H.toString());
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.print("test");
 		}
+		this.deconnexion();
 		return listeEmploye;
 	}
 
+	/**
+	 * Méthode pour générer les adhérents du vidéoclub
+	 * @return Hashtable<String,Adherent> Le String = numero de téléphone de l'employé
+	 */
 	public Hashtable<String,Adherent> genererAdherent(){
 		String numeroTel;
 		String codeSecret;
 		String nom;
 		String prenom;
 		String adresse;
-		String numeroCB; //Adherent 
+		String numeroCB;
 
 		Hashtable<String,Adherent> listeMembre=new Hashtable<String,Adherent>();
 		this.connexion();
@@ -184,16 +186,20 @@ public class Database {
 				numeroCB=(adh.getString("numeroCB"));		
 				Adherent H=new Adherent(numeroTel,codeSecret,nom,prenom,adresse,numeroCB);
 				listeMembre.put(numeroTel,H);
-				//System.out.println(H.toString());
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.print("test");
 		}
+		this.deconnexion();
 		return listeMembre;
 	}
 
+	/**
+	 * Méthode pour générer les descriptions d'article du vidéoclub
+	 * @return Hashtable<String,DescriptionArticle> Le String = code Article de la description
+	 */
 	public Hashtable<String,DescriptionArticle> genererDescriptionArticle() {
 		Hashtable<String,DescriptionArticle> catalogue = new Hashtable<String,DescriptionArticle>();
 		//ArrayList<DescriptionArticle> catalogue = new ArrayList<DescriptionArticle>();
@@ -214,18 +220,20 @@ public class Database {
 
 				DescriptionArticle tmp = new DescriptionArticle(id, ca,description,prixVente,
 						prixJournalier,titre,genre,estNouveau,prixHebdomadaire);
-				//System.out.println(tmp);
-				//catalogue.add(tmp);
 				catalogue.put(ca,tmp);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		this.deconnexion();
 		return catalogue;
 	}
 
-	//Permet de générer tous les articles de la base de données
+	/**
+	 * Méthode pour générer les articles du vidéoclub
+	 * @return Hashtable<String,DescriptionArticle> Le String = code barre de l'article 
+	 */
 	public Hashtable<String,Article> genererArticle() {
 		Hashtable<String,Article> listeArticle = new Hashtable<String,Article>();
 		this.connexion();
@@ -235,14 +243,14 @@ public class Database {
 			while (res.next()) {
 				String codeBarre = res.getString("codeBarre");
 				String codeDesc = res.getString("codeDescription");
-				
+
 				/* 
 				 * Il y a un probleme pour les booleens
 				 * Il faut les recupérer en string et les mettre en booleen apres
 				 */
 				boolean estLoue = res.getBoolean("estLoue");
 				boolean estPerdu = res.getBoolean("estPerdu");
-				
+
 				Article art = new Article(codeBarre,codeDesc,estLoue,estPerdu);
 				//art.toString();
 				listeArticle.put(codeBarre, art);
@@ -255,26 +263,30 @@ public class Database {
 		return listeArticle;
 	}
 
-	//Fonctionne 
+	/**
+	 * Méthode pour ajouter une location au vidéoclub
+	 * @param Location
+	 * Permet aussi de spécifier à la base de données que l'article est loué 
+	 */
 	public int insertLocation(Location l) {
 		this.connexion();
 		int lastId = 0;
 		int co = 0;
-		
+
 		try {
-			//SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 			//Pour recuperer le dernier id de Location
-			
+
 			ResultSet rs = this.getResultatDe("SELECT id,count(*) FROM Location;");
 			while (rs.next()) {
 				lastId = rs.getInt("id");
 				co = rs.getInt("count(*)");
-				//System.out.println(lastId);
+
 			}
 
 			requeteP = connexion.prepareStatement("INSERT INTO Location (id,numeroAdherent,codeBarre,dateHeure,datePrevue,dateRetour,montant) "
 					+ "VALUES (?,?,?,?,?,?,?);");
 			for(int i = 0; i < l.getListeLigneArticles().size(); i++) {
+				//Pour la première insertion
 				if(co == 0 && lastId == 0) {
 					requeteP.setInt(1,lastId);
 				}
@@ -282,26 +294,21 @@ public class Database {
 					requeteP.setInt(1,lastId+1);
 					lastId = lastId + 1;
 				}
-				
+
 				requeteP.setString(2,l.getAdherent().getNumeroTel());
 				requeteP.setString(3,l.getListeLigneArticles().get(i).getCodeBarreArticle());
 
 				//On met les dates au bon format
-				/* 
-				String dateFormatee = format.format(dateHeure); 
-
-				String dateFormatee2 = format.format(dateDue);*/
 
 				Date dateHeure = l.getDateHeure();
 				Date dateDue = l.getListeLigneArticles().get(i).getDateDue();
+
 				//Format des dates dans la base de donnees
 				java.sql.Timestamp ts = new java.sql.Timestamp(dateHeure.getTime());
 				requeteP.setString(4, ts.toString());
 				java.sql.Timestamp ts2 = new java.sql.Timestamp(dateDue.getTime());
 				requeteP.setString(5, ts2.toString());
 
-				/*requeteP.setString(4,dateFormatee.toString());
-				requeteP.setString(5,dateFormatee2.toString());*/
 				//La date de retour doit etre a null car la location vient de commencer
 				requeteP.setString(6, null);
 				requeteP.setFloat(7, l.getMontant());
@@ -309,7 +316,7 @@ public class Database {
 				requeteP.executeUpdate();
 				this.faireRequete("UPDATE Article SET estLoue=1 WHERE codeBarre='"+l.ligneArticle.get(i).getCodeBarreArticle()+"';");
 			}
-			
+
 
 		} catch (SQLException e) {
 
@@ -318,29 +325,28 @@ public class Database {
 		this.deconnexion();
 		return lastId;
 	}
+
 	/**
 	 * Ajoute une nouvelle Description d'article à la database. 
-	 * @param desc
+	 * @param ArrayList<DescriptionArticle>
 	 */
 	public void insertDescriptionArticle(ArrayList<DescriptionArticle> listeDesc) {
-		//Testé et fonctionne :)
 		try {
 			this.connexion();
 			requeteP = connexion.prepareStatement("INSERT INTO DescriptionArticle ('codeArticle','description','prixVente','prixJournalier',"
 					+ "'titre','genre','estNouveau','prixHebdomadaire') VALUES(?,?,?,?,?,?,?,?)");
 			for (int i =0;i<listeDesc.size();i++){
-			requeteP.setString(1, listeDesc.get(i).getCodeArticle());
-			requeteP.setString(2, listeDesc.get(i).getDescription());
-			requeteP.setFloat(3, listeDesc.get(i).getPrixVente());
-			requeteP.setFloat(4,listeDesc.get(i).getPrixJournalier());
-			requeteP.setString(5,listeDesc.get(i).getTitre());
-			requeteP.setString(6, listeDesc.get(i).getGenre());
-			requeteP.setBoolean(7, listeDesc.get(i).getEstNouveau());
-			requeteP.setFloat(8, listeDesc.get(i).getPrixHebdomadaire());
+				requeteP.setString(1, listeDesc.get(i).getCodeArticle());
+				requeteP.setString(2, listeDesc.get(i).getDescription());
+				requeteP.setFloat(3, listeDesc.get(i).getPrixVente());
+				requeteP.setFloat(4,listeDesc.get(i).getPrixJournalier());
+				requeteP.setString(5,listeDesc.get(i).getTitre());
+				requeteP.setString(6, listeDesc.get(i).getGenre());
+				requeteP.setBoolean(7, listeDesc.get(i).getEstNouveau());
+				requeteP.setFloat(8, listeDesc.get(i).getPrixHebdomadaire());
 
-			requeteP.executeUpdate();
+				requeteP.executeUpdate();
 			}
-			//this.faireRequete(strSQL);
 			this.deconnexion();
 
 		} catch (SQLException e) {
@@ -349,20 +355,23 @@ public class Database {
 		}
 	}
 
+	/**
+	 * Ajoute un nouvel article à la database. 
+	 * @param ArrayList<Article>
+	 */
 	public void insertArticle(ArrayList<Article> listeArt) {
-		
+
 		try {
 			this.connexion();
 			requeteP = connexion.prepareStatement("INSERT INTO Article ('codeDescription','estLoue','estPerdu')" 
 					+ "VALUES(?,?,?)");
 			for (int i = 0;i<listeArt.size();i++){
-			requeteP.setString(1, listeArt.get(i).getDescription().getCodeArticle());
-			requeteP.setBoolean(2, false);
-			requeteP.setBoolean(3, false);
-			
-			requeteP.executeUpdate();
+				requeteP.setString(1, listeArt.get(i).getDescription().getCodeArticle());
+				requeteP.setBoolean(2, false);
+				requeteP.setBoolean(3, false);
+
+				requeteP.executeUpdate();
 			}
-			//this.faireRequete(strSQL);
 			this.deconnexion();
 
 		} catch (SQLException e) {
@@ -370,8 +379,14 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Ajoute un nouvel adherent à la database. 
+	 * @param un adhérent
+	 */
+	
 	public void insertAdherent(Adherent ad) {
-		//Testé et fonctionnel 
+		
 		try {
 			this.connexion();
 			String sql = "INSERT INTO Adherent ('numeroTel','codeSecret','nom','prenom','adresse','numeroCB') VALUES (?,?,?,?,?,?);";
@@ -383,29 +398,31 @@ public class Database {
 			requeteP.setString(5, ad.getAdresse());
 			requeteP.setString(6, ad.getNumeroCB());
 			requeteP.executeUpdate();
-
-			//N'oubliez pas de vous deconnecter apres avoir fait vos requetes
 			this.deconnexion();
 
 		}
 		catch(SQLException e) {
 			e.printStackTrace();
 		}
-
 	}
+	
+	/**
+	 * Ajoute un nouvelle vente à la database. 
+	 * @param une vente
+	 */
+	
 	public void insertVente(Vente v) {
-		
+
 		try {
 			this.connexion();
 			requeteP = connexion.prepareStatement("INSERT INTO Vente ('dateHeure','montant','lignesArticles')" 
 					+ "VALUES(?,?,?)");
-			
+
 			requeteP.setString(1, new java.sql.Timestamp(v.dateHeure.getTime()).toString());
 			requeteP.setBoolean(2, false);
 			requeteP.setBoolean(3, false);
 
 			requeteP.executeUpdate();
-			//this.faireRequete(strSQL);
 			this.deconnexion();
 
 		} catch (SQLException e) {
@@ -414,12 +431,18 @@ public class Database {
 		}
 	}
 
+	/**
+	 * Méthode pour générer les locations du vidéoclub
+	 * @return ArrayList<Location> qui est triée par la suite dans le programme
+	 * afin que les locations soit rentrés au bon format dans le code et non au format de la base
+	 * de données
+	 */
+	
 	public ArrayList<Location> genererLocation() {
 		ArrayList<Location> listeLocation = new ArrayList<Location>();
 		try {
 			this.connexion();
 			ResultSet res = this.getResultatDe("SELECT * FROM Location");
-			//SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 			while (res.next()) {
 				int id = res.getInt("id");
 				String numAd = res.getString("numeroAdherent");
@@ -437,10 +460,6 @@ public class Database {
 					dateRetour = new java.util.Date(ts3.getTime());
 				}
 
-				//System.out.println(dateHeure);
-				//System.out.println(dateDue);
-				//System.out.println(dateRetour);
-
 				float montant = res.getFloat("montant");
 				listeLocation.add(new Location(id,numAd,codeBarre,dateHeure,dateDue,dateRetour,montant));
 			}
@@ -452,6 +471,12 @@ public class Database {
 		return listeLocation;
 	}
 
+	/**
+	 * Méthode pour retourner un article dans la database
+	 * @param id de la location que l'on veut retourner
+	 * @param Ligne d'articles contenant l'article a retourné
+	 */
+	
 	public void retour(int idLocation,LigneArticle lar) {
 		this.connexion();
 		String requeteArticle = "UPDATE Article SET estLoue = ? WHERE codeBarre = ?;";
@@ -463,7 +488,7 @@ public class Database {
 			requeteP.setBoolean(1, false);
 			requeteP.setString(2, lar.getCodeBarreArticle());
 			requeteP.executeUpdate();
-			
+
 			//Changement de la date de retour de la location
 			requeteP = connexion.prepareStatement(requeteLocation);
 			java.sql.Timestamp ts = new java.sql.Timestamp(lar.getDateRetour().getTime());
@@ -471,8 +496,8 @@ public class Database {
 			requeteP.setInt(2, idLocation);
 			requeteP.setString(3, lar.getCodeBarreArticle());
 			requeteP.executeUpdate();
-			
-			
+
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -480,21 +505,32 @@ public class Database {
 		this.deconnexion();
 
 	}
+	
+	/**
+	 * Méthode pour retirer un article de la base de données
+	 * @param article a retiré
+	 */
 	public void removeArticle(Article art){
 		this.connexion();
 		String strSQL = "DELETE FROM Article WHERE codeBarre = ?";
 		try {
 			requeteP = connexion.prepareStatement(strSQL);
-			requeteP.setString(1, art.getCodeBarre());
+			requeteP.setString(1,art.getCodeBarre());
 			requeteP.executeUpdate();
-			
+
 		} catch (SQLException e) {
-			
+
 			e.printStackTrace();
 		}
 		this.deconnexion();
-		
+
 	}
+	
+	/**
+	 * Méthode pour insérer une amende de la base de données
+	 * @param amende a inséré
+	 */
+	
 	public void insertAmende(Amende am) {
 		this.connexion();
 		String requete = "INSERT INTO Amende (numLocation,numAdherent,codeBarre,montant,payee) VALUES(?,?,?,?,?);";
@@ -506,13 +542,19 @@ public class Database {
 			requeteP.setFloat(4, am.getMontant());
 			requeteP.setBoolean(5, am.isTerminee());
 			requeteP.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		this.deconnexion();
 	}
+	
+	/**
+	 * Méthode pour modifier une amende de la base de données
+	 * @param amende a modifié
+	 */
+	
 	public void udpateAmende(Amende am) {
 		this.connexion();
 		String requete = "UPDATE Amende "
@@ -527,17 +569,17 @@ public class Database {
 			requeteP.setBoolean(5,am.isTerminee());
 			requeteP.setInt(6,am.getLoc().getIdLoc());
 			requeteP.setString(7,am.getAd().getNumeroTel());
-			
+
 			requeteP.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		this.deconnexion();
 	}
-	
-	
+
+
 
 }
 

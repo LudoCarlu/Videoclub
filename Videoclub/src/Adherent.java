@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class Adherent{
 	
@@ -8,8 +7,19 @@ public class Adherent{
 	private String prenom;
 	private String adresse;
 	private String numeroCB;
-	private ArrayList<Location> listeLocation;
 	
+	//Constructeur 
+	public Adherent(String numeroTel, String codeSecret, String nom, String prenom, String adresse, String numeroCB) {
+		super();
+		this.numeroTel = numeroTel;
+		this.codeSecret = codeSecret;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.adresse = adresse;
+		this.numeroCB = numeroCB;
+	}
+
+	//Getteurs / Setteurs
 	public String getNumeroTel() {
 		return numeroTel;
 	}
@@ -28,32 +38,19 @@ public class Adherent{
 	public String getPrenom() {
 		return prenom;
 	}
-	public ArrayList<Location> getListeLocation() {
-		return listeLocation;
-	}
-	public Adherent(String numeroTel, String codeSecret, String nom, String prenom, String adresse, String numeroCB) {
-		super();
-		this.numeroTel = numeroTel;
-		this.codeSecret = codeSecret;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.adresse = adresse;
-		this.numeroCB = numeroCB;
-	}
-
-	
-	public void setListeLocation(ArrayList<Location> listeLocation) {
-		this.listeLocation = listeLocation;
-	}
-	
 	public void setNumeroTel(String n) {
 		this.numeroTel = n;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "Adherent [numeroTel=" + numeroTel + ", codeSecret=" + codeSecret + ", nom=" + nom + ", prenom=" + prenom
-				+ ", adresse=" + adresse + ", numeroCB=" + numeroCB + ", listeLocation=" + listeLocation + "]";
+				+ ", adresse=" + adresse + ", numeroCB=" + numeroCB + "]";
 	}
+	
+	//Méthode qui permet de payer une amende et qui insère modifie l'amende dans la base de données
+	//Pour signaler qu'elle est terminée et payée
 	
 	public void payerAmende(Location l,String codeBarre) {
 

@@ -18,6 +18,12 @@ public class ControlPanel extends JPanel implements ActionListener{
 	private JButton acquisition=null;
 	private int choix=0;
 
+	/*
+	 * Constructeur
+	 * Le controlPanel permet la gestion de l'affichage 
+	 * en fonction des menus auxquelles on souhaite accéder 
+	 */
+	
 	public ControlPanel(JFrameGestionnaire fenetre){
 		this.gestionnaire=fenetre;
 		
@@ -60,6 +66,12 @@ public class ControlPanel extends JPanel implements ActionListener{
 		return this.choix;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 * Quand on clique sur les boutons c'est la que sont traité les redirections 
+	 * vers les nouveaux affichages
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==this.location){
