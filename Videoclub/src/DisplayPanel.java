@@ -380,7 +380,6 @@ public class DisplayPanel extends JPanel implements ActionListener{
 				public void actionPerformed(ActionEvent e) {
 					Random rand = new Random();
 					int nombreAleatoire = rand.nextInt(9999 - 1000 + 1) + 1000;
-					System.out.println(nombreAleatoire);
 					mdp.setText(String.valueOf(nombreAleatoire));
 				}
 			});
@@ -693,7 +692,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 					this.mdp.setText("");
 				}
 				else {
-					System.out.println("Il manque un element important à l'inscription");
+					JOptionPane.showMessageDialog(this,"Veuillez remplir tout les champs","Erreur..",JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		}
@@ -757,11 +756,9 @@ public class DisplayPanel extends JPanel implements ActionListener{
 				if(codeArticle.getText() != "") {
 
 					c.creerligneVente(this.codeArticle.getText(), 1);
-					System.out.println(this.codeArticle.getText());
 
 					int position = c.instanceVente().getListeLigneArticles().size()-1;
 					LigneArticle lar = c.instanceVente().getListeLigneArticles().get(position);
-					System.out.println(lar.toString());
 
 					DefaultTableModel m = (DefaultTableModel)table.getModel();
 

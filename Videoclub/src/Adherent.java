@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Adherent extends Client{
+public class Adherent{
 	
 	private String numeroTel;
 	private String codeSecret;

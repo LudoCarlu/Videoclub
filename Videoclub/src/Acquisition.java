@@ -20,7 +20,7 @@ public class Acquisition {
 		art.setDescription(desc);
 		if (listeArticle == null){
 			listeArticle = new ArrayList<Article>();
-		}		
+		}
 		
 		for (int i = 0;i<qte;i++){
 

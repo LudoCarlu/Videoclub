@@ -9,9 +9,7 @@ public class DescriptionArticle {
 	private float prixJournalier;
 	private String titre;
 	private String genre;
-	private boolean estNouveau; /*Je trouve que le "Est" devrait être enlevé il est inutile est se répète dans la méthode
-	 							* isEstNouveau() is=Est. Qu'est ce que vous en pensez?
-	 							*/
+	private boolean estNouveau; 
 	private float prixHebdomadaire;
 	private Hashtable<String,Article> listeArticle = null;
 	

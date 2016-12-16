@@ -39,13 +39,11 @@ public class Controler {
 			String num=this.listeMembre.get(pseudo).getNumeroTel();
 			String test=this.listeMembre.get(pseudo).getCodeSecret();
 			if(num.equals(pseudo) && test.equals(mdp)){
-				System.out.println("Authentification Adherent");
 				loc.ajouterAdherent(this.listeMembre.get(pseudo));
 				return this.listeMembre.get(pseudo);
 			}
 		}
 		catch (NullPointerException e){
-			System.out.print("pas de membre");
 			return null;
 		}
 		return null;
@@ -55,7 +53,6 @@ public class Controler {
 			int id=this.listeEmploye.get(Integer.parseInt(idEmploye)).getIdEmploye();
 			String password=this.listeEmploye.get(Integer.parseInt(idEmploye)).getMdp();
 			if(Integer.parseInt(idEmploye)==id && password.equals(mdp)){
-				System.out.println("Authentification Employé");
 				this.caissier=this.listeEmploye.get(id);
 				return this.caissier;
 			}
@@ -70,21 +67,10 @@ public class Controler {
 		return null;
 	}
 
-	/*public void MenuLocation() {
-		creerLocation();
-		Adherent ad = authentificationMembre("8192396454","1234");
-		if(ad != null) {
-			loc.ajouterAdherent(ad);
-		}
-	}*/
-
-	/*Methodes pour la location */
-
 	public Location getLocation(){
 		return this.loc;
 	}
 	public void creerLocation() {
-		System.out.println("Création de la location");
 		Calendar aujourdhui = Calendar.getInstance();
 		this.loc = new Location(aujourdhui);
 	}
@@ -107,7 +93,6 @@ public class Controler {
 				if(desc != null) {
 					//Ce n'est pas des confiseries
 					if(desc.getPrixJournalier() > 0) {
-						System.out.println("pas une confiserie");
 						loc.creerLigneArticles(art);
 						//loc.creerLigneArticles(desc, 1);
 						loc.setDateDue(duree);
@@ -116,13 +101,11 @@ public class Controler {
 						return true;
 					}
 					else {
-						System.out.println("Article pas à louer");
 						return false;
 					}
 				}
 			}
 		}
-		System.out.println("Code article non trouvé");
 		return false;
 	}
 
@@ -138,8 +121,6 @@ public class Controler {
 		if(this.listeLocation == null) {
 			this.listeLocation = new Hashtable<Integer,Location>();
 		}
-		System.out.println("ID "+ id);
-		//this.addListeLocation(D.genererLocation());
 		this.listeLocation.put(id,loc);
 		this.loc = null;
 		
@@ -278,8 +259,8 @@ public class Controler {
 					v.getDB().retour(this.listeLocation.get(k).getIdLoc(), la);
 					
 					if(r.isEnRetard() == true) {
-						System.out.println("En retard");
-						System.out.println(this.listeLocation.get(k).getListeLigneArticles().get(j));
+						//System.out.println("En retard");
+						//System.out.println(this.listeLocation.get(k).getListeLigneArticles().get(j));
 						//Cas amende
 					}
 				}
@@ -314,7 +295,7 @@ public class Controler {
 	 */
 	
 	public void gererRetard() {
-		
+
 		Set<Integer> keys = this.listeLocation.keySet();
 		for(Integer k: keys) {
 			int taille = this.listeLocation.get(k).getListeLigneArticles().size();
@@ -324,8 +305,8 @@ public class Controler {
 				Date dateDue = la.getDateDue();
 				Date aujourdhui = new Date();
 				Date dateRetour = la.getDateRetour();
-				
-				
+				System.out.println(dateRetour);
+				System.out.println(dateDue);
 				//System.out.println(nombreJourRetard);
 				//System.out.println(dateDue.before(aujourdhui));
 				//En retard
@@ -344,10 +325,11 @@ public class Controler {
 					
 					if(jRet > 0) {
 						Amende am = new Amende(this.listeLocation.get(k),j);
-					//System.out.println(listeLocation.get(k));
+					System.out.println(listeLocation.get(k));
 						listeLocation.get(k).ajouterAmende(am);
+						System.out.println(am);
 					}
-					//System.out.println(am);
+					
 				}
 				
 				
