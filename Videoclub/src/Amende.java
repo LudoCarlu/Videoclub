@@ -22,7 +22,6 @@ public class Amende extends Operation{
 		this.codeBarre = this.loc.getListeLigneArticles().get(indexLA).getCodeBarreArticle();
 		
 		if(la.getDateRetour() == null) {
-			System.out.println(la.getDateDue());
 			this.jrsRetard = calculJourEntreDate(this.dateHeure,la.getDateDue());
 			
 		}
@@ -31,7 +30,6 @@ public class Amende extends Operation{
 			this.jrsRetard = calculJourEntreDate(la.getDateDue(), la.getDateRetour());
 		}
 		 
-		//System.out.println(jrsRetard);
 		/*
 		 * S'assure que le film est bien en retard. 
 		 * Evite calcul avec 0 ou valeurs négative de jrsRetard
@@ -52,9 +50,7 @@ public class Amende extends Operation{
 			
 			//Si le film est régulier
 			if(desc.getEstNouveau() == false) {
-				System.out.println("non nouveau");
 				long duree = calculJourEntreDate(la.getDateDue(),loc.getDateHeure());
-				System.out.println("Duree " + duree);
 				if(jrsRetard > 60) {
 					montantAmende =  montantAmende + desc.getPrixVente()+20/*+taxes*/;
 					la.getArticle().setPerdu(true);
@@ -86,7 +82,6 @@ public class Amende extends Operation{
 		}
 		
 		this.montant = montantAmende;
-		//System.out.println("Montant amende = "+this.montant);
 	}
 
 	

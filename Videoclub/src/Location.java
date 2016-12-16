@@ -150,7 +150,6 @@ public class Location extends Operation{
 					listeAmende.get(i).setDateHeure(am.getDateHeure());
 					co++;
 					v.getDB().udpateAmende(am);
-					
 				}
 			}
 			//Amende pas encore présente et il y a deja une autre amende
@@ -159,7 +158,6 @@ public class Location extends Operation{
 				v.getDB().insertAmende(am);
 			}
 		}
-		System.out.println(listeAmende);
 	}
 
 }

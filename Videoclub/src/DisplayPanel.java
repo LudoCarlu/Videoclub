@@ -658,7 +658,6 @@ public class DisplayPanel extends JPanel implements ActionListener{
 					};
 					this.defaultModel.addRow(data);
 				};
-				//System.out.print(this.fenetre.getController().getLocation());
 				this.quantite.setText("1");
 				this.duree.setSelectedIndex(0);
 				this.codeArticle.setText("0");
@@ -707,6 +706,7 @@ public class DisplayPanel extends JPanel implements ActionListener{
 
 		if(this.type == 5) { //Retard
 			if(e.getSource() == btnAmende) {
+				this.defaultModel.setRowCount(0);
 				this.fenetre.getController().gererRetard();
 				Hashtable<Integer,Location> am = this.fenetre.getController().getListeLocation();
 				Set<Integer> keys = am.keySet();

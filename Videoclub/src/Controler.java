@@ -58,11 +58,10 @@ public class Controler {
 			}
 		}
 		catch (NullPointerException e){
-			System.out.print(e);
 			return null;
 		}
 		catch (NumberFormatException e){
-			System.out.print(e);
+			
 		}
 		return null;
 	}
@@ -215,7 +214,6 @@ public class Controler {
 		for(int i=0;i < l.size(); i++) {
 			Adherent ad = listeMembre.get(l.get(i).getNumAdherent());
 			Article a = inventaire.getArticle(l.get(i).getCodeBarre());
-			//System.out.println(a);
 			//Condition si l'article a ete enlever des articles
 			if(a != null) {
 				DescriptionArticle desc = catalogue.getDesc(a.getCodeDescription());
@@ -245,11 +243,9 @@ public class Controler {
 	public void effectuerUnRetour(String codeBarre) {
 		Retour r;
 		Videoclub v = Videoclub.instanceVideoclub();
-		//System.out.println(this.listeLocation);
 		
 		Set<Integer> keys = this.listeLocation.keySet();
 		for(Integer k: keys) {
-			//System.out.println("LOCATION "+k+"\n"+this.listeLocation.get(k));
 			int taille = this.listeLocation.get(k).getListeLigneArticles().size();
 			for(int j=0; j < taille; j++) {
 				LigneArticle la = this.listeLocation.get(k).getListeLigneArticles().get(j);
@@ -259,9 +255,6 @@ public class Controler {
 					v.getDB().retour(this.listeLocation.get(k).getIdLoc(), la);
 					
 					if(r.isEnRetard() == true) {
-						//System.out.println("En retard");
-						//System.out.println(this.listeLocation.get(k).getListeLigneArticles().get(j));
-						//Cas amende
 					}
 				}
 			}
@@ -305,10 +298,6 @@ public class Controler {
 				Date dateDue = la.getDateDue();
 				Date aujourdhui = new Date();
 				Date dateRetour = la.getDateRetour();
-				System.out.println(dateRetour);
-				System.out.println(dateDue);
-				//System.out.println(nombreJourRetard);
-				//System.out.println(dateDue.before(aujourdhui));
 				//En retard
 
 				
@@ -325,14 +314,10 @@ public class Controler {
 					
 					if(jRet > 0) {
 						Amende am = new Amende(this.listeLocation.get(k),j);
-					System.out.println(listeLocation.get(k));
 						listeLocation.get(k).ajouterAmende(am);
-						System.out.println(am);
 					}
 					
 				}
-				
-				
 			}
 		}
 	}
