@@ -4,7 +4,7 @@ public class Vente extends Operation{
 	public Vente(){
 		
 	}
-	
+	//On crée un ligne article de vente
 	public void ajouterLigneArticles(Article a, int qte) {
 		LigneArticle lar = new LigneArticle(a,qte);
 

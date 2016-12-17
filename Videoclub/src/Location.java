@@ -49,11 +49,7 @@ public class Location extends Operation{
 		this.adherent =  ad;
 	}
 	
-	public void creerLigneArticles(DescriptionArticle desc, int quantite) {
-		LigneArticle lar = new LigneArticle(desc,quantite);
-		this.ligneArticle.add(lar);
-	}
-	
+	//On crée un ligne d'articles
 	public void creerLigneArticles(Article a) {
 		LigneArticle lar = new LigneArticle(a);
 		this.ligneArticle.add(lar);

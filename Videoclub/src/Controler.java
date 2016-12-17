@@ -69,11 +69,14 @@ public class Controler {
 	public Location getLocation(){
 		return this.loc;
 	}
+	
+	//Création d'une location avec la date d'aujourd'hui
 	public void creerLocation() {
 		Calendar aujourdhui = Calendar.getInstance();
 		this.loc = new Location(aujourdhui);
 	}
-	//Le code article saisit est le code de la description de l'article
+	
+	//On saisit le code barre du film et sa durée 
 	public boolean saisirArticleLoc (String codeBarre,int duree) {
 		if(this.loc.isTerminee() == false) {
 			//On récupère l'article grace à son code barre
@@ -87,16 +90,12 @@ public class Controler {
 				 */
 				DescriptionArticle desc = catalogue.getDesc(codeArticle);
 				art.setDescription(desc);
-				//desc.setListeArticleLouable(this.listeArticle);
 	
 				if(desc != null) {
-					//Ce n'est pas des confiseries
-					if(desc.getPrixJournalier() > 0) {
+					if(desc.getPrixJournalier() > 0) { //Ce n'est pas des confiseries
 						loc.creerLigneArticles(art);
-						//loc.creerLigneArticles(desc, 1);
 						loc.setDateDue(duree);
 						loc.majMontant();
-						loc.toString();
 						return true;
 					}
 					else {
@@ -111,12 +110,17 @@ public class Controler {
 	public void terminerLocation () {
 		loc.setEstTerminee(true);
 		float montantFinal = loc.getMontant();
+		//On crée un paiement 
 		Paiement p = new Paiement(montantFinal);
 		loc.setPaiement(p);
+		//On ajoute la location à la base de données
 		Videoclub v = Videoclub.instanceVideoclub();
 		Database D = v.getDB();
 		int id = D.insertLocation(loc);
 		loc.setIdLoc(id);
+		System.out.println(loc.getListeLigneArticles());
+		
+		//Puis on l'ajoute à la liste des locations du contrôleur
 		if(this.listeLocation == null) {
 			this.listeLocation = new Hashtable<Integer,Location>();
 		}
@@ -240,33 +244,39 @@ public class Controler {
 		Retour r;
 		Videoclub v = Videoclub.instanceVideoclub();
 		
+		//On cherche dans les locations celle qui possède l'article avec le code barre entrée en paramètres
 		Set<Integer> keys = this.listeLocation.keySet();
 		for(Integer k: keys) {
 			int taille = this.listeLocation.get(k).getListeLigneArticles().size();
 			for(int j=0; j < taille; j++) {
 				LigneArticle la = this.listeLocation.get(k).getListeLigneArticles().get(j);
+				//On trouve cet article
 				if(la.getCodeBarreArticle().equals(codeBarre)) {
+					//On le retourne
 					r = new Retour(this.listeLocation.get(k).getListeLigneArticles().get(j));
 					la = r.getLigneArticles();
-					v.getDB().retour(this.listeLocation.get(k).getIdLoc(), la);
 					
-					if(r.isEnRetard() == true) {
-					}
+					//On le retourne aussi dans la base de données
+					v.getDB().retour(this.listeLocation.get(k).getIdLoc(), la);
 				}
 			}
 		}
 	}
+	//On crée une vente
 	public void initierVente(){
 		if (vente==null){
 			this.vente = new Vente();
 		}
 	}
+	//On termine la vente
 	public void terminerVente(){
 		this.vente = null;
 	}
 	public Vente instanceVente(){
 		return this.vente;
 	}
+	//On creer un ligne de vente
+	//Equivalent de saisirArticleLoc mais pour la vente
 	public void creerligneVente(String codeBarre, int qte){
 		if (vente==null){
 			this.vente = new Vente();
@@ -285,19 +295,21 @@ public class Controler {
 	
 	public void gererRetard() {
 
+		//On parcourt toutes les locations
 		Set<Integer> keys = this.listeLocation.keySet();
 		for(Integer k: keys) {
 			int taille = this.listeLocation.get(k).getListeLigneArticles().size();
 			
+			//On analyse les lignes d'articles de chaque location pour voir si elles contiennent des retards
 			for(int j=0; j < taille; j++) {
 				LigneArticle la = this.listeLocation.get(k).getListeLigneArticles().get(j);
 				Date dateDue = la.getDateDue();
 				Date aujourdhui = new Date();
 				Date dateRetour = la.getDateRetour();
-				//En retard
 
-				
+				//
 				if(dateDue.before(aujourdhui) && (dateRetour == null || dateDue.before(dateRetour))){
+					//Il y a un retard, on calcule le nombre de jour
 					long diff;
 					if(dateRetour != null) {
 						diff = Math.abs(dateRetour.getTime() - dateDue.getTime());
@@ -309,7 +321,9 @@ public class Controler {
 					long jRet = (long)diff/MILLISECONDS_PER_DAY;
 					
 					if(jRet > 0) {
+						//On crée une nouvelle amende
 						Amende am = new Amende(this.listeLocation.get(k),j);
+						//On ajoute l'amende à la location
 						listeLocation.get(k).ajouterAmende(am);
 					}
 					
@@ -317,7 +331,7 @@ public class Controler {
 			}
 		}
 	}
-	
+	//Utiliser pour payer une amende
 	public void finAmende(int idLoc, String numAd, String codeBarre) {
 		Location loc = this.listeLocation.get(idLoc);
 		Adherent ad = this.listeMembre.get(numAd);

@@ -285,15 +285,15 @@ public class Database {
 
 			requeteP = connexion.prepareStatement("INSERT INTO Location (id,numeroAdherent,codeBarre,dateHeure,datePrevue,dateRetour,montant) "
 					+ "VALUES (?,?,?,?,?,?,?);");
+			//Pour la première insertion
+			if(co == 0 && lastId == 0) {
+				requeteP.setInt(1,lastId);
+			}
+			else {
+				requeteP.setInt(1,lastId+1);
+				lastId = lastId + 1;
+			}
 			for(int i = 0; i < l.getListeLigneArticles().size(); i++) {
-				//Pour la première insertion
-				if(co == 0 && lastId == 0) {
-					requeteP.setInt(1,lastId);
-				}
-				else {
-					requeteP.setInt(1,lastId+1);
-					lastId = lastId + 1;
-				}
 
 				requeteP.setString(2,l.getAdherent().getNumeroTel());
 				requeteP.setString(3,l.getListeLigneArticles().get(i).getCodeBarreArticle());

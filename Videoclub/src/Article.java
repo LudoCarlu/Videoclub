@@ -3,7 +3,7 @@ public class Article {
 	
 	
 	private String codeBarre; // un code barre unique à chacun des articles
-	private String codeDescription; // le code de la description de cette article
+	private String codeDescription; // le code de la description de cet article
 	private boolean perdu = false; // l'article est-il perdu 
 	private boolean loue = false; // l'article est-il loué
 	private DescriptionArticle desc; // La description complète de l'article
