@@ -1,0 +1,7 @@
+AUTHORS : Ludovic CARLU / Maxime FAIVRE / Samuel Laroche
+
+Si vous voulez exécuter le programme directement sans passer par eclipse aller dans le dossier videoclub .jar Vous y trouverez un .jar qui comprend directement la librairie extérieur que nous avons utiliser
+
+Sinon importer le dossier videoclub (par avec .jar) dans eclipse. Dans les propriétés du projet aller dans java build Path. Retirer la librairie sqlite-jdbc... et faite add external jar puis remeter la librairie sqlite-jdbc ... qui se trouve dans le dossier database de notre projet
+
+Pour l'explication de l'execution voir plus en détail dans le rendu.
